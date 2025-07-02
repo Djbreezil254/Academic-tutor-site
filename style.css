@@ -3,12 +3,19 @@
   --text: #222;
   --primary: #0066cc;
   --card-bg: #ffffff;
+  --accent: #ffb703;
+  --footer-bg: #003566;
+  --footer-text: #ffffff;
 }
+
 [data-theme="dark"] {
   --bg: #121212;
   --text: #eeeeee;
   --primary: #4dabf7;
   --card-bg: #1e1e1e;
+  --accent: #f4a261;
+  --footer-bg: #1a1a1a;
+  --footer-text: #cccccc;
 }
 
 body {
@@ -17,6 +24,16 @@ body {
   background-color: var(--bg);
   color: var(--text);
   transition: background 0.3s, color 0.3s;
+}
+
+h1, h2, h3 {
+  color: var(--primary);
+}
+a {
+  color: var(--primary);
+}
+a:hover {
+  color: var(--accent);
 }
 
 /* Navigation */
@@ -74,6 +91,9 @@ nav ul li a {
   max-width: 800px;
   margin: 0 auto;
 }
+.hero-content .highlight {
+  color: var(--accent);
+}
 .hero .cta {
   display: inline-block;
   margin-top: 1rem;
@@ -94,16 +114,19 @@ nav ul li a {
 }
 .card {
   background: var(--card-bg);
-  padding: 1rem;
+  padding: 1.2rem;
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  font-size: 1rem;
+}
+.card .material-icons {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
-/* Other sections */
-section {
-  padding: 2rem;
-}
+/* Call to Action */
 .cta-section {
   background-color: var(--primary);
   color: white;
@@ -121,13 +144,38 @@ section {
   display: inline-block;
 }
 
-/* ✅ Testimonials Carousel */
+/* How It Works */
+.how-it-works {
+  text-align: center;
+  background: var(--bg);
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.steps-grid div {
+  padding: 1rem;
+  border-radius: 6px;
+  background: var(--card-bg);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.steps-grid h3 {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+.steps-grid .material-icons {
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+/* Testimonials Carousel */
 .testimonials {
   background: var(--card-bg);
   padding: 2rem;
   text-align: center;
 }
-
 .carousel {
   position: relative;
   overflow: hidden;
@@ -135,13 +183,11 @@ section {
   margin: 0 auto;
   width: 100%;
 }
-
 .carousel-track {
   display: flex;
   transition: transform 0.6s ease-in-out;
   will-change: transform;
 }
-
 .testimonial-card {
   width: 100%;
   flex-shrink: 0;
@@ -151,21 +197,18 @@ section {
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
-
 .testimonial-card cite {
   display: block;
   margin-top: 1rem;
   font-style: normal;
   font-weight: bold;
 }
-
 .carousel-buttons {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
 }
-
 .carousel-btn {
   background: var(--primary);
   color: white;
@@ -175,22 +218,22 @@ section {
   cursor: pointer;
   font-size: 1rem;
 }
-
 .carousel-btn:hover {
   background: #005bb5;
 }
 
-/* Footer */
-footer {
+/* Contact & Connect Section */
+.connect {
+  padding: 2rem;
   background: var(--card-bg);
   text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: var(--text);
-  border-top: 1px solid #ccc;
+}
+.connect .material-icons {
+  vertical-align: middle;
+  margin-right: 0.3rem;
 }
 
-/* Calendly section responsiveness */
+/* Calendly section */
 .schedule iframe,
 .calendly-inline-widget {
   width: 100% !important;
@@ -198,7 +241,50 @@ footer {
   height: 700px;
 }
 
-/* Responsive tweaks */
+/* Footer */
+footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto 1rem auto;
+  gap: 1rem;
+}
+.footer-container div {
+  flex: 1;
+}
+footer a {
+  color: var(--footer-text);
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+footer a:hover {
+  color: var(--accent);
+}
+
+/* Sticky Book Now Button */
+.book-mobile {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: #000;
+  padding: 0.7rem 1.2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+}
+
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -229,5 +315,14 @@ footer {
   .theme-toggle {
     margin-top: 0.5rem;
     align-self: flex-end;
+  }
+
+  .book-mobile {
+    display: block;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
   }
 }
