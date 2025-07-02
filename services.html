@@ -1,30 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services - Academic Tutor</title>
+  <title>Our Services – Tutor Brian</title>
   <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style>
+    /* Scoped styles for Services Page only */
+    .services-page {
+      font-family: 'Poppins', sans-serif;
+      padding: 4rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-  <section>
-    <h1>My Services</h1>
-    <ul>
-      <li>Academic writing guidance</li>
-      <li>Research coaching and literature review help</li>
-      <li>APA/MLA formatting assistance</li>
-      <li>Plagiarism-safe and AI-proof writing support</li>
-      <li>One-on-one tutoring for thesis/dissertation support</li>
-    </ul>
+    .services-page h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .service-card img {
+      max-width: 80px;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+
+    .service-card p {
+      font-size: 0.98rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .services-page h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body class="services-page">
+
+<!-- ✅ Navigation (same as index.html) -->
+<nav>
+  <div class="nav-brand">Tutor Brian</div>
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+</nav>
+
+<main>
+  <section class="services-page">
+    <h1>Academic Coaching Services</h1>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <img src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-thesis-university-flat-icons-inmotus-design.png" alt="Thesis Icon" />
+        <h3>Thesis Structuring</h3>
+        <p>Get help organizing your chapters, formulating research questions, and aligning your methodology to academic standards.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="https://img.icons8.com/color/96/000000/document--v1.png" alt="Formatting Icon" />
+        <h3>APA, MLA, Chicago Formatting</h3>
+        <p>We ensure your citations, references, and formatting meet university-approved guidelines—without error.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="https://img.icons8.com/external-wanicon-flat-wanicon/64/000000/external-ai-artificial-intelligence-wanicon-flat-wanicon.png" alt="AI Writing Icon" />
+        <h3>AI-Safe Academic Writing</h3>
+        <p>We write and coach using ethical, human-led strategies that pass AI detectors and maintain originality.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="https://img.icons8.com/dusk/64/000000/books.png" alt="Books Icon" />
+        <h3>Literature Reviews</h3>
+        <p>We help synthesize sources, identify gaps, and build strong theoretical frameworks using current peer-reviewed research.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="https://img.icons8.com/office/64/000000/lecturer.png" alt="Defense Icon" />
+        <h3>Dissertation Defense Prep</h3>
+        <p>Gain confidence with personalized prep sessions, mock defenses, and slides that highlight your key arguments.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-mentorship-professional-network-flaticons-lineal-color-flat-icons.png" alt="Coaching Icon" />
+        <h3>1-on-1 Research Coaching</h3>
+        <p>Work directly with Tutor Brian to refine your topic, improve your writing, and overcome academic roadblocks.</p>
+      </div>
+
+    </div>
   </section>
+</main>
+
+<!-- ✅ Footer (same as index.html) -->
+<footer>
+  <div class="footer-container">
+    <div class="contact-info">
+      <p><strong>Contact Us On:</strong></p>
+      <p><span class="material-icons">email</span> bomfreelancelab@gmail.com</p>
+      <p><span class="material-icons">phone</span> +1‑234‑567‑8900</p>
+    </div>
+    <div class="site-info">
+      <p>Follow me:
+        <a href="#"><span class="material-icons">linkedin</span></a>
+        <a href="#"><span class="material-icons">telegram</span></a>
+      </p>
+    </div>
+  </div>
+  <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
+</footer>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  function toggleTheme() {
+    const html = document.documentElement;
+    html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+  }
+</script>
 </body>
 </html>
