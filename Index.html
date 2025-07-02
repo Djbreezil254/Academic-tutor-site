@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Academic Coaching by Tutor Brian</title>
+  <title>Tutor Brian – Academic Coaching</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script defer>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+    }
+  </script>
 </head>
 <body>
 
@@ -14,33 +22,64 @@
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="resources.html">Resources</a></li>
     </ul>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
   </nav>
 
-  <header>
-    <h1>Academic Coaching & Research Support</h1>
-    <p>Helping students succeed in writing, research, and formatting.</p>
-    <a href="mailto:bomfreelancelab@gmail.com" class="cta">Contact Me</a>
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Academic Coaching That Moves You Forward</h1>
+      <p>Guiding students from confusion to clarity in writing, formatting, and research success.</p>
+      <a href="mailto:bomfreelancelab@gmail.com" class="cta">📅 Book Your Free Consult</a>
+    </div>
   </header>
 
   <main>
-    <section>
-      <h2>My Services</h2>
+    <section class="services">
+      <h2>What I Help With</h2>
+      <div class="card-grid">
+        <div class="card">🧠 Thesis Structuring</div>
+        <div class="card">📝 APA, MLA, Chicago Formatting</div>
+        <div class="card">🔍 AI-Safe Academic Writing</div>
+        <div class="card">📚 Literature Reviews</div>
+        <div class="card">🎤 Dissertation Defense Prep</div>
+        <div class="card">💬 1-on-1 Research Coaching</div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <h2>Let’s Elevate Your Academic Game</h2>
+      <p>Whether you're stuck formatting citations or navigating a complex dissertation, I’ve got you covered.</p>
+      <a href="mailto:bomfreelancelab@gmail.com" class="cta">Start Now →</a>
+    </section>
+
+    <section class="testimonials">
+      <h2>What Students Say</h2>
+      <blockquote>“I couldn’t have completed my master's thesis without Brian’s help. His insight and formatting support were invaluable.”</blockquote>
+      <cite>– J. Morgan, MSc Graduate</cite>
+    </section>
+
+    <section class="resources">
+      <h2>Free Resources</h2>
       <ul>
-        <li>Dissertation and Thesis Structuring</li>
-        <li>APA/MLA/Chicago Formatting Help</li>
-        <li>Academic Writing Guidance</li>
-        <li>AI Detection-Safe Writing Support</li>
-        <li>Research Coaching and Literature Reviews</li>
+        <li><a href="assets/AIntelligence.pdf" download>📄 Sample PDF: Research on AI</a></li>
       </ul>
+    </section>
+
+    <section class="connect">
+      <h2>Get in Touch</h2>
+      <p>Email: <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a></p>
+      <p>LinkedIn | WhatsApp | Telegram – coming soon</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Tutor Brian | Academic Support</p>
+    <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
   </footer>
 
-  <!--Start of Tawk.to Script-->
+  <!-- ✅ Tawk.to Live Chat -->
   <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function () {
@@ -52,7 +91,6 @@
       s0.parentNode.insertBefore(s1, s0);
     })();
   </script>
-  <!--End of Tawk.to Script-->
 
 </body>
 </html>
