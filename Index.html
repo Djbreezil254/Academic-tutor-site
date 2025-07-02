@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Academic Coaching by Tutor Brian</title>
+  <title>Tutor Brian – Academic Coaching</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script defer>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+    }
+  </script>
 </head>
 <body>
 
@@ -15,30 +23,46 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Mode</button>
   </nav>
 
-  <header>
-    <h1>Academic Coaching & Research Support</h1>
-    <p>Helping students succeed in writing, research, and formatting.</p>
-    <a href="mailto:bomfreelancelab@gmail.com" class="cta">Contact Me</a>
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Your Personal Academic Coach</h1>
+      <p>One-on-one guidance for writing, research, and formatting excellence.</p>
+      <a href="mailto:bomfreelancelab@gmail.com" class="cta">Start a Session</a>
+    </div>
   </header>
 
   <main>
-    <section>
-      <h2>My Services</h2>
-      <ul>
-        <li>Dissertation and Thesis Structuring</li>
-        <li>APA/MLA/Chicago Formatting Help</li>
-        <li>Academic Writing Guidance</li>
-        <li>AI Detection-Safe Writing Support</li>
-        <li>Research Coaching and Literature Reviews</li>
-      </ul>
+    <section class="services">
+      <h2>How I Can Help</h2>
+      <div class="card-grid">
+        <div class="card">✅ Thesis Structuring</div>
+        <div class="card">✅ Formatting (APA, MLA)</div>
+        <div class="card">✅ Plagiarism-Safe Writing</div>
+        <div class="card">✅ Literature Review Help</div>
+        <div class="card">✅ Dissertation Defense Coaching</div>
+        <div class="card">✅ AI Detection-Safe Support</div>
+      </div>
+    </section>
+
+    <section class="resources">
+      <h2>Downloadables</h2>
+      <p><a href="assets/AIntelligence.pdf" download>📄 Sample PDF: Research on AI</a></p>
+    </section>
+
+    <section class="connect">
+      <h2>Connect with Me</h2>
+      <p>Email: <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a></p>
+      <p>LinkedIn | WhatsApp | Telegram – coming soon</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Tutor Brian | Academic Support</p>
+    <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
   </footer>
 
+  <!-- 🔧 Chat Widget Placeholder (we’ll add live script later) -->
 </body>
 </html>
