@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
   <!-- ✅ AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
@@ -50,7 +51,7 @@
   <header class="hero">
     <div class="overlay"></div>
     <div class="hero-content" data-aos="fade-up">
-      <h1>Academic Coaching That Moves You Forward</h1>
+      <h1>Academic <span class="highlight">Coaching</span> That Moves You Forward</h1>
       <p>Guiding students from confusion to clarity in writing, formatting, and research success.</p>
       <a href="mailto:bomfreelancelab@gmail.com" class="cta">📅 Book Your Free Consult</a>
     </div>
@@ -60,12 +61,12 @@
     <section class="services" data-aos="fade-up">
       <h2>What I Help With</h2>
       <div class="card-grid">
-        <div class="card" data-aos="zoom-in">🧠 Thesis Structuring</div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="100">📝 APA, MLA, Chicago Formatting</div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="200">🔍 AI-Safe Academic Writing</div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="300">📚 Literature Reviews</div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="400">🎤 Dissertation Defense Prep</div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="500">💬 1-on-1 Research Coaching</div>
+        <div class="card" data-aos="zoom-in"><span class="material-icons">school</span> Thesis Structuring</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="100"><span class="material-icons">format_align_left</span> APA, MLA, Chicago Formatting</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="200"><span class="material-icons">security</span> AI-Safe Academic Writing</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="300"><span class="material-icons">menu_book</span> Literature Reviews</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="400"><span class="material-icons">mic</span> Dissertation Defense Prep</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="500"><span class="material-icons">person</span> 1-on-1 Research Coaching</div>
       </div>
     </section>
 
@@ -73,6 +74,17 @@
       <h2>Let’s Elevate Your Academic Game</h2>
       <p>Whether you're stuck formatting citations or navigating a complex dissertation, I’ve got you covered.</p>
       <a href="mailto:bomfreelancelab@gmail.com" class="cta">Start Now →</a>
+    </section>
+
+    <!-- ✅ How It Works -->
+    <section class="how-it-works" data-aos="fade-up">
+      <h2>How It Works</h2>
+      <div class="steps-grid">
+        <div><span class="material-icons">calendar_today</span><h3>Book a Free Call</h3></div>
+        <div><span class="material-icons">upload_file</span><h3>Share Your Draft</h3></div>
+        <div><span class="material-icons">support_agent</span><h3>Receive Coaching</h3></div>
+        <div><span class="material-icons">rocket_launch</span><h3>Submit with Confidence</h3></div>
+      </div>
     </section>
 
     <!-- ✅ Testimonial Carousel -->
@@ -102,8 +114,8 @@
 
     <section class="connect" data-aos="fade-up">
       <h2>Get in Touch</h2>
-      <p>Email: <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a></p>
-      <p>LinkedIn | WhatsApp | Telegram – coming soon</p>
+      <p><span class="material-icons">email</span> <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a></p>
+      <p><span class="material-icons">link</span> LinkedIn | WhatsApp | Telegram – coming soon</p>
     </section>
 
     <section class="schedule" data-aos="fade-up">
@@ -114,9 +126,26 @@
     </section>
   </main>
 
+  <!-- ✅ Footer -->
   <footer>
+    <div class="footer-container">
+      <div class="contact-info">
+        <p><strong>Contact Us On:</strong></p>
+        <p><span class="material-icons">email</span> bomfreelancelab@gmail.com</p>
+        <p><span class="material-icons">phone</span> +1‑234‑567‑8900</p>
+      </div>
+      <div class="site-info">
+        <p>Follow me:
+          <a href="#"><span class="material-icons">linkedin</span></a>
+          <a href="#"><span class="material-icons">telegram</span></a>
+        </p>
+      </div>
+    </div>
     <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
   </footer>
+
+  <!-- ✅ Sticky Mobile Button -->
+  <a href="https://calendly.com/tutorjohntaylor/30min" class="book-mobile">Book Now</a>
 
   <!-- ✅ Tawk.to Live Chat -->
   <script type="text/javascript">
@@ -153,13 +182,10 @@
     });
   </script>
 
-  <!-- ✅ AOS Script -->
+  <!-- ✅ AOS Animation Script -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
+    AOS.init({ duration: 1000, once: true });
   </script>
 
 </body>
