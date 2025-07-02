@@ -2,170 +2,429 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FAQs – Tutor Brian</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet" />
+
   <style>
+    /* Reset & base */
     body {
-      font-family: 'Inter', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f9fafb;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: linear-gradient(135deg, #e0e7ff, #f9fafb);
       color: #2c2c2c;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* Navigation bar */
+    /* Nav bar styling */
     nav {
-      background: white;
-      border-bottom: 1px solid #ddd;
-      padding: 0.75rem 2rem;
+      background: #ffffffdd;
+      backdrop-filter: saturate(180%) blur(15px);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      padding: 1rem 3rem;
       display: flex;
       justify-content: center;
-      gap: 2.5rem;
       font-weight: 600;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      user-select: none;
     }
+
+    /* Nav container flex wrapper for mobile toggle */
+    nav .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    /* Nav links container */
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 3rem;
+    }
+
     nav a {
-      text-decoration: none;
       color: #4f46e5;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      text-decoration: none;
+      position: relative;
+      padding: 0.25rem 0;
       transition: color 0.3s ease;
     }
-    nav a:hover,
-    nav a.active {
-      color: #3730a3;
-      text-decoration: underline;
+    nav a.active,
+    nav a:hover {
+      color: #312e81;
+    }
+    nav a.active::after,
+    nav a:hover::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #4f46e5;
+      border-radius: 3px 3px 0 0;
+    }
+
+    /* Hamburger toggle button */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 101;
+    }
+
+    /* Hamburger lines */
+    .nav-toggle span {
+      width: 30px;
+      height: 3px;
+      background: #4f46e5;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      transform-origin: 1px;
+    }
+
+    /* Animate hamburger when active */
+    .nav-toggle.active span:nth-child(1) {
+      transform: rotate(45deg);
+    }
+    .nav-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+
+    /* Responsive nav for mobile */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      nav .nav-container {
+        max-width: 100%;
+      }
+
+      nav ul {
+        position: fixed;
+        top: 58px; /* height of nav */
+        left: 0;
+        right: 0;
+        background: #f9fafb;
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        border-radius: 0 0 12px 12px;
+        z-index: 99;
+      }
+
+      nav ul.open {
+        max-height: 400px; /* enough for all menu items */
+      }
+
+      nav ul li {
+        border-bottom: 1px solid #e0e0e0;
+      }
+      nav ul li:last-child {
+        border-bottom: none;
+      }
+      nav ul li a {
+        display: block;
+        padding: 1rem 1.5rem;
+        font-size: 1.2rem;
+        color: #4f46e5;
+      }
+      nav ul li a:hover,
+      nav ul li a.active {
+        background: #4338ca;
+        color: white;
+        border-radius: 0;
+      }
+
+      /* Show hamburger */
+      .nav-toggle {
+        display: flex;
+      }
     }
 
     main {
       max-width: 900px;
-      margin: 2rem auto 4rem;
+      margin: 3rem auto 4rem;
       padding: 0 1.5rem;
+      flex-grow: 1;
     }
 
+    /* Heading */
     h2 {
-      font-weight: 600;
-      font-size: 1.8rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 2.4rem;
+      color: #4338ca;
       margin-bottom: 0.5rem;
-      color: #4f46e5;
+      text-align: center;
+      letter-spacing: 0.04em;
+      text-shadow: 0 2px 6px rgba(99, 102, 241, 0.35);
     }
-
     .faq-intro {
-      font-size: 1rem;
-      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0.25rem auto 3rem auto;
       color: #555;
+      text-align: center;
+      line-height: 1.5;
     }
 
+    /* FAQ container */
     .faq-container {
-      /* existing styles can stay here */
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
     }
 
-    /* FAQ toggling script styles and other FAQ styles unchanged */
+    /* FAQ item */
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      box-shadow:
+        0 8px 20px rgba(79, 70, 229, 0.1),
+        0 0 0 1px rgba(79, 70, 229, 0.1);
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+      user-select: none;
+    }
+    .faq-item.active {
+      box-shadow:
+        0 12px 40px rgba(79, 70, 229, 0.25),
+        0 0 0 1px rgba(79, 70, 229, 0.2);
+      border-radius: 12px 12px 0 0;
+    }
 
+    /* FAQ question button */
+    .faq-question {
+      width: 100%;
+      background: linear-gradient(90deg, #6366f1, #4f46e5);
+      color: white;
+      font-weight: 600;
+      font-size: 1.15rem;
+      padding: 1.15rem 2rem;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      outline-offset: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+      border-radius: 12px;
+    }
+    .faq-item.active .faq-question {
+      background: linear-gradient(90deg, #4f46e5, #4338ca);
+      border-radius: 12px 12px 0 0;
+    }
+    .faq-question:hover,
+    .faq-question:focus-visible {
+      background: linear-gradient(90deg, #4338ca, #3730a3);
+    }
+
+    /* Chevron icon */
+    .faq-question::after {
+      content: '▸';
+      font-size: 1.3rem;
+      transition: transform 0.3s ease;
+      color: #dbeafe;
+      margin-left: 1rem;
+      flex-shrink: 0;
+      transform-origin: center;
+    }
+    .faq-item.active .faq-question::after {
+      transform: rotate(90deg);
+      color: #a5b4fc;
+    }
+
+    /* FAQ answer panel */
+    .faq-answer {
+      max-height: 0;
+      opacity: 0;
+      padding: 0 2rem;
+      background: #f3f4ff;
+      color: #1e293b;
+      font-size: 1rem;
+      line-height: 1.6;
+      transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+      border-radius: 0 0 12px 12px;
+      overflow: hidden;
+      user-select: text;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 400px; /* enough for content */
+      opacity: 1;
+      padding: 1rem 2rem 1.5rem;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      main {
+        margin: 2rem 1rem 3rem;
+        padding: 0 1rem;
+      }
+      .faq-question {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+      }
+      .faq-answer {
+        padding: 0 1.5rem;
+      }
+      .faq-item.active .faq-answer {
+        padding: 1rem 1.5rem 1.5rem;
+      }
+    }
   </style>
-  <script defer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const faqs = document.querySelectorAll(".faq-item");
+      faqs.forEach(faq => {
+        faq.querySelector(".faq-question").addEventListener("click", () => {
+          // Close others
+          faqs.forEach(other => {
+            if (other !== faq) other.classList.remove("active");
+          });
+          // Toggle current
+          faq.classList.toggle("active");
+        });
+      });
+
+      // Mobile nav toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('nav ul');
+
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('open');
+      });
+    });
+
     function toggleTheme() {
       const html = document.documentElement;
       html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
     }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const faqs = document.querySelectorAll(".faq-item");
-
-      faqs.forEach((faq) => {
-        faq.querySelector(".faq-question").addEventListener("click", () => {
-          faqs.forEach(f => {
-            if (f !== faq) f.classList.remove("active");
-          });
-          faq.classList.toggle("active");
-        });
-      });
-    });
   </script>
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-    <a href="faq.html" class="active">FAQ</a>
+    <div class="nav-container">
+      <!-- Hamburger -->
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navigation links -->
+      <ul id="primary-navigation" role="menu">
+        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+        <li role="none"><a href="services.html" role="menuitem">Services</a></li>
+        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+        <li role="none"><a href="faq.html" class="active" role="menuitem">FAQ</a></li>
+      </ul>
+    </div>
   </nav>
 
   <main>
-    <section class="faq-section">
+    <section class="faq-section" aria-label="Frequently Asked Questions">
       <h2>📘 Frequently Asked Questions</h2>
       <p class="faq-intro">Find quick answers to the most common questions students ask before booking.</p>
 
       <div class="faq-container">
-        <!-- FAQ items here remain unchanged -->
         <div class="faq-item">
-          <button class="faq-question">What services do you provide as an academic coach?</button>
-          <div class="faq-answer">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq1" id="faq1btn">What services do you provide as an academic coach?</button>
+          <div class="faq-answer" id="faq1" role="region" aria-labelledby="faq1btn">
             <p>I offer help with thesis structuring, formatting (APA/MLA/Chicago), literature reviews, AI-safe academic writing, research coaching, and dissertation prep.</p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">How do I book a session with you?</button>
-          <div class="faq-answer">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq2" id="faq2btn">How do I book a session with you?</button>
+          <div class="faq-answer" id="faq2" role="region" aria-labelledby="faq2btn">
             <p>You can use the integrated Calendly widget on the homepage to select a convenient time slot.</p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">Can you help with plagiarism or AI detection concerns?</button>
-          <div class="faq-answer">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq3" id="faq3btn">Can you help with plagiarism or AI detection concerns?</button>
+          <div class="faq-answer" id="faq3" role="region" aria-labelledby="faq3btn">
             <p>Yes. I offer strategies for ethical paraphrasing, accurate citation, and writing that passes AI detection tools while maintaining academic integrity.</p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">Do you write assignments or research papers for students?</button>
-          <div class="faq-answer">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq4" id="faq4btn">Do you write assignments or research papers for students?</button>
+          <div class="faq-answer" id="faq4" role="region" aria-labelledby="faq4btn">
             <p>No. I provide guidance and academic coaching to help you develop your own original work ethically.</p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">What should I prepare before a coaching session?</button>
-          <div class="faq-answer">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq5" id="faq5btn">What should I prepare before a coaching session?</button>
+          <div class="faq-answer" id="faq5" role="region" aria-labelledby="faq5btn">
             <p>Bring your current draft, research questions, or outline. If possible, email any specific concerns in advance.</p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">What academic levels do you support?</button>
-          <div class="faq-answer">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq6" id="faq6btn">What academic levels do you support?</button>
+          <div class="faq-answer" id="faq6" role="region" aria-labelledby="faq6btn">
             <p>I assist undergraduate, graduate, and doctoral students as well as professionals pursuing academic publications.</p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">Can you help me prepare for my dissertation defense?</button>
-          <div class="faq-answer">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq7" id="faq7btn">Can you help me prepare for my dissertation defense?</button>
+          <div class="faq-answer" id="faq7" role="region" aria-labelledby="faq7btn">
             <p>Yes. I offer defense prep sessions, slide review, and mock Q&A to help you present with clarity and confidence.</p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">Are your services confidential?</button>
-          <div class="faq-answer">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq8" id="faq8btn">Are your services confidential?</button>
+          <div class="faq-answer" id="faq8" role="region" aria-labelledby="faq8btn">
             <p>Absolutely. Everything we discuss or share is kept private and handled with full confidentiality.</p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">Do you provide templates or writing resources?</button>
-          <div class="faq-answer">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq9" id="faq9btn">Do you provide templates or writing resources?</button>
+          <div class="faq-answer" id="faq9" role="region" aria-labelledby="faq9btn">
             <p>Yes. Visit the Free Resources section to download chapter templates, formatting guides, and citation checklists.</p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">How much do your services cost?</button>
-          <div class="faq-answer">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq10" id="faq10btn">How much do your services cost?</button>
+          <div class="faq-answer" id="faq10" role="region" aria-labelledby="faq10btn">
             <p>Initial consultations are free. After that, pricing depends on the level of support you need and is discussed during our first meeting.</p>
           </div>
         </div>
@@ -173,22 +432,9 @@
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
+  <footer style="text-align:center; padding: 2rem 1rem; color:#777; font-size:0.9rem;">
+    &copy; 2025 Tutor Brian | Academic Coaching
   </footer>
-
-  <!-- ✅ Tawk.to Live Chat -->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/68648d8d0340fc1912a7bc0a/1iv4chsr3';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
 
 </body>
 </html>
