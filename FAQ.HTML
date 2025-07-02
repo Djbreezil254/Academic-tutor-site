@@ -5,13 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQs – Tutor Brian</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <script defer>
     function toggleTheme() {
       const html = document.documentElement;
       html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
     }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const faqs = document.querySelectorAll(".faq-item");
+
+      faqs.forEach((faq) => {
+        faq.querySelector(".faq-question").addEventListener("click", () => {
+          faqs.forEach(f => {
+            if (f !== faq) f.classList.remove("active");
+          });
+          faq.classList.toggle("active");
+        });
+      });
+    });
   </script>
 </head>
 <body>
@@ -23,7 +35,7 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="resources.html">Resources</a></li>
-      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="faq.html" class="active">FAQ</a></li>
     </ul>
     <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
   </nav>
@@ -31,93 +43,85 @@
   <main>
     <section class="faq-section">
       <h2>📘 Frequently Asked Questions</h2>
-      <p class="faq-intro">Got a question? See the answers below or <a href="mailto:bomfreelancelab@gmail.com">contact me directly</a>.</p>
+      <p class="faq-intro">Find quick answers to the most common questions students ask before booking.</p>
 
       <div class="faq-container">
         <div class="faq-item">
-          <button class="faq-question">💼 What services do you provide as an academic coach?</button>
+          <button class="faq-question">What services do you provide as an academic coach?</button>
           <div class="faq-answer">
-            <p>I offer support with thesis and dissertation structuring, APA/MLA/Chicago formatting, literature review guidance, research coaching, and AI-detection-safe writing techniques.</p>
+            <p>I offer help with thesis structuring, formatting (APA/MLA/Chicago), literature reviews, AI-safe academic writing, research coaching, and dissertation prep.</p>
           </div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">📅 How do I book a session with you?</button>
+          <button class="faq-question">How do I book a session with you?</button>
           <div class="faq-answer">
-            <p>Click the "📅 Book a Coaching Session" button on the homepage or use the integrated Calendly widget to choose a time.</p>
+            <p>You can use the integrated Calendly widget on the homepage to select a convenient time slot.</p>
           </div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">🧠 Can you help with plagiarism or AI detection concerns?</button>
+          <button class="faq-question">Can you help with plagiarism or AI detection concerns?</button>
           <div class="faq-answer">
-            <p>Yes. I guide students in paraphrasing effectively, using citations correctly, and formatting properly — all designed to help your work pass AI detection and maintain academic integrity.</p>
+            <p>Yes. I offer strategies for ethical paraphrasing, accurate citation, and writing that passes AI detection tools while maintaining academic integrity.</p>
           </div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">🚫 Do you write assignments or research papers for students?</button>
+          <button class="faq-question">Do you write assignments or research papers for students?</button>
           <div class="faq-answer">
-            <p>No. I provide ethical coaching, feedback, and support so you can develop your own academic work with confidence.</p>
+            <p>No. I provide guidance and academic coaching to help you develop your own original work ethically.</p>
           </div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">📝 What should I prepare before a coaching session?</button>
+          <button class="faq-question">What should I prepare before a coaching session?</button>
           <div class="faq-answer">
-            <p>Come ready with your draft, topic, or outline. If you have specific questions or formatting concerns, please share them when booking or via email beforehand.</p>
+            <p>Bring your current draft, research questions, or outline. If possible, email any specific concerns in advance.</p>
           </div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">🎓 What academic levels do you support?</button>
+          <button class="faq-question">What academic levels do you support?</button>
           <div class="faq-answer">
-            <p>I work with undergrad, master’s, and doctoral students. I also assist professionals working on academic publications.</p>
+            <p>I assist undergraduate, graduate, and doctoral students as well as professionals pursuing academic publications.</p>
           </div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">📣 Can you help me prepare for my dissertation defense?</button>
+          <button class="faq-question">Can you help me prepare for my dissertation defense?</button>
           <div class="faq-answer">
-            <p>Absolutely. I offer mock defense sessions, slide reviews, and structured feedback to build your clarity and confidence.</p>
+            <p>Yes. I offer defense prep sessions, slide review, and mock Q&A to help you present with clarity and confidence.</p>
           </div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">🔒 Are your services confidential?</button>
+          <button class="faq-question">Are your services confidential?</button>
           <div class="faq-answer">
-            <p>Yes. All sessions and shared materials are treated with the utmost confidentiality and data security.</p>
+            <p>Absolutely. Everything we discuss or share is kept private and handled with full confidentiality.</p>
           </div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">📂 Do you provide templates or writing resources?</button>
+          <button class="faq-question">Do you provide templates or writing resources?</button>
           <div class="faq-answer">
-            <p>Yes. Visit the <a href="resources.html">Free Resources</a> section for templates, citation guides, and checklists.</p>
+            <p>Yes. Visit the Free Resources section to download chapter templates, formatting guides, and citation checklists.</p>
           </div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">💰 How much do your services cost?</button>
+          <button class="faq-question">How much do your services cost?</button>
           <div class="faq-answer">
-            <p>Initial consultations are free. Pricing depends on the level and scope of support, discussed transparently in session.</p>
+            <p>Initial consultations are free. After that, pricing depends on the level of support you need and is discussed during our first meeting.</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer-dark">
-    <p>📩 Contact us at <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a></p>
-    <p>© 2025 Tutor Brian | Academic Coaching. All rights reserved.</p>
+  <footer>
+    <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
   </footer>
-
-  <!-- Accordion FAQ Script -->
-  <script>
-    const faqItems = document.querySelectorAll('.faq-item');
-
-    faqItems.forEach(item => {
-      const question = item.querySelector('.faq-question');
-      question.addEventListener('click', () => {
-        const openItem = document.querySelector('.faq-item.active');
-        if (openItem && openItem !== item) {
-          openItem.classList.remove('active');
-        }
-        item.classList.toggle('active');
-      });
-    });
-  </script>
 
   <!-- ✅ Tawk.to Live Chat -->
   <script type="text/javascript">
