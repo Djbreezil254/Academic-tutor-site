@@ -15,6 +15,28 @@
       padding: 0;
     }
 
+    /* Navigation bar */
+    nav {
+      background: white;
+      border-bottom: 1px solid #ddd;
+      padding: 0.75rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      font-weight: 600;
+    }
+    nav a {
+      text-decoration: none;
+      color: #4f46e5;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #3730a3;
+      text-decoration: underline;
+    }
+
     header {
       padding: 2rem 1.5rem 1rem;
       text-align: center;
@@ -135,10 +157,23 @@
         grid-template-columns: 1fr;
         padding: 1.5rem;
       }
+      nav {
+        gap: 1.5rem;
+        padding: 0.5rem 1rem;
+      }
     }
   </style>
 </head>
 <body class="contact-page">
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
 
   <!-- Header -->
   <header>
@@ -153,7 +188,7 @@
       <h2>Contact Information</h2>
       <p><span class="material-icons">email</span> <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a></p>
       <p><span class="material-icons">phone</span> <a href="tel:+254717357947">+254 717 357 947</a></p>
-      <p><span class="material-icons">chat</span> <a href="https://wa.me/717357947" target="_blank">Chat on WhatsApp</a></p>
+      <p><span class="material-icons">chat</span> <a href="https://wa.me/717357947" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></p>
       <p><span class="material-icons">location_on</span> United States (Remote Services)</p>
       <h2 style="margin-top:2rem;">Social Media</h2>
       <p>
