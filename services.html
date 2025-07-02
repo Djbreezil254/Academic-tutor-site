@@ -8,13 +8,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <style>
-    /* Scoped styles for Services Page only */
     body.services-page {
       font-family: 'Poppins', sans-serif;
       background: #f9fafb;
       color: #2c2c2c;
       padding: 4rem 1rem 6rem;
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .services-page h1 {
@@ -28,7 +26,6 @@
       display: inline-block;
     }
 
-    /* Decorative underline */
     .services-page h1::after {
       content: "";
       display: block;
@@ -52,7 +49,6 @@
       padding: 0 1rem;
     }
 
-    /* Subtle patterned background behind grid */
     .services-grid::before {
       content: "";
       position: absolute;
@@ -72,13 +68,8 @@
       background: white;
       border-radius: 14px;
       padding: 2rem 1.8rem 2.5rem;
-      box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.07),
-        0 0 0 1px rgba(0, 0, 0, 0.04);
-      transition:
-        transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
-        box-shadow 0.3s ease,
-        background-color 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.04);
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, background-color 0.3s ease;
       text-align: center;
       cursor: default;
       user-select: none;
@@ -86,7 +77,6 @@
       animation: fadeSlideUp 0.6s forwards;
     }
 
-    /* Stagger animation delay for each card */
     .service-card:nth-child(1) { animation-delay: 0.1s; }
     .service-card:nth-child(2) { animation-delay: 0.25s; }
     .service-card:nth-child(3) { animation-delay: 0.4s; }
@@ -95,25 +85,16 @@
     .service-card:nth-child(6) { animation-delay: 0.85s; }
 
     @keyframes fadeSlideUp {
-      0% {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      0% { opacity: 0; transform: translateY(15px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     .service-card:hover {
       transform: translateY(-12px);
-      box-shadow:
-        0 15px 30px rgba(79, 70, 229, 0.25),
-        0 0 0 1px rgba(79, 70, 229, 0.15);
+      box-shadow: 0 15px 30px rgba(79, 70, 229, 0.25), 0 0 0 1px rgba(79, 70, 229, 0.15);
       background-color: #f3f4ff;
     }
 
-    /* Circular icon background for material icons */
     .material-icon-circle {
       font-size: 72px;
       display: inline-flex;
@@ -143,9 +124,7 @@
       transition: color 0.3s ease;
     }
 
-    .service-card:hover h3 {
-      color: #4f46e5;
-    }
+    .service-card:hover h3 { color: #4f46e5; }
 
     .service-card p {
       font-size: 1rem;
@@ -154,113 +133,45 @@
       user-select: text;
     }
 
-    /* Responsive tweaks */
     @media (max-width: 600px) {
-      .services-page h1 {
-        font-size: 2rem;
-      }
-      .services-grid {
-        grid-template-columns: 1fr;
-        gap: 1.8rem;
-      }
-      .service-card {
-        padding: 1.8rem 1.2rem 2rem;
-      }
+      .services-page h1 { font-size: 2rem; }
+      .services-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+      .service-card { padding: 1.8rem 1.2rem 2rem; }
     }
 
-    /* Smooth theme toggle background and text color */
     html[data-theme="dark"] body.services-page {
       background: #1f2937;
       color: #e0e0e0;
     }
+
     html[data-theme="dark"] .service-card {
       background: #374151;
-      box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.1);
-      color: #e0e0e0;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
     }
+
     html[data-theme="dark"] .service-card:hover {
       background-color: #4b5563;
-      box-shadow:
-        0 15px 30px rgba(147, 197, 253, 0.5),
-        0 0 0 1px rgba(147, 197, 253, 0.25);
+      box-shadow: 0 15px 30px rgba(147, 197, 253, 0.5), 0 0 0 1px rgba(147, 197, 253, 0.25);
     }
-    html[data-theme="dark"] .service-card h3 {
-      color: #dbeafe;
-    }
-    html[data-theme="dark"] .service-card:hover h3 {
-      color: #93c5fd;
-    }
+
+    html[data-theme="dark"] .service-card h3 { color: #dbeafe; }
+
+    html[data-theme="dark"] .service-card:hover h3 { color: #93c5fd; }
+
     html[data-theme="dark"] .material-icon-circle {
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
       box-shadow: 0 5px 15px rgba(147, 197, 253, 0.5);
       filter: brightness(1.1);
-      background: linear-gradient(135deg, #2563eb, #3b82f6);
     }
+
     html[data-theme="dark"] .service-card:hover .material-icon-circle {
       background: linear-gradient(135deg, #3b82f6, #2563eb);
     }
-
-    /* Footer social icons container */
-    .services-page footer .site-info p {
-      margin: 0;
-      font-weight: 600;
-      font-size: 1rem;
-      color: #333;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .services-page footer .site-info p::before {
-      content: "Follow me:";
-      margin-right: 0.5rem;
-      font-weight: 700;
-      color: #1a1a1a;
-      user-select: none;
-    }
-
-    /* Social icon links */
-    .services-page footer .site-info p a {
-      color: #4f46e5;
-      font-size: 28px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 6px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      text-decoration: none;
-      user-select: none;
-    }
-
-    .services-page footer .site-info p a:hover,
-    .services-page footer .site-info p a:focus {
-      background-color: #6366f1;
-      color: white;
-      outline: none;
-      cursor: pointer;
-    }
-
-    /* Responsive footer tweaks */
-    @media (max-width: 480px) {
-      .services-page footer .site-info p {
-        justify-content: center;
-      }
-      .services-page footer .site-info p a {
-        font-size: 24px;
-        width: 32px;
-        height: 32px;
-      }
-    }
   </style>
 </head>
+
 <body class="services-page">
 
-<!-- Navigation -->
 <nav>
   <div class="nav-brand">Tutor Brian</div>
   <button class="menu-toggle" id="menu-toggle">☰</button>
@@ -280,7 +191,7 @@
     <div class="services-grid">
 
       <div class="service-card">
-        <span class="material-icons material-icon-circle" aria-hidden="true" title="Thesis Structuring">menu_book</span>
+        <span class="material-icons material-icon-circle" title="Thesis Structuring">menu_book</span>
         <h3>Thesis Structuring</h3>
         <p>Get help organizing your chapters, formulating research questions, and aligning your methodology to academic standards.</p>
       </div>
@@ -292,7 +203,7 @@
       </div>
 
       <div class="service-card">
-        <span class="material-icons material-icon-circle" aria-hidden="true" title="AI-Safe Academic Writing">smart_toy</span>
+        <span class="material-icons material-icon-circle" title="AI-Safe Academic Writing">smart_toy</span>
         <h3>AI-Safe Academic Writing</h3>
         <p>We write and coach using ethical, human-led strategies that pass AI detectors and maintain originality.</p>
       </div>
@@ -319,38 +230,32 @@
   </section>
 </main>
 
-<!-- Footer -->
-<footer>
-  <div class="footer-container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding:1.5rem 2rem; background:#fafafa; border-top:1px solid #ddd;">
-    <div class="contact-info" style="flex:1; min-width:240px;">
-      <p><strong>Contact Us On:</strong></p>
-      <p><span class="material-icons" aria-hidden="true">email</span> bomfreelancelab@gmail.com</p>
-      <p><span class="material-icons" aria-hidden="true">phone</span> +1‑234‑567‑8900</p>
-    </div>
-    <div class="site-info" style="flex:1; min-width:240px; text-align:right;">
-      <p>
-        <a href="#" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
-          <span class="material-icons" aria-hidden="true">facebook</span>
-        </a>
-        <a href="#" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
-          <span class="material-icons" aria-hidden="true">photo_camera</span>
-        </a>
-        <a href="#" aria-label="X (Twitter)" title="X (Twitter)" target="_blank" rel="noopener noreferrer">
-          <span class="material-icons" aria-hidden="true">alternate_email</span>
-        </a>
-        <a href="#" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-          <span class="material-icons" aria-hidden="true">linkedin</span>
-        </a>
-        <a href="#" aria-label="Telegram" title="Telegram" target="_blank" rel="noopener noreferrer">
-          <span class="material-icons" aria-hidden="true">send</span>
-        </a>
-        <a href="#" aria-label="YouTube" title="YouTube" target="_blank" rel="noopener noreferrer">
-          <span class="material-icons" aria-hidden="true">play_circle_filled</span>
-        </a>
+<footer style="background:#f9f9f9; border-top:1px solid #ddd; padding:2rem 1.5rem;">
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; max-width:1200px; margin:0 auto;">
+    <div style="flex:1; min-width:260px;">
+      <h3 style="font-size:1.2rem; margin-bottom:0.75rem; color:#111;">Contact Us</h3>
+      <p style="color:#333; font-size:1rem; margin:0.5rem 0;">
+        <span class="material-icons" style="vertical-align:middle; margin-right:6px;">email</span>
+        <a href="mailto:bomfreelancelab@gmail.com" style="color:#4f46e5; text-decoration:none;">bomfreelancelab@gmail.com</a>
+      </p>
+      <p style="color:#333; font-size:1rem; margin:0.5rem 0;">
+        <span class="material-icons" style="vertical-align:middle; margin-right:6px;">phone</span>
+        <a href="tel:+12345678900" style="color:#4f46e5; text-decoration:none;">+1‑234‑567‑8900</a>
       </p>
     </div>
+    <div style="flex:1; min-width:260px; text-align:right;">
+      <h3 style="font-size:1.2rem; margin-bottom:0.75rem; color:#111;">Follow Me</h3>
+      <div style="display:flex; justify-content:flex-end; gap:12px; flex-wrap:wrap;">
+        <a href="#" title="Facebook" style="color:#4f46e5;"><span class="material-icons">facebook</span></a>
+        <a href="#" title="Instagram" style="color:#4f46e5;"><span class="material-icons">photo_camera</span></a>
+        <a href="#" title="X (formerly Twitter)" style="color:#4f46e5;"><span class="material-icons">alternate_email</span></a>
+        <a href="#" title="LinkedIn" style="color:#4f46e5;"><span class="material-icons">linkedin</span></a>
+        <a href="#" title="Telegram" style="color:#4f46e5;"><span class="material-icons">send</span></a>
+        <a href="#" title="YouTube" style="color:#4f46e5;"><span class="material-icons">play_circle</span></a>
+      </div>
+    </div>
   </div>
-  <p style="text-align:center; padding:1rem 0; font-size:0.9rem; color:#888;">&copy; 2025 Tutor Brian | Academic Coaching</p>
+  <p style="text-align:center; font-size:0.9rem; margin-top:2rem; color:#888;">&copy; 2025 Tutor Brian | Academic Coaching</p>
 </footer>
 
 <script>
@@ -365,5 +270,6 @@
     html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
   }
 </script>
+
 </body>
 </html>
