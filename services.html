@@ -200,6 +200,58 @@
     html[data-theme="dark"] .service-card:hover .material-icon-circle {
       background: linear-gradient(135deg, #3b82f6, #2563eb);
     }
+
+    /* New footer styles for visibility */
+    .footer-container {
+      background-color: #e0e7ff; /* soft blue background */
+      border-top: 1px solid #6366f1; /* darker blue border */
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .contact-info, .site-info {
+      flex: 1;
+      min-width: 240px;
+      color: #1e293b; /* dark slate blue */
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .contact-info p, .site-info p {
+      margin: 0.3rem 0;
+      user-select: text;
+    }
+    .contact-info strong {
+      color: #4f46e5;
+      font-size: 1.1rem;
+    }
+    .site-info p a {
+      color: #4f46e5;
+      text-decoration: none;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+    .site-info p a:hover {
+      text-decoration: underline;
+    }
+
+    /* Dark mode footer tweaks */
+    html[data-theme="dark"] .footer-container {
+      background-color: #1e293b;
+      border-top: 1px solid #3b82f6;
+    }
+    html[data-theme="dark"] .contact-info,
+    html[data-theme="dark"] .site-info {
+      color: #bfdbfe;
+    }
+    html[data-theme="dark"] .contact-info strong {
+      color: #93c5fd;
+    }
+    html[data-theme="dark"] .site-info p a {
+      color: #93c5fd;
+    }
   </style>
 </head>
 <body class="services-page">
@@ -263,18 +315,18 @@
   </section>
 </main>
 
-<!-- ✅ Footer (same as index.html) -->
+<!-- ✅ Footer (updated for visibility) -->
 <footer>
-  <div class="footer-container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding:1.5rem 2rem; background:#fafafa; border-top:1px solid #ddd;">
-    <div class="contact-info" style="flex:1; min-width:240px;">
+  <div class="footer-container">
+    <div class="contact-info">
       <p><strong>Contact Us On:</strong></p>
-      <p><span class="material-icons">email</span> bomfreelancelab@gmail.com</p>
-      <p><span class="material-icons">phone</span> +1‑234‑567‑8900</p>
+      <p><span class="material-icons" aria-hidden="true">email</span> bomfreelancelab@gmail.com</p>
+      <p><span class="material-icons" aria-hidden="true">phone</span> +1‑234‑567‑8900</p>
     </div>
-    <div class="site-info" style="flex:1; min-width:240px; text-align:right;">
+    <div class="site-info" style="text-align:right;">
       <p>Follow me:
-        <a href="#" aria-label="LinkedIn"><span class="material-icons">linkedin</span></a>
-        <a href="#" aria-label="Telegram"><span class="material-icons">telegram</span></a>
+        <a href="#" aria-label="LinkedIn"><span class="material-icons" aria-hidden="true">linkedin</span></a>
+        <a href="#" aria-label="Telegram"><span class="material-icons" aria-hidden="true">telegram</span></a>
       </p>
     </div>
   </div>
