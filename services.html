@@ -276,4 +276,20 @@
       </p>
     </div>
   </div>
-  <p style="text-align:center; padding:1rem 0; font-size:0.9rem; color:#888;">&copy
+  <p style="text-align:center; padding:1rem 0; font-size:0.9rem; color:#888;">&copy; 2025 Tutor Brian | Academic Coaching</p>
+</footer>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  function toggleTheme() {
+    const html = document.documentElement;
+    html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+  }
+</script>
+</body>
+</html>
