@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources – Tutor Brian</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Download free academic resources to improve your writing, research, and formatting skills. Curated by Tutor Brian.">
+  <meta property="og:title" content="Free Academic Resources – Tutor Brian" />
+  <meta property="og:description" content="Get access to free academic guides and tools to help with your thesis, formatting, and research projects." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1573496529574-be85d6a60704?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:url" content="https://yourdomain.com/resources.html" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" type="image/png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="resources.html">Resources</a></li>
+    </ul>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+  </nav>
+
+  <main>
+    <section class="resources" data-aos="fade-up">
+      <h1>📚 Free Academic Resources</h1>
+      <p>Download helpful tools and guides to support your writing and research journey.</p>
+      <ul>
+        <li><a href="assets/AIntelligence.pdf" download>📄 Research on AI (Sample PDF)</a></li>
+        <li><a href="assets/FreeGuide.pdf" download>📘 5 Research Writing Mistakes to Avoid (Free Guide)</a></li>
+        <!-- Add more downloadable resources below -->
+        <!-- <li><a href="assets/YourFile.pdf" download>📎 Another Helpful Resource</a></li> -->
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
+  </footer>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+    }
+  </script>
+</body>
+</html>
