@@ -1,33 +1,37 @@
-/* Base colors and themes */
+/* === Base Colors and Theme === */
 :root {
   --bg: #f8f9fa;
   --text: #222;
   --primary: #0066cc;
   --card-bg: #ffffff;
+  --accent: #e0f0ff;
 }
 [data-theme="dark"] {
   --bg: #121212;
   --text: #eeeeee;
   --primary: #4dabf7;
   --card-bg: #1e1e1e;
+  --accent: #1a2733;
 }
 
+/* === Global Styles === */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background-color: var(--bg);
   color: var(--text);
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
 }
 
-/* Navigation */
+/* === Navigation === */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: var(--card-bg);
   padding: 1rem 2rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 nav ul {
   list-style: none;
@@ -40,6 +44,10 @@ nav ul li a {
   color: var(--primary);
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.2s;
+}
+nav ul li a:hover {
+  color: #003366;
 }
 .theme-toggle {
   background: none;
@@ -50,7 +58,7 @@ nav ul li a {
   cursor: pointer;
 }
 
-/* Hero section */
+/* === Hero Section === */
 .hero {
   position: relative;
   background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
@@ -75,14 +83,18 @@ nav ul li a {
   display: inline-block;
   margin-top: 1rem;
   background: white;
-  color: #0066cc;
+  color: var(--primary);
   padding: 0.6rem 1.2rem;
   border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
+  transition: background 0.3s;
+}
+.hero .cta:hover {
+  background: var(--accent);
 }
 
-/* Card sections */
+/* === Card Section === */
 .card-grid {
   display: grid;
   gap: 1rem;
@@ -91,16 +103,43 @@ nav ul li a {
 }
 .card {
   background: var(--card-bg);
-  padding: 1rem;
-  border-radius: 8px;
+  padding: 1.2rem;
+  border-radius: 10px;
   text-align: center;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
 }
 
-/* Other sections */
+/* === Sections === */
 section {
-  padding: 2rem;
+  padding: 3rem 2rem;
 }
+section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+.resources ul {
+  list-style-type: none;
+  padding-left: 0;
+  text-align: center;
+}
+.resources a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--primary);
+}
+.resources a:hover {
+  text-decoration: underline;
+}
+.connect p, .resources p {
+  text-align: center;
+}
+
+/* === CTA Section === */
 .cta-section {
   background-color: var(--primary);
   color: white;
@@ -116,16 +155,49 @@ section {
   text-decoration: none;
   margin-top: 1rem;
   display: inline-block;
+  transition: background 0.3s;
 }
+.cta-section .cta:hover {
+  background-color: var(--accent);
+}
+
+/* === Testimonials === */
 .testimonials {
   background: var(--card-bg);
-  padding: 2rem;
+  padding: 2.5rem 2rem;
   font-style: italic;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
 }
+.testimonials cite {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+  color: var(--primary);
+}
+
+/* === Calendly Schedule Section === */
+.schedule {
+  padding: 3rem 2rem;
+  background: var(--accent);
+  text-align: center;
+}
+.schedule h2 {
+  margin-bottom: 0.5rem;
+}
+.calendly-inline-widget {
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* === Footer === */
 footer {
   background: var(--card-bg);
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem;
   font-size: 0.9rem;
   color: var(--text);
   border-top: 1px solid #ccc;
