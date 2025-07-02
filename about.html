@@ -5,11 +5,115 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us – Tutor Brian & Team</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Replace Inter with Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style>
+    /* Scoped styles for About Page only */
+    .about-page .intro, 
+    .about-page .values, 
+    .about-page .stats, 
+    .about-page .quote {
+      padding: 4rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .about-page h1, 
+    .about-page h2 {
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 1rem;
+    }
+
+    .about-page .intro p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 800px;
+      margin: 0.5rem auto;
+    }
+
+    .about-page .values ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .about-page .values li {
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .about-page .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .about-page .stat-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .about-page .stat-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .about-page .stat-card span.material-icons {
+      font-size: 2rem;
+      color: var(--accent, #4a90e2);
+      margin-bottom: 0.5rem;
+    }
+
+    .about-page .stat-card h3 {
+      font-size: 1.5rem;
+      margin: 0.3rem 0;
+      color: #222;
+    }
+
+    .about-page .stat-card p {
+      margin: 0;
+      color: #666;
+    }
+
+    .about-page .quote {
+      text-align: center;
+      font-style: italic;
+      margin-top: 3rem;
+      color: #333;
+    }
+
+    .about-page .quote blockquote {
+      margin: 0;
+      padding: 0;
+    }
+
+    .about-page .quote cite {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .about-page h1, .about-page h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="about-page">
 
 <!-- ✅ Navigation (same as index.html) -->
 <nav>
@@ -25,7 +129,7 @@
   <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
 </nav>
 
-<main class="about-page">
+<main>
   <section class="intro">
     <h1>Meet Tutor Brian & the BomFreelanceLab Team</h1>
     <p>Since founding BomFreelanceLab three years ago, Brian and a dedicated team of full‑time researchers and academic tutors have provided relentless, top‑tier support to students across the US and UK.</p>
@@ -74,24 +178,6 @@
       <p>“Education is the most powerful weapon which you can use to change the world.”</p>
       <cite>– Nelson Mandela</cite>
     </blockquote>
-  </section>
-
-  <section class="team-images">
-    <h2>Meet Our Experts</h2>
-    <div class="card-grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&fm=jpg" alt="Tutor 1" style="width: 100%; border-radius: 8px;">
-        <p><strong>Mary K.</strong><br>Senior Research Coach</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&fm=jpg" alt="Tutor 2" style="width: 100%; border-radius: 8px;">
-        <p><strong>David O.</strong><br>Academic Writer & Reviewer</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&fm=jpg" alt="Tutor 3" style="width: 100%; border-radius: 8px;">
-        <p><strong>Amina A.</strong><br>Thesis Formatting Specialist</p>
-      </div>
-    </div>
   </section>
 </main>
 
