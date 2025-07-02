@@ -5,29 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tutor Brian – Academic Coaching</title>
 
-  <!-- ✅ Meta Description -->
   <meta name="description" content="Personalized academic coaching for students and researchers. Get expert help with formatting, writing, literature reviews, and thesis support.">
-
-  <!-- ✅ Open Graph Tags -->
   <meta property="og:title" content="Tutor Brian – Academic Coaching" />
   <meta property="og:description" content="Need academic guidance? Book a 1-on-1 session with Tutor Brian for help in research, thesis writing, and formatting." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1573496529574-be85d6a60704?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
   <meta property="og:url" content="https://yourdomain.com" />
   <meta property="og:type" content="website" />
-
-  <!-- ✅ Favicon -->
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" type="image/png" />
 
-  <!-- ✅ Fonts & Styles -->
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
-  <!-- ✅ AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <!-- ✅ Theme Toggle Script -->
   <script defer>
     function toggleTheme() {
       const html = document.documentElement;
@@ -37,8 +28,11 @@
 </head>
 <body>
 
+  <!-- ✅ Responsive Navigation -->
   <nav>
-    <ul>
+    <div class="nav-brand">Tutor Brian</div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
@@ -76,7 +70,6 @@
       <a href="mailto:bomfreelancelab@gmail.com" class="cta">Start Now →</a>
     </section>
 
-    <!-- ✅ How It Works -->
     <section class="how-it-works" data-aos="fade-up">
       <h2>How It Works</h2>
       <div class="steps-grid">
@@ -87,7 +80,6 @@
       </div>
     </section>
 
-    <!-- ✅ Testimonial Carousel -->
     <section class="testimonials" data-aos="fade-up">
       <h2>What Students Say</h2>
       <div class="carousel">
@@ -126,7 +118,6 @@
     </section>
   </main>
 
-  <!-- ✅ Footer -->
   <footer>
     <div class="footer-container">
       <div class="contact-info">
@@ -144,48 +135,51 @@
     <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
   </footer>
 
-  <!-- ✅ Sticky Mobile Button -->
   <a href="https://calendly.com/tutorjohntaylor/30min" class="book-mobile">Book Now</a>
 
-  <!-- ✅ Tawk.to Live Chat -->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+  <script>
+    const Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      const s1 = document.createElement("script");
       s1.async = true;
       s1.src = 'https://embed.tawk.to/68648d8d0340fc1912a7bc0a/1iv4chsr3';
       s1.charset = 'UTF-8';
       s1.setAttribute('crossorigin', '*');
+      const s0 = document.getElementsByTagName("script")[0];
       s0.parentNode.insertBefore(s1, s0);
     })();
   </script>
 
-  <!-- ✅ Testimonial Carousel Script -->
   <script>
     const track = document.querySelector('.carousel-track');
     const prevBtn = document.querySelector('.carousel-btn.prev');
     const nextBtn = document.querySelector('.carousel-btn.next');
     let index = 0;
-
     function updateCarousel() {
       track.style.transform = `translateX(-${index * 100}%)`;
     }
-
     nextBtn.addEventListener('click', () => {
       index = (index + 1) % track.children.length;
       updateCarousel();
     });
-
     prevBtn.addEventListener('click', () => {
       index = (index - 1 + track.children.length) % track.children.length;
       updateCarousel();
     });
   </script>
 
-  <!-- ✅ AOS Animation Script -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 1000, once: true });
+  </script>
+
+  <!-- ✅ Mobile Menu Script -->
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
   </script>
 
 </body>
