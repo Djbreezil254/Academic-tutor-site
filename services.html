@@ -9,65 +9,200 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <style>
     /* Scoped styles for Services Page only */
-    .services-page {
+    body.services-page {
       font-family: 'Poppins', sans-serif;
-      padding: 4rem 1rem;
-      max-width: 1200px;
-      margin: auto;
+      background: #f9fafb;
+      color: #2c2c2c;
+      padding: 4rem 1rem 6rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .services-page h1 {
       text-align: center;
-      margin-bottom: 2.5rem;
-      font-size: 2.5rem;
+      font-weight: 700;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+      color: #1a1a1a;
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Decorative underline */
+    .services-page h1::after {
+      content: "";
+      display: block;
+      width: 4.5rem;
+      height: 4px;
+      background: linear-gradient(90deg, #4f46e5 0%, #6366f1 100%);
+      border-radius: 2px;
+      margin: 0.75rem auto 0;
     }
 
     .services-grid {
+      margin-top: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.75rem;
+      position: relative;
+      z-index: 1;
+      padding: 0 1rem;
+    }
+
+    /* Subtle patterned background behind grid */
+    .services-grid::before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      height: 90%;
+      background: radial-gradient(circle at center, #e0e7ff 1px, transparent 1px);
+      background-size: 30px 30px;
+      opacity: 0.15;
+      z-index: -1;
+      border-radius: 16px;
     }
 
     .service-card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
+      background: white;
+      border-radius: 14px;
+      padding: 2rem 1.8rem 2.5rem;
+      box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.07),
+        0 0 0 1px rgba(0, 0, 0, 0.04);
+      transition:
+        transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
       text-align: center;
+      cursor: default;
+      user-select: none;
+      opacity: 0;
+      animation: fadeSlideUp 0.6s forwards;
+    }
+
+    /* Stagger animation delay for each card */
+    .service-card:nth-child(1) { animation-delay: 0.1s; }
+    .service-card:nth-child(2) { animation-delay: 0.25s; }
+    .service-card:nth-child(3) { animation-delay: 0.4s; }
+    .service-card:nth-child(4) { animation-delay: 0.55s; }
+    .service-card:nth-child(5) { animation-delay: 0.7s; }
+    .service-card:nth-child(6) { animation-delay: 0.85s; }
+
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .service-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-12px);
+      box-shadow:
+        0 15px 30px rgba(79, 70, 229, 0.25),
+        0 0 0 1px rgba(79, 70, 229, 0.15);
+      background-color: #f3f4ff;
     }
 
+    /* Circular icon background */
     .service-card img {
-      max-width: 80px;
-      margin-bottom: 1rem;
+      width: 72px;
+      height: 72px;
+      padding: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+      margin-bottom: 1.25rem;
+      transition: background 0.4s ease;
+      object-fit: contain;
+      filter: brightness(1.05);
+    }
+
+    .service-card:hover img {
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      filter: brightness(1.15);
     }
 
     .service-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-      color: #222;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: #2c2c2c;
+      transition: color 0.3s ease;
+    }
+
+    .service-card:hover h3 {
+      color: #4f46e5;
     }
 
     .service-card p {
-      font-size: 0.98rem;
+      font-size: 1rem;
       color: #555;
-      line-height: 1.5;
+      line-height: 1.6;
+      user-select: text;
     }
 
+    /* Responsive tweaks */
     @media (max-width: 600px) {
       .services-page h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+      .service-card {
+        padding: 1.8rem 1.2rem 2rem;
       }
     }
+
+    /* Smooth theme toggle background and text color */
+    html[data-theme="dark"] body.services-page {
+      background: #1f2937;
+      color: #e0e0e0;
+    }
+    html[data-theme="dark"] .service-card {
+      background: #374151;
+      box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+      color: #e0e0e0;
+    }
+    html[data-theme="dark"] .service-card:hover {
+      background-color: #4b5563;
+      box-shadow:
+        0 15px 30px rgba(147, 197, 253, 0.5),
+        0 0 0 1px rgba(147, 197, 253, 0.25);
+    }
+    html[data-theme="dark"] .service-card h3 {
+      color: #dbeafe;
+    }
+    html[data-theme="dark"] .service-card:hover h3 {
+      color: #93c5fd;
+    }
+    html[data-theme="dark"] .service-card img {
+      box-shadow: 0 5px 15px rgba(147, 197, 253, 0.5);
+      filter: brightness(1.1);
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+    }
+    html[data-theme="dark"] .service-card:hover img {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+    }
+
   </style>
 </head>
 <body class="services-page">
 
-<!-- ✅ Navigation -->
+<!-- ✅ Navigation (same as index.html) -->
 <nav>
   <div class="nav-brand">Tutor Brian</div>
   <button class="menu-toggle" id="menu-toggle">☰</button>
@@ -82,30 +217,30 @@
 </nav>
 
 <main>
-  <section class="services-page">
+  <section>
     <h1>Academic Coaching Services</h1>
     <div class="services-grid">
 
       <div class="service-card">
-        <img src="https://img.icons8.com/fluency/96/open-book.png" alt="Thesis Icon" />
+        <img src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-thesis-university-flat-icons-inmotus-design.png" alt="Thesis Icon" />
         <h3>Thesis Structuring</h3>
         <p>Get help organizing your chapters, formulating research questions, and aligning your methodology to academic standards.</p>
       </div>
 
       <div class="service-card">
-        <img src="https://img.icons8.com/color/96/document--v1.png" alt="Formatting Icon" />
+        <img src="https://img.icons8.com/color/96/000000/document--v1.png" alt="Formatting Icon" />
         <h3>APA, MLA, Chicago Formatting</h3>
         <p>We ensure your citations, references, and formatting meet university-approved guidelines—without error.</p>
       </div>
 
       <div class="service-card">
-        <img src="https://img.icons8.com/fluency/96/artificial-intelligence.png" alt="AI Writing Icon" />
+        <img src="https://img.icons8.com/external-wanicon-flat-wanicon/64/000000/external-ai-artificial-intelligence-wanicon-flat-wanicon.png" alt="AI Writing Icon" />
         <h3>AI-Safe Academic Writing</h3>
         <p>We write and coach using ethical, human-led strategies that pass AI detectors and maintain originality.</p>
       </div>
 
       <div class="service-card">
-        <img src="https://img.icons8.com/dusk/64/books.png" alt="Books Icon" />
+        <img src="https://img.icons8.com/dusk/64/000000/books.png" alt="Books Icon" />
         <h3>Literature Reviews</h3>
         <p>We help synthesize sources, identify gaps, and build strong theoretical frameworks using current peer-reviewed research.</p>
       </div>
@@ -126,35 +261,19 @@
   </section>
 </main>
 
-<!-- ✅ Footer -->
+<!-- ✅ Footer (same as index.html) -->
 <footer>
-  <div class="footer-container">
-    <div class="contact-info">
+  <div class="footer-container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding:1.5rem 2rem; background:#fafafa; border-top:1px solid #ddd;">
+    <div class="contact-info" style="flex:1; min-width:240px;">
       <p><strong>Contact Us On:</strong></p>
       <p><span class="material-icons">email</span> bomfreelancelab@gmail.com</p>
       <p><span class="material-icons">phone</span> +1‑234‑567‑8900</p>
     </div>
-    <div class="site-info">
+    <div class="site-info" style="flex:1; min-width:240px; text-align:right;">
       <p>Follow me:
-        <a href="#"><span class="material-icons">linkedin</span></a>
-        <a href="#"><span class="material-icons">telegram</span></a>
+        <a href="#" aria-label="LinkedIn"><span class="material-icons">linkedin</span></a>
+        <a href="#" aria-label="Telegram"><span class="material-icons">telegram</span></a>
       </p>
     </div>
   </div>
-  <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
-</footer>
-
-<script>
-  const toggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
-  toggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-
-  function toggleTheme() {
-    const html = document.documentElement;
-    html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
-  }
-</script>
-</body>
-</html>
+  <p style="text-align:center; padding:1rem 0; font-size:0.9rem; color:#888;">&copy
