@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tutor Brian – Academic Coaching</title>
+
   <meta name="description" content="Personalized academic coaching for students and researchers. Get expert help with formatting, writing, literature reviews, and thesis support.">
   <meta property="og:title" content="Tutor Brian – Academic Coaching" />
   <meta property="og:description" content="Need academic guidance? Book a 1-on-1 session with Tutor Brian for help in research, thesis writing, and formatting." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1573496529574-be85d6a60704?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1573496529574-be85d6a60704?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
   <meta property="og:url" content="https://yourdomain.com" />
   <meta property="og:type" content="website" />
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" type="image/png" />
 
-  <!-- Styles & Icons -->
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
@@ -21,13 +21,14 @@
 
   <script defer>
     function toggleTheme() {
-      document.documentElement.dataset.theme =
-        document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      const html = document.documentElement;
+      html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
     }
   </script>
 </head>
 <body>
-  <!-- Navigation -->
+
+  <!-- ✅ Responsive Navigation -->
   <nav>
     <div class="nav-brand">Tutor Brian</div>
     <button class="menu-toggle" id="menu-toggle">☰</button>
@@ -41,7 +42,6 @@
     <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
   </nav>
 
-  <!-- Hero -->
   <header class="hero">
     <div class="overlay"></div>
     <div class="hero-content" data-aos="fade-up">
@@ -51,54 +51,49 @@
     </div>
   </header>
 
-  <!-- Main Content -->
   <main>
-    <!-- Services -->
     <section class="services" data-aos="fade-up">
       <h2>What I Help With</h2>
       <div class="card-grid">
         <div class="card" data-aos="zoom-in"><span class="material-icons">school</span> Thesis Structuring</div>
         <div class="card" data-aos="zoom-in" data-aos-delay="100"><span class="material-icons">format_align_left</span> APA, MLA, Chicago Formatting</div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="200"><span class="material-icons">security</span> AI‑Safe Academic Writing</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="200"><span class="material-icons">security</span> AI-Safe Academic Writing</div>
         <div class="card" data-aos="zoom-in" data-aos-delay="300"><span class="material-icons">menu_book</span> Literature Reviews</div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="400"><span class="material-icons">mic</span> Dissertation Prep</div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="500"><span class="material-icons">person</span> 1‑on‑1 Research Coaching</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="400"><span class="material-icons">mic</span> Dissertation Defense Prep</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="500"><span class="material-icons">person</span> 1-on-1 Research Coaching</div>
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="cta-section" data-aos="fade-up">
       <h2>Let’s Elevate Your Academic Game</h2>
       <p>Whether you're stuck formatting citations or navigating a complex dissertation, I’ve got you covered.</p>
       <a href="mailto:bomfreelancelab@gmail.com" class="cta">Start Now →</a>
     </section>
 
-    <!-- How It Works -->
     <section class="how-it-works" data-aos="fade-up">
       <h2>How It Works</h2>
       <div class="steps-grid">
         <div><span class="material-icons">calendar_today</span><h3>Book a Free Call</h3></div>
-        <div><span class="material-icons">upload_file</span><h3>Upload Your Draft</h3></div>
+        <div><span class="material-icons">upload_file</span><h3>Share Your Draft</h3></div>
         <div><span class="material-icons">support_agent</span><h3>Receive Coaching</h3></div>
-        <div><span class="material-icons">rocket_launch</span><h3>Submit With Confidence</h3></div>
+        <div><span class="material-icons">rocket_launch</span><h3>Submit with Confidence</h3></div>
       </div>
     </section>
 
-    <!-- Testimonials -->
     <section class="testimonials" data-aos="fade-up">
       <h2>What Students Say</h2>
       <div class="carousel">
         <div class="carousel-track">
           <div class="testimonial-card">
-            <p>“I couldn’t have completed my master's thesis without Brian’s help…”</p>
+            <p>“I couldn’t have completed my master's thesis without Brian’s help. His insight and formatting support were invaluable.”</p>
             <cite>– J. Morgan, MSc Graduate</cite>
           </div>
           <div class="testimonial-card">
-            <p>“Brian’s coaching turned a failing paper into a distinction…”</p>
-            <cite>– A. Kibet, MBA Student</cite>
+            <p>“Brian’s coaching helped me turn a failing paper into a distinction-grade submission. His knowledge of APA style is unmatched.”</p>
+            <cite>– A. Kibet, MBA Student</cite>
           </div>
           <div class="testimonial-card">
-            <p>“I passed my dissertation defense with confidence thanks to Brian.”</p>
+            <p>“Thanks to Brian, I passed my dissertation defense with confidence. His step-by-step guidance made a huge difference.”</p>
             <cite>– Sarah L., PhD Candidate</cite>
           </div>
         </div>
@@ -109,29 +104,26 @@
       </div>
     </section>
 
-    <!-- Contact -->
     <section class="connect" data-aos="fade-up">
       <h2>Get in Touch</h2>
       <p><span class="material-icons">email</span> <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a></p>
       <p><span class="material-icons">link</span> LinkedIn | WhatsApp | Telegram – coming soon</p>
     </section>
 
-    <!-- Calendly -->
     <section class="schedule" data-aos="fade-up">
       <h2>📅 Book a Coaching Session</h2>
       <p>Choose a time that works for you below:</p>
       <div class="calendly-inline-widget" data-url="https://calendly.com/tutorjohntaylor/30min" style="min-width:320px;height:700px;"></div>
-      <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-container">
       <div class="contact-info">
         <p><strong>Contact Us On:</strong></p>
         <p><span class="material-icons">email</span> bomfreelancelab@gmail.com</p>
-        <p><span class="material-icons">phone</span> +1 234‑567‑8900</p>
+        <p><span class="material-icons">phone</span> +1‑234‑567‑8900</p>
       </div>
       <div class="site-info">
         <p>Follow me:
@@ -143,38 +135,52 @@
     <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
   </footer>
 
-  <!-- Book Now (Mobile) -->
   <a href="https://calendly.com/tutorjohntaylor/30min" class="book-mobile">Book Now</a>
 
-  <!-- Scripts -->
   <script>
-    // Tawk.to Chat
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/68648d8d0340fc1912a7bc0a/1iv4chsr3';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
+    const Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      const s1 = document.createElement("script");
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/68648d8d0340fc1912a7bc0a/1iv4chsr3';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      const s0 = document.getElementsByTagName("script")[0];
+      s0.parentNode.insertBefore(s1, s0);
     })();
+  </script>
 
-    // Testimonials carousel
+  <script>
     const track = document.querySelector('.carousel-track');
     const prevBtn = document.querySelector('.carousel-btn.prev');
     const nextBtn = document.querySelector('.carousel-btn.next');
     let index = 0;
-    function updateCarousel(){ track.style.transform = `translateX(-${index * 100}%)`; }
-    nextBtn.addEventListener('click', ()=>{ index = (index + 1) % track.children.length; updateCarousel(); });
-    prevBtn.addEventListener('click', ()=>{ index = (index - 1 + track.children.length) % track.children.length; updateCarousel(); });
-
-    // AOS init
-    AOS.init({ duration: 1000, once: true });
-
-    // Mobile menu toggle
-    document.getElementById('menu-toggle').addEventListener('click',()=>{
-      document.getElementById('nav-links').classList.toggle('active');
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % track.children.length;
+      updateCarousel();
+    });
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + track.children.length) % track.children.length;
+      updateCarousel();
     });
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+
+  <!-- ✅ Mobile Menu Script -->
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
 </body>
 </html>
