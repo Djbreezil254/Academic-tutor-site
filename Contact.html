@@ -7,34 +7,91 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <style>
+    /* ===== Navigation Styles ===== */
+    nav {
+      background: white;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      user-select: none;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    nav .nav-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 2rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4f46e5;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #3730a3;
+      text-decoration: underline;
+    }
+
+    /* Hamburger toggle button */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 101;
+    }
+
+    .nav-toggle span {
+      width: 30px;
+      height: 3px;
+      background: #4f46e5;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      transform-origin: 1px;
+    }
+
+    /* Hamburger active animation */
+    .nav-toggle.active span:nth-child(1) {
+      transform: rotate(45deg);
+    }
+    .nav-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+
+    /* ===== Page Styles ===== */
     body.contact-page {
       font-family: 'Poppins', sans-serif;
       background: #f9fafb;
       color: #2c2c2c;
       margin: 0;
       padding: 0;
-    }
-
-    /* Navigation bar */
-    nav {
-      background: white;
-      border-bottom: 1px solid #ddd;
-      padding: 0.75rem 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      font-weight: 600;
-    }
-    nav a {
-      text-decoration: none;
-      color: #4f46e5;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-    nav a:hover,
-    nav a.active {
-      color: #3730a3;
-      text-decoration: underline;
     }
 
     header {
@@ -152,14 +209,57 @@
       color: #666;
     }
 
+    /* ===== Responsive Styles ===== */
     @media (max-width: 768px) {
       main.contact-container {
         grid-template-columns: 1fr;
         padding: 1.5rem;
       }
-      nav {
-        gap: 1.5rem;
+      nav .nav-container {
         padding: 0.5rem 1rem;
+      }
+
+      nav ul {
+        position: fixed;
+        top: 58px;
+        left: 0;
+        right: 0;
+        background: #f9fafb;
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        border-radius: 0 0 12px 12px;
+        z-index: 99;
+      }
+
+      nav ul.open {
+        max-height: 400px;
+      }
+
+      nav ul li {
+        border-bottom: 1px solid #e0e0e0;
+      }
+      nav ul li:last-child {
+        border-bottom: none;
+      }
+      nav ul li a {
+        display: block;
+        padding: 1rem 1.5rem;
+        font-size: 1.2rem;
+        color: #4f46e5;
+      }
+      nav ul li a:hover,
+      nav ul li a.active {
+        background: #4338ca;
+        color: white;
+        border-radius: 0;
+      }
+
+      .nav-toggle {
+        display: flex;
       }
     }
   </style>
@@ -168,11 +268,21 @@
 
   <!-- Navigation -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html" class="active">Contact</a>
-    <a href="faq.html">FAQ</a>
+    <div class="nav-container">
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul id="primary-navigation" role="menu">
+        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+        <li role="none"><a href="services.html" role="menuitem">Services</a></li>
+        <li role="none"><a href="contact.html" role="menuitem" class="active">Contact</a></li>
+        <li role="none"><a href="faq.html" role="menuitem">FAQ</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- Header -->
@@ -216,6 +326,20 @@
   <footer>
     &copy; 2025 Tutor Brian – All rights reserved.
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('nav ul');
+
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('open');
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
+        navToggle.setAttribute('aria-expanded', expanded);
+      });
+    });
+  </script>
 
 </body>
 </html>
