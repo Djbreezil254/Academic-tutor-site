@@ -2,10 +2,10 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tutor Brian – Academic Coaching</title>
 
-  <meta name="description" content="Personalized academic coaching for students and researchers. Get expert help with formatting, writing, literature reviews, and thesis support.">
+  <meta name="description" content="Personalized academic coaching for students and researchers. Get expert help with formatting, writing, literature reviews, and thesis support." />
   <meta property="og:title" content="Tutor Brian – Academic Coaching" />
   <meta property="og:description" content="Need academic guidance? Book a 1-on-1 session with Tutor Brian for help in research, thesis writing, and formatting." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1573496529574-be85d6a60704?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
@@ -28,88 +28,138 @@
 </head>
 <body>
 
-  <!-- ✅ Responsive Navigation -->
+  <!-- Navigation -->
   <nav>
     <div class="nav-brand">Tutor Brian</div>
-    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">☰</button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" aria-current="page">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="faq.html">FAQ</a></li>
     </ul>
-    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark/Light Theme">🌓</button>
   </nav>
 
+  <!-- Hero Section -->
   <header class="hero">
     <div class="overlay"></div>
     <div class="hero-content" data-aos="fade-up">
       <h1>Academic <span class="highlight">Coaching</span> That Moves You Forward</h1>
       <p>Guiding students from confusion to clarity in writing, formatting, and research success.</p>
-      <a href="mailto:bomfreelancelab@gmail.com" class="cta">📅 Book Your Free Consult</a>
+      <a href="mailto:bomfreelancelab@gmail.com" class="cta" aria-label="Book Your Free Consult">📅 Book Your Free Consult</a>
     </div>
   </header>
 
   <main>
+    <!-- Services Section -->
     <section class="services" data-aos="fade-up">
       <h2>What I Help With</h2>
       <div class="card-grid">
-        <div class="card" data-aos="zoom-in"><span class="material-icons">school</span> Thesis Structuring</div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="100"><span class="material-icons">format_align_left</span> APA, MLA, Chicago Formatting</div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="200"><span class="material-icons">security</span> AI-Safe Academic Writing</div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="300"><span class="material-icons">menu_book</span> Literature Reviews</div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="400"><span class="material-icons">mic</span> Dissertation Defense Prep</div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="500"><span class="material-icons">person</span> 1-on-1 Research Coaching</div>
+        <div class="card" data-aos="zoom-in"><span class="material-icons" aria-hidden="true">school</span> Thesis Structuring</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="100"><span class="material-icons" aria-hidden="true">format_align_left</span> APA, MLA, Chicago Formatting</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="200"><span class="material-icons" aria-hidden="true">security</span> AI-Safe Academic Writing</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="300"><span class="material-icons" aria-hidden="true">menu_book</span> Literature Reviews</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="400"><span class="material-icons" aria-hidden="true">mic</span> Dissertation Defense Prep</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="500"><span class="material-icons" aria-hidden="true">person</span> 1-on-1 Research Coaching</div>
       </div>
     </section>
 
+    <!-- Call to Action -->
     <section class="cta-section" data-aos="fade-up">
       <h2>Let’s Elevate Your Academic Game</h2>
       <p>Whether you're stuck formatting citations or navigating a complex dissertation, I’ve got you covered.</p>
-      <a href="mailto:bomfreelancelab@gmail.com" class="cta">Start Now →</a>
+      <a href="mailto:bomfreelancelab@gmail.com" class="cta" aria-label="Start Academic Coaching Now">Start Now →</a>
     </section>
 
+    <!-- How It Works -->
     <section class="how-it-works" data-aos="fade-up">
       <h2>How It Works</h2>
       <div class="steps-grid">
-        <div><span class="material-icons">calendar_today</span><h3>Book a Free Call</h3></div>
-        <div><span class="material-icons">upload_file</span><h3>Share Your Draft</h3></div>
-        <div><span class="material-icons">support_agent</span><h3>Receive Coaching</h3></div>
-        <div><span class="material-icons">rocket_launch</span><h3>Submit with Confidence</h3></div>
+        <div><span class="material-icons" aria-hidden="true">calendar_today</span><h3>Book a Free Call</h3></div>
+        <div><span class="material-icons" aria-hidden="true">upload_file</span><h3>Share Your Draft</h3></div>
+        <div><span class="material-icons" aria-hidden="true">support_agent</span><h3>Receive Coaching</h3></div>
+        <div><span class="material-icons" aria-hidden="true">rocket_launch</span><h3>Submit with Confidence</h3></div>
       </div>
     </section>
 
-    <section class="testimonials" data-aos="fade-up">
+    <!-- Testimonials Carousel -->
+    <section class="testimonials" data-aos="fade-up" aria-label="Student Testimonials">
       <h2>What Students Say</h2>
-      <div class="carousel">
+      <div class="carousel" role="region" aria-roledescription="carousel" aria-live="polite" aria-atomic="true">
         <div class="carousel-track">
-          <div class="testimonial-card">
+          <div class="testimonial-card" role="group" aria-label="Testimonial 1 of 3">
             <p>“I couldn’t have completed my master's thesis without Brian’s help. His insight and formatting support were invaluable.”</p>
             <cite>– J. Morgan, MSc Graduate</cite>
           </div>
-          <div class="testimonial-card">
+          <div class="testimonial-card" role="group" aria-label="Testimonial 2 of 3">
             <p>“Brian’s coaching helped me turn a failing paper into a distinction-grade submission. His knowledge of APA style is unmatched.”</p>
             <cite>– A. Kibet, MBA Student</cite>
           </div>
-          <div class="testimonial-card">
+          <div class="testimonial-card" role="group" aria-label="Testimonial 3 of 3">
             <p>“Thanks to Brian, I passed my dissertation defense with confidence. His step-by-step guidance made a huge difference.”</p>
             <cite>– Sarah L., PhD Candidate</cite>
           </div>
         </div>
         <div class="carousel-buttons">
-          <button class="carousel-btn prev">◀</button>
-          <button class="carousel-btn next">▶</button>
+          <button class="carousel-btn prev" aria-label="Previous Testimonial">◀</button>
+          <button class="carousel-btn next" aria-label="Next Testimonial">▶</button>
         </div>
       </div>
     </section>
 
-    <section class="connect" data-aos="fade-up">
-      <h2>Get in Touch</h2>
-      <p><span class="material-icons">email</span> <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a></p>
-      <p><span class="material-icons">link</span> LinkedIn | WhatsApp | Telegram – coming soon</p>
+    <!-- FAQ Section -->
+    <section class="faq-section" data-aos="fade-up" aria-labelledby="faq-title">
+      <h2 id="faq-title">Frequently Asked Questions</h2>
+      <p class="faq-intro">Here are some common questions students ask about the coaching process.</p>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq1" id="faq1-btn">
+            What is academic coaching and how can it help me?
+          </button>
+          <div class="faq-answer" id="faq1" role="region" aria-labelledby="faq1-btn">
+            Academic coaching is a personalized support service that helps students improve their writing, research, and study skills. It guides you through the thesis, dissertation, or research process to enhance clarity and confidence.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq2" id="faq2-btn">
+            How do I book a session with Tutor Brian?
+          </button>
+          <div class="faq-answer" id="faq2" role="region" aria-labelledby="faq2-btn">
+            Booking is easy! Use the booking calendar below or email directly at <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a> to schedule your free consultation.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq3" id="faq3-btn">
+            What if I need help with formatting styles like APA or MLA?
+          </button>
+          <div class="faq-answer" id="faq3" role="region" aria-labelledby="faq3-btn">
+            I provide expert guidance on formatting styles including APA, MLA, and Chicago. You’ll learn how to format citations, references, and papers correctly to meet academic standards.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq4" id="faq4-btn">
+            Is the coaching confidential and personalized?
+          </button>
+          <div class="faq-answer" id="faq4" role="region" aria-labelledby="faq4-btn">
+            Absolutely. All coaching sessions are confidential and tailored to your individual needs, ensuring a supportive and focused learning experience.
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- Contact Section -->
+    <section class="connect" data-aos="fade-up">
+      <h2>Get in Touch</h2>
+      <p><span class="material-icons" aria-hidden="true">email</span> <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a></p>
+      <p><span class="material-icons" aria-hidden="true">link</span> LinkedIn | WhatsApp | Telegram – coming soon</p>
+    </section>
+
+    <!-- Booking Calendly -->
     <section class="schedule" data-aos="fade-up">
       <h2>📅 Book a Coaching Session</h2>
       <p>Choose a time that works for you below:</p>
@@ -118,25 +168,28 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <div class="footer-container">
       <div class="contact-info">
         <p><strong>Contact Us On:</strong></p>
-        <p><span class="material-icons">email</span> bomfreelancelab@gmail.com</p>
-        <p><span class="material-icons">phone</span> +1‑234‑567‑8900</p>
+        <p><span class="material-icons" aria-hidden="true">email</span> bomfreelancelab@gmail.com</p>
+        <p><span class="material-icons" aria-hidden="true">phone</span> +1‑234‑567‑8900</p>
       </div>
       <div class="site-info">
         <p>Follow me:
-          <a href="#"><span class="material-icons">linkedin</span></a>
-          <a href="#"><span class="material-icons">telegram</span></a>
+          <a href="#" aria-label="LinkedIn"><span class="material-icons">linkedin</span></a>
+          <a href="#" aria-label="Telegram"><span class="material-icons">telegram</span></a>
         </p>
       </div>
     </div>
     <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
   </footer>
 
-  <a href="https://calendly.com/tutorjohntaylor/30min" class="book-mobile">Book Now</a>
+  <!-- Sticky Book Now Button for mobile -->
+  <a href="https://calendly.com/tutorjohntaylor/30min" class="book-mobile" aria-label="Book Now">Book Now</a>
 
+  <!-- Tawk.to Chat Widget -->
   <script>
     const Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function () {
@@ -150,6 +203,7 @@
     })();
   </script>
 
+  <!-- Testimonials Carousel Script -->
   <script>
     const track = document.querySelector('.carousel-track');
     const prevBtn = document.querySelector('.carousel-btn.prev');
@@ -168,17 +222,32 @@
     });
   </script>
 
+  <!-- AOS Animation -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 1000, once: true });
   </script>
 
-  <!-- ✅ Mobile Menu Script -->
+  <!-- Mobile Menu Script -->
   <script>
     const toggle = document.getElementById("menu-toggle");
     const navLinks = document.getElementById("nav-links");
     toggle.addEventListener("click", () => {
       navLinks.classList.toggle("active");
+    });
+  </script>
+
+  <!-- FAQ Accordion Script -->
+  <script>
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
+        item.classList.toggle('active');
+      });
     });
   </script>
 
