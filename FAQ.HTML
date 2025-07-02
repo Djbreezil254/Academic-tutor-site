@@ -29,64 +29,95 @@
   </nav>
 
   <main>
-    <section class="faq">
+    <section class="faq-section">
       <h2>📘 Frequently Asked Questions</h2>
+      <p class="faq-intro">Got a question? See the answers below or <a href="mailto:bomfreelancelab@gmail.com">contact me directly</a>.</p>
 
-      <details>
-        <summary>What services do you provide as an academic coach?</summary>
-        <p>I offer support with thesis and dissertation structuring, APA/MLA/Chicago formatting, literature review guidance, research coaching, and AI-detection-safe writing techniques. Sessions are tailored to individual academic needs.</p>
-      </details>
-
-      <details>
-        <summary>How do I book a session with you?</summary>
-        <p>Click the "📅 Book a Coaching Session" button on the homepage or use the integrated Calendly widget to choose a time that works for you.</p>
-      </details>
-
-      <details>
-        <summary>Can you help with plagiarism or AI detection concerns?</summary>
-        <p>Yes. I guide students in paraphrasing effectively, using citations correctly, and formatting properly — all designed to help your work pass AI detection and maintain academic integrity.</p>
-      </details>
-
-      <details>
-        <summary>Do you write assignments or research papers for students?</summary>
-        <p>No. I do not offer ghostwriting services. I provide ethical coaching, feedback, and support so you can develop your own academic work with confidence.</p>
-      </details>
-
-      <details>
-        <summary>What should I prepare before a coaching session?</summary>
-        <p>Come ready with your draft, topic, or outline. If you have specific questions or formatting concerns, please share them when booking or via email before your session.</p>
-      </details>
-
-      <details>
-        <summary>What academic levels do you support?</summary>
-        <p>I work with undergraduate, master's, and doctoral-level students. I also assist professionals working on research projects or academic publications.</p>
-      </details>
-
-      <details>
-        <summary>Can you help me prepare for my dissertation defense?</summary>
-        <p>Absolutely. I offer mock defense sessions, presentation slide reviews, and structured feedback to build your confidence and clarity.</p>
-      </details>
-
-      <details>
-        <summary>Are your services confidential?</summary>
-        <p>Yes. All sessions and shared materials are treated with the utmost confidentiality. Your work, ideas, and information remain private and protected.</p>
-      </details>
-
-      <details>
-        <summary>Do you provide templates or writing resources?</summary>
-        <p>Yes. I offer downloadable templates for thesis chapters, formatting guides, citation checklists, and more — available in the "Free Resources" section.</p>
-      </details>
-
-      <details>
-        <summary>How much do your services cost?</summary>
-        <p>Initial consultations are free. Coaching session pricing and service packages are explained during your first session, and depend on the depth and scope of support you need.</p>
-      </details>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">💼 What services do you provide as an academic coach?</button>
+          <div class="faq-answer">
+            <p>I offer support with thesis and dissertation structuring, APA/MLA/Chicago formatting, literature review guidance, research coaching, and AI-detection-safe writing techniques.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">📅 How do I book a session with you?</button>
+          <div class="faq-answer">
+            <p>Click the "📅 Book a Coaching Session" button on the homepage or use the integrated Calendly widget to choose a time.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">🧠 Can you help with plagiarism or AI detection concerns?</button>
+          <div class="faq-answer">
+            <p>Yes. I guide students in paraphrasing effectively, using citations correctly, and formatting properly — all designed to help your work pass AI detection and maintain academic integrity.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">🚫 Do you write assignments or research papers for students?</button>
+          <div class="faq-answer">
+            <p>No. I provide ethical coaching, feedback, and support so you can develop your own academic work with confidence.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">📝 What should I prepare before a coaching session?</button>
+          <div class="faq-answer">
+            <p>Come ready with your draft, topic, or outline. If you have specific questions or formatting concerns, please share them when booking or via email beforehand.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">🎓 What academic levels do you support?</button>
+          <div class="faq-answer">
+            <p>I work with undergrad, master’s, and doctoral students. I also assist professionals working on academic publications.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">📣 Can you help me prepare for my dissertation defense?</button>
+          <div class="faq-answer">
+            <p>Absolutely. I offer mock defense sessions, slide reviews, and structured feedback to build your clarity and confidence.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">🔒 Are your services confidential?</button>
+          <div class="faq-answer">
+            <p>Yes. All sessions and shared materials are treated with the utmost confidentiality and data security.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">📂 Do you provide templates or writing resources?</button>
+          <div class="faq-answer">
+            <p>Yes. Visit the <a href="resources.html">Free Resources</a> section for templates, citation guides, and checklists.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">💰 How much do your services cost?</button>
+          <div class="faq-answer">
+            <p>Initial consultations are free. Pricing depends on the level and scope of support, discussed transparently in session.</p>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
+  <footer class="footer-dark">
+    <p>📩 Contact us at <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a></p>
+    <p>© 2025 Tutor Brian | Academic Coaching. All rights reserved.</p>
   </footer>
+
+  <!-- Accordion FAQ Script -->
+  <script>
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        const openItem = document.querySelector('.faq-item.active');
+        if (openItem && openItem !== item) {
+          openItem.classList.remove('active');
+        }
+        item.classList.toggle('active');
+      });
+    });
+  </script>
 
   <!-- ✅ Tawk.to Live Chat -->
   <script type="text/javascript">
