@@ -113,21 +113,24 @@
       background-color: #f3f4ff;
     }
 
-    /* Circular icon background */
-    .service-card img {
-      width: 72px;
-      height: 72px;
-      padding: 14px;
+    /* Circular icon background for material icons */
+    .material-icon-circle {
+      font-size: 72px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       background: linear-gradient(135deg, #4f46e5, #6366f1);
       box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+      color: white;
       margin-bottom: 1.25rem;
-      transition: background 0.4s ease;
-      object-fit: contain;
-      filter: brightness(1.05);
+      transition: background 0.4s ease, filter 0.4s ease;
+      user-select: none;
     }
 
-    .service-card:hover img {
+    .service-card:hover .material-icon-circle {
       background: linear-gradient(135deg, #6366f1, #4f46e5);
       filter: brightness(1.15);
     }
@@ -189,15 +192,14 @@
     html[data-theme="dark"] .service-card:hover h3 {
       color: #93c5fd;
     }
-    html[data-theme="dark"] .service-card img {
+    html[data-theme="dark"] .material-icon-circle {
       box-shadow: 0 5px 15px rgba(147, 197, 253, 0.5);
       filter: brightness(1.1);
       background: linear-gradient(135deg, #2563eb, #3b82f6);
     }
-    html[data-theme="dark"] .service-card:hover img {
+    html[data-theme="dark"] .service-card:hover .material-icon-circle {
       background: linear-gradient(135deg, #3b82f6, #2563eb);
     }
-
   </style>
 </head>
 <body class="services-page">
@@ -222,7 +224,7 @@
     <div class="services-grid">
 
       <div class="service-card">
-        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-thesis-education-flaticons-lineal-color-flat-icons.png" alt="Thesis Icon" />
+        <span class="material-icons material-icon-circle" aria-hidden="true" title="Thesis Structuring">menu_book</span>
         <h3>Thesis Structuring</h3>
         <p>Get help organizing your chapters, formulating research questions, and aligning your methodology to academic standards.</p>
       </div>
@@ -234,7 +236,7 @@
       </div>
 
       <div class="service-card">
-        <img src="https://img.icons8.com/external-flat-juicy-fish/60/000000/external-robot-ai-flat-flat-juicy-fish.png" alt="AI Writing Icon" />
+        <span class="material-icons material-icon-circle" aria-hidden="true" title="AI-Safe Academic Writing">smart_toy</span>
         <h3>AI-Safe Academic Writing</h3>
         <p>We write and coach using ethical, human-led strategies that pass AI detectors and maintain originality.</p>
       </div>
