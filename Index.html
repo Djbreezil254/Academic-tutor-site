@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- ✅ AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script defer>
     function toggleTheme() {
       const html = document.documentElement;
@@ -29,7 +31,7 @@
 
   <header class="hero">
     <div class="overlay"></div>
-    <div class="hero-content">
+    <div class="hero-content" data-aos="fade-up">
       <h1>Academic Coaching That Moves You Forward</h1>
       <p>Guiding students from confusion to clarity in writing, formatting, and research success.</p>
       <a href="mailto:bomfreelancelab@gmail.com" class="cta">📅 Book Your Free Consult</a>
@@ -37,45 +39,45 @@
   </header>
 
   <main>
-    <section class="services">
+    <section class="services" data-aos="fade-up">
       <h2>What I Help With</h2>
       <div class="card-grid">
-        <div class="card">🧠 Thesis Structuring</div>
-        <div class="card">📝 APA, MLA, Chicago Formatting</div>
-        <div class="card">🔍 AI-Safe Academic Writing</div>
-        <div class="card">📚 Literature Reviews</div>
-        <div class="card">🎤 Dissertation Defense Prep</div>
-        <div class="card">💬 1-on-1 Research Coaching</div>
+        <div class="card" data-aos="zoom-in">🧠 Thesis Structuring</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="100">📝 APA, MLA, Chicago Formatting</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="200">🔍 AI-Safe Academic Writing</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="300">📚 Literature Reviews</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="400">🎤 Dissertation Defense Prep</div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="500">💬 1-on-1 Research Coaching</div>
       </div>
     </section>
 
-    <section class="cta-section">
+    <section class="cta-section" data-aos="fade-up">
       <h2>Let’s Elevate Your Academic Game</h2>
       <p>Whether you're stuck formatting citations or navigating a complex dissertation, I’ve got you covered.</p>
       <a href="mailto:bomfreelancelab@gmail.com" class="cta">Start Now →</a>
     </section>
 
-    <section class="testimonials">
+    <section class="testimonials" data-aos="fade-up">
       <h2>What Students Say</h2>
       <blockquote>“I couldn’t have completed my master's thesis without Brian’s help. His insight and formatting support were invaluable.”</blockquote>
       <cite>– J. Morgan, MSc Graduate</cite>
     </section>
 
-    <section class="resources">
+    <section class="resources" data-aos="fade-up">
       <h2>Free Resources</h2>
       <ul>
         <li><a href="assets/AIntelligence.pdf" download>📄 Sample PDF: Research on AI</a></li>
       </ul>
     </section>
 
-    <section class="connect">
+    <section class="connect" data-aos="fade-up">
       <h2>Get in Touch</h2>
       <p>Email: <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a></p>
       <p>LinkedIn | WhatsApp | Telegram – coming soon</p>
     </section>
 
     <!-- 📅 Calendly Schedule Section -->
-    <section class="schedule">
+    <section class="schedule" data-aos="fade-up">
       <h2>📅 Book a Coaching Session</h2>
       <p>Choose a time that works for you below:</p>
       <!-- Calendly inline widget begin -->
@@ -100,6 +102,15 @@
       s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
     })();
+  </script>
+
+  <!-- ✅ AOS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
   </script>
 
 </body>
