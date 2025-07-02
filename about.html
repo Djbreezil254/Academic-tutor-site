@@ -10,105 +10,120 @@
 </head>
 <body>
 
-  <!-- ✅ Navigation from index.html -->
-  <nav>
-    <div class="nav-brand">Tutor Brian</div>
-    <button class="menu-toggle" id="menu-toggle">☰</button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="faq.html">FAQ</a></li>
+<!-- ✅ Navigation (same as index.html) -->
+<nav>
+  <div class="nav-brand">Tutor Brian</div>
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+</nav>
+
+<main class="about-page">
+  <section class="intro">
+    <h1>Meet Tutor Brian & the BomFreelanceLab Team</h1>
+    <p>Since founding BomFreelanceLab three years ago, Brian and a dedicated team of full‑time researchers and academic tutors have provided relentless, top‑tier support to students across the US and UK.</p>
+    <p><strong>Brian</strong>, our CEO, has been a freelance researcher since 2019, delivering quality research guidance and academic writing support—full time—ever since.</p>
+  </section>
+
+  <section class="values">
+    <h2>Our Core Values</h2>
+    <ul>
+      <li>🔍 <strong>Integrity:</strong> Upholding academic honesty at every step.</li>
+      <li>🎯 <strong>Excellence:</strong> Delivering rigorous, in‑depth coaching and feedback.</li>
+      <li>🤝 <strong>Collaboration:</strong> Studying with you—not for you.</li>
+      <li>📈 <strong>Growth:</strong> Empowering continuous improvement through learning.</li>
+      <li>💡 <strong>Innovation:</strong> Integrating smart tools and AI‑safe writing methods.</li>
     </ul>
-    <button class="theme-toggle" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'">🌓</button>
-  </nav>
+  </section>
 
-  <!-- ✅ Main Content -->
-  <main class="about-page">
-    <section class="intro" data-aos="fade-up">
-      <h1>Meet Tutor Brian & the BomFreelanceLab Team</h1>
-      <p>Since founding BomFreelanceLab three years ago, Brian and a dedicated team of full‑time researchers and academic tutors have provided relentless, top‑tier support to students across the US and UK.</p>
-      <p><strong>Brian</strong>, our CEO, has been a freelance researcher since 2019, delivering quality research guidance and academic writing support—full time—ever since.</p>
-    </section>
-
-    <section class="values" data-aos="fade-up">
-      <h2>Our Core Values</h2>
-      <ul>
-        <li>🔍 <strong>Integrity:</strong> Upholding academic honesty at every step.</li>
-        <li>🎯 <strong>Excellence:</strong> Delivering rigorous, in‑depth coaching and feedback.</li>
-        <li>🤝 <strong>Collaboration:</strong> Studying with you—not for you.</li>
-        <li>📈 <strong>Growth:</strong> Empowering continuous improvement through learning.</li>
-        <li>💡 <strong>Innovation:</strong> Integrating smart tools and AI‑safe writing methods.</li>
-      </ul>
-    </section>
-
-    <section class="stats" data-aos="fade-up">
-      <h2>By the Numbers 📊</h2>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <span class="material-icons">people</span>
-          <h3>250+</h3><p>Happy Clients</p>
-        </div>
-        <div class="stat-card">
-          <span class="material-icons">star_rate</span>
-          <h3>4.9/5</h3><p>Average Rating</p>
-        </div>
-        <div class="stat-card">
-          <span class="material-icons">work</span>
-          <h3>5 Years+</h3><p>Team Experience</p>
-        </div>
-        <div class="stat-card">
-          <span class="material-icons">thumb_up</span>
-          <h3>98%</h3><p>Client Satisfaction</p>
-        </div>
-        <div class="stat-card">
-          <span class="material-icons">done_all</span>
-          <h3>450+</h3><p>Projects Completed</p>
-        </div>
+  <section class="stats">
+    <h2>By the Numbers 📊</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="material-icons">people</span>
+        <h3>250+</h3><p>Happy Clients</p>
       </div>
-    </section>
-
-    <section class="quote" data-aos="fade-up">
-      <blockquote>
-        <p>“Education is the most powerful weapon which you can use to change the world.”</p>
-        <cite>– Nelson Mandela</cite>
-        <img src="https://images.unsplash.com/photo-1548115185-0ca6d75e051c?auto=format&fit=crop&w=800&q=80" alt="Nelson Mandela speaking" style="max-width: 300px; margin-top: 1rem; border-radius: 10px;" />
-      </blockquote>
-    </section>
-
-    <section class="team-images" data-aos="fade-up">
-      <h2>Our Team in Action</h2>
-      <p>Images coming soon...</p>
-      <!-- Future carousel goes here -->
-    </section>
-  </main>
-
-  <!-- ✅ Footer from index.html -->
-  <footer>
-    <div class="footer-container">
-      <div class="contact-info">
-        <p><strong>Contact Us On:</strong></p>
-        <p><span class="material-icons">email</span> bomfreelancelab@gmail.com</p>
-        <p><span class="material-icons">phone</span> +1‑234‑567‑8900</p>
+      <div class="stat-card">
+        <span class="material-icons">star_rate</span>
+        <h3>4.9/5</h3><p>Average Rating</p>
       </div>
-      <div class="site-info">
-        <p>Follow me:
-          <a href="#"><span class="material-icons">linkedin</span></a>
-          <a href="#"><span class="material-icons">telegram</span></a>
-        </p>
+      <div class="stat-card">
+        <span class="material-icons">work</span>
+        <h3>5 Years+</h3><p>Team Experience</p>
+      </div>
+      <div class="stat-card">
+        <span class="material-icons">thumb_up</span>
+        <h3>98%</h3><p>Client Satisfaction</p>
+      </div>
+      <div class="stat-card">
+        <span class="material-icons">done_all</span>
+        <h3>450+</h3><p>Projects Completed</p>
       </div>
     </div>
-    <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
-  </footer>
+  </section>
 
-  <!-- ✅ Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ duration: 1000, once: true });</script>
-  <script>
-    document.getElementById("menu-toggle").addEventListener("click", () => {
-      document.getElementById("nav-links").classList.toggle("active");
-    });
-  </script>
+  <section class="quote">
+    <blockquote>
+      <p>“Education is the most powerful weapon which you can use to change the world.”</p>
+      <cite>– Nelson Mandela</cite>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Nelson_Mandela-2008_%28edit%29.jpg/330px-Nelson_Mandela-2008_%28edit%29.jpg" alt="Nelson Mandela">
+    </blockquote>
+  </section>
+
+  <section class="team-images">
+    <h2>Meet Our Experts</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&fm=jpg" alt="Tutor 1" style="width: 100%; border-radius: 8px;">
+        <p><strong>Mary K.</strong><br>Senior Research Coach</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&fm=jpg" alt="Tutor 2" style="width: 100%; border-radius: 8px;">
+        <p><strong>David O.</strong><br>Academic Writer & Reviewer</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&fm=jpg" alt="Tutor 3" style="width: 100%; border-radius: 8px;">
+        <p><strong>Amina A.</strong><br>Thesis Formatting Specialist</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ✅ Footer (same as index.html) -->
+<footer>
+  <div class="footer-container">
+    <div class="contact-info">
+      <p><strong>Contact Us On:</strong></p>
+      <p><span class="material-icons">email</span> bomfreelancelab@gmail.com</p>
+      <p><span class="material-icons">phone</span> +1‑234‑567‑8900</p>
+    </div>
+    <div class="site-info">
+      <p>Follow me:
+        <a href="#"><span class="material-icons">linkedin</span></a>
+        <a href="#"><span class="material-icons">telegram</span></a>
+      </p>
+    </div>
+  </div>
+  <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
+</footer>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  function toggleTheme() {
+    const html = document.documentElement;
+    html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+  }
+</script>
 </body>
 </html>
