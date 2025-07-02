@@ -2,239 +2,185 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact – Tutor Brian</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <style>
     body.contact-page {
       font-family: 'Poppins', sans-serif;
       background: #f9fafb;
-      color: #1a1a1a;
-      padding: 4rem 1.5rem;
+      color: #2c2c2c;
+      margin: 0;
+      padding: 0;
     }
 
-    .contact-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2.5rem;
-      max-width: 1100px;
+    header {
+      padding: 2rem 1.5rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 0.25rem;
+    }
+
+    header p {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    main.contact-container {
+      max-width: 900px;
       margin: 0 auto;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-      overflow: hidden;
+      padding: 2rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
     }
 
-    .contact-form-section {
-      flex: 1.1;
-      padding: 2.5rem;
-      background: #f3f4ff;
-    }
-
-    .contact-info-section {
-      flex: 1;
-      padding: 2.5rem;
+    .contact-info {
       background: #ffffff;
-      border-left: 2px solid #e5e7eb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
-    .contact-form-section h2,
-    .contact-info-section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
+    .contact-info h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
       color: #4f46e5;
     }
 
-    form label {
-      display: block;
-      margin-bottom: 0.3rem;
-      font-weight: 600;
+    .contact-info p {
+      margin: 0.8rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1rem;
       color: #333;
     }
 
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 0.9rem 1rem;
-      margin-bottom: 1.5rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      font-family: 'Poppins', sans-serif;
-      transition: border-color 0.3s ease;
+    .contact-info p span.material-icons {
+      color: #6366f1;
     }
 
-    form input:focus,
-    form textarea:focus {
-      border-color: #4f46e5;
-      outline: none;
+    .contact-info a {
+      color: #2563eb;
+      text-decoration: none;
     }
 
-    form textarea {
-      resize: vertical;
-      min-height: 150px;
+    .contact-form {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
-    .submit-btn {
-      background: #4f46e5;
-      color: white;
-      border: none;
-      padding: 0.9rem 1.5rem;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .submit-btn:hover {
-      background: #4338ca;
-    }
-
-    .info-block {
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    .info-block span {
+    .contact-form h2 {
       font-size: 1.5rem;
       color: #4f46e5;
+      margin-bottom: 1rem;
     }
 
-    .info-block a {
-      color: #111827;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-
-    .info-block a:hover {
-      text-decoration: underline;
-    }
-
-    .social-icons {
+    .contact-form form {
       display: flex;
-      gap: 12px;
-      margin-top: 1.5rem;
+      flex-direction: column;
     }
 
-    .social-icons a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .contact-form textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .contact-form button {
       background: #4f46e5;
       color: white;
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
       transition: background 0.3s ease;
     }
 
-    .social-icons a:hover {
+    .contact-form button:hover {
       background: #4338ca;
     }
 
+    footer {
+      background: #f3f4f6;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
     @media (max-width: 768px) {
-      .contact-container {
-        flex-direction: column;
-      }
-      .contact-info-section {
-        border-left: none;
-        border-top: 2px solid #e5e7eb;
+      main.contact-container {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
       }
     }
   </style>
 </head>
-
 <body class="contact-page">
 
-<!-- ✅ Navigation -->
-<nav>
-  <div class="nav-brand">Tutor Brian</div>
-  <button class="menu-toggle" id="menu-toggle">☰</button>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="contact.html" class="active">Contact</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-  </ul>
-  <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
-</nav>
+  <!-- Header -->
+  <header>
+    <h1>Get In Touch</h1>
+    <p>Reach out for academic support, coaching, or questions.</p>
+  </header>
 
-<!-- ✅ Contact Section -->
-<main>
-  <div class="contact-container">
+  <!-- Contact Section -->
+  <main class="contact-container">
+    <!-- Left: Contact Info -->
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <p><span class="material-icons">email</span> <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a></p>
+      <p><span class="material-icons">phone</span> <a href="tel:+12345678900">+1‑234‑567‑8900</a></p>
+      <p><span class="material-icons">chat</span> <a href="https://wa.me/12345678900" target="_blank">Chat on WhatsApp</a></p>
+      <p><span class="material-icons">location_on</span> United States (Remote Services)</p>
+      <h2 style="margin-top:2rem;">Social Media</h2>
+      <p>
+        <a href="#" aria-label="Facebook"><span class="material-icons">facebook</span></a>
+        <a href="#" aria-label="Instagram"><span class="material-icons">photo_camera</span></a>
+        <a href="#" aria-label="X / Twitter"><span class="material-icons">alternate_email</span></a>
+        <a href="#" aria-label="LinkedIn"><span class="material-icons">business</span></a>
+        <a href="#" aria-label="Telegram"><span class="material-icons">send</span></a>
+      </p>
+    </div>
 
-    <!-- Contact Form Section -->
-    <div class="contact-form-section">
+    <!-- Right: Form -->
+    <div class="contact-form">
       <h2>Send a Message</h2>
-      <form action="#" method="post">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <button type="submit" class="submit-btn">Send Message</button>
+      <form action="https://formspree.io/f/mdkzjgpq" method="POST">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+        <textarea name="message" placeholder="Your message" required></textarea>
+        <button type="submit">Send Message</button>
       </form>
     </div>
+  </main>
 
-    <!-- Contact Info Section -->
-    <div class="contact-info-section">
-      <h2>Contact Info</h2>
-
-      <div class="info-block">
-        <span class="material-icons">email</span>
-        <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a>
-      </div>
-
-      <div class="info-block">
-        <span class="material-icons">phone</span>
-        <a href="tel:+254717357947">+254 717 357 947</a>
-      </div>
-
-      <div class="info-block">
-        <span class="material-icons">chat</span>
-        <a href="https://wa.me/717357947" target="_blank">Chat on WhatsApp</a>
-      </div>
-
-      <div class="social-icons">
-        <a href="#" title="Facebook"><span class="material-icons">facebook</span></a>
-        <a href="#" title="Instagram"><span class="material-icons">photo_camera</span></a>
-        <a href="#" title="LinkedIn"><span class="material-icons">linkedin</span></a>
-        <a href="#" title="Telegram"><span class="material-icons">send</span></a>
-        <a href="#" title="X / Twitter"><span class="material-icons">alternate_email</span></a>
-      </div>
-    </div>
-  </div>
-</main>
-
-<!-- ✅ Footer -->
-<footer style="text-align:center; margin-top:3rem; font-size:0.9rem; color:#888;">
-  &copy; 2025 Tutor Brian | All rights reserved.
-</footer>
-
-<script>
-  const toggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
-  toggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-
-  function toggleTheme() {
-    const html = document.documentElement;
-    html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
-  }
-</script>
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Tutor Brian – All rights reserved.
+  </footer>
 
 </body>
 </html>
