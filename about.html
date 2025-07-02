@@ -9,16 +9,30 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 <body>
-  <nav>…same nav as index.html…</nav>
 
+  <!-- ✅ Navigation from index.html -->
+  <nav>
+    <div class="nav-brand">Tutor Brian</div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+    <button class="theme-toggle" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'">🌓</button>
+  </nav>
+
+  <!-- ✅ Main Content -->
   <main class="about-page">
-    <section class="intro">
+    <section class="intro" data-aos="fade-up">
       <h1>Meet Tutor Brian & the BomFreelanceLab Team</h1>
-      <p>Since founding BomFreelanceLab three years ago, Brian and a dedicated team of full‑time researchers and academic tutors have provided relentless, top‑tier support to students across the US and UK. </p>
+      <p>Since founding BomFreelanceLab three years ago, Brian and a dedicated team of full‑time researchers and academic tutors have provided relentless, top‑tier support to students across the US and UK.</p>
       <p><strong>Brian</strong>, our CEO, has been a freelance researcher since 2019, delivering quality research guidance and academic writing support—full time—ever since.</p>
     </section>
 
-    <section class="values">
+    <section class="values" data-aos="fade-up">
       <h2>Our Core Values</h2>
       <ul>
         <li>🔍 <strong>Integrity:</strong> Upholding academic honesty at every step.</li>
@@ -29,7 +43,7 @@
       </ul>
     </section>
 
-    <section class="stats">
+    <section class="stats" data-aos="fade-up">
       <h2>By the Numbers 📊</h2>
       <div class="stats-grid">
         <div class="stat-card">
@@ -55,20 +69,46 @@
       </div>
     </section>
 
-    <section class="quote">
+    <section class="quote" data-aos="fade-up">
       <blockquote>
         <p>“Education is the most powerful weapon which you can use to change the world.”</p>
-        <cite>– Nelson Mandela :contentReference[oaicite:2]{index=2}</cite>
+        <cite>– Nelson Mandela</cite>
+        <img src="https://images.unsplash.com/photo-1548115185-0ca6d75e051c?auto=format&fit=crop&w=800&q=80" alt="Nelson Mandela speaking" style="max-width: 300px; margin-top: 1rem; border-radius: 10px;" />
       </blockquote>
     </section>
 
-    <section class="team-images">
-      <!-- Image carousel -->
-      <!-- Use the images above -->
+    <section class="team-images" data-aos="fade-up">
+      <h2>Our Team in Action</h2>
+      <p>Images coming soon...</p>
+      <!-- Future carousel goes here -->
     </section>
-
   </main>
 
-  <footer>…same footer as index.html…</footer>
+  <!-- ✅ Footer from index.html -->
+  <footer>
+    <div class="footer-container">
+      <div class="contact-info">
+        <p><strong>Contact Us On:</strong></p>
+        <p><span class="material-icons">email</span> bomfreelancelab@gmail.com</p>
+        <p><span class="material-icons">phone</span> +1‑234‑567‑8900</p>
+      </div>
+      <div class="site-info">
+        <p>Follow me:
+          <a href="#"><span class="material-icons">linkedin</span></a>
+          <a href="#"><span class="material-icons">telegram</span></a>
+        </p>
+      </div>
+    </div>
+    <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
+  </footer>
+
+  <!-- ✅ Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1000, once: true });</script>
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+      document.getElementById("nav-links").classList.toggle("active");
+    });
+  </script>
 </body>
 </html>
