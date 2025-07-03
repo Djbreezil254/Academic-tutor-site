@@ -230,6 +230,8 @@ section {
   display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%;
+  /* Prevent horizontal scrollbar */
+  will-change: transform;
 }
 
 .testimonial-card {
@@ -245,7 +247,14 @@ section {
   word-wrap: break-word;
   overflow-wrap: break-word;
   min-height: 150px;
-  margin: 0 1rem;
+  margin: 0 0.5rem; /* reduced horizontal margin */
+  box-sizing: border-box;
+}
+
+/* Make sure testimonial text doesn't overflow */
+.testimonial-card p {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .testimonial-card cite {
@@ -264,6 +273,7 @@ section {
   right: 10px;
   display: flex;
   gap: 10px;
+  z-index: 2;
 }
 
 .carousel-btn {
