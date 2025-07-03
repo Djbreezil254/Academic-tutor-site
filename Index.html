@@ -30,18 +30,22 @@
   </script>
 </head>
 <body>
-  <nav>
+  <nav class="navbar">
+  <div class="nav-container">
     <div class="nav-brand">Tutor Brian</div>
-    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <button class="menu-toggle" id="menu-toggle">
+      <span class="material-icons">menu</span>
+    </button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="index.html"><span class="material-icons">home</span> Home</a></li>
+      <li><a href="about.html"><span class="material-icons">person</span> About</a></li>
+      <li><a href="services.html"><span class="material-icons">build</span> Services</a></li>
+      <li><a href="contact.html"><span class="material-icons">mail</span> Contact</a></li>
+      <li><a href="faq.html"><span class="material-icons">help</span> FAQ</a></li>
     </ul>
-    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
-  </nav>
+    <button class="theme-toggle" onclick="toggleTheme()"><span class="material-icons">brightness_4</span></button>
+  </div>
+</nav>
 
   <header class="hero">
     <div class="overlay"></div>
