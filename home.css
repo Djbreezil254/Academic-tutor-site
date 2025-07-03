@@ -7,9 +7,9 @@ header.hero {
   background-position: center;
   position: relative;
   color: white;
-  padding: 4rem 2rem;
+  padding: 2rem;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
@@ -20,7 +20,7 @@ header.hero .overlay {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 51, 102, 0.6); /* dark blue overlay with transparency */
+  background-color: rgba(0, 102, 204, 0.6); /* semi-transparent blue overlay */
   z-index: 0;
 }
 
@@ -28,44 +28,41 @@ header.hero .overlay {
 header.hero .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 700px;
-  margin: 0 auto;
 }
 
-header.hero h1 {
+header h1 {
   margin: 0;
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: 2rem;
 }
 
-header.hero h1 .highlight {
-  color: #ffd54f; /* bright accent color */
+header p {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
 }
 
-header.hero p {
-  margin-top: 1rem;
-  font-size: 1.25rem;
-  font-weight: 400;
+/* Highlight inside h1 */
+header h1 .highlight {
+  color: #ffd54f;
 }
 
 /* CTA button */
 .cta {
   display: inline-block;
-  background: #ffd54f;
-  color: #003366;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
+  background: #ffffff;
+  color: #0066cc;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
   text-decoration: none;
-  font-weight: 700;
-  margin-top: 1.5rem;
-  transition: background 0.3s ease, color 0.3s ease;
-  box-shadow: 0 4px 10px rgba(255, 213, 79, 0.4);
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background 0.3s, color 0.3s;
+  position: relative;
+  z-index: 1;
 }
 
 .cta:hover {
-  background: #ffc107;
-  color: #002244;
+  background: #e0e0e0;
+  color: #003f80;
 }
 
 /* Section padding – used if homepage uses unscoped <section> */
@@ -90,16 +87,7 @@ footer {
     margin: 10px 0;
   }
 
-  header.hero h1 {
-    font-size: 1.8rem;
-  }
-
-  header.hero p {
-    font-size: 1rem;
-  }
-
-  .cta {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+  header h1 {
+    font-size: 1.5rem;
   }
 }
