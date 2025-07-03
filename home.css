@@ -554,3 +554,65 @@ footer a:focus {
     font-size: 1rem;
   }
 }
+
+/* DARK THEME OVERRIDES */
+[data-theme="dark"] {
+  background: #1b1e23;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] nav,
+[data-theme="dark"] .navbar {
+  background: #2a2d33;
+  color: #e0e0e0;
+  border-bottom: 1px solid #444;
+}
+
+[data-theme="dark"] .nav-links li a {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .nav-links li a:hover {
+  color: #ffd54f;
+}
+
+[data-theme="dark"] .hero::before {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .hero-content p {
+  color: #ccc;
+}
+
+[data-theme="dark"] .card {
+  background: #2f333b;
+  color: #ffd54f;
+}
+
+[data-theme="dark"] .cta-section {
+  background: #333;
+  color: #fff;
+}
+
+[data-theme="dark"] .cta-section .cta {
+  background: #ffd54f;
+  color: #222;
+}
+
+[data-theme="dark"] .testimonial-card {
+  background: #2a2d33;
+  color: #ccc;
+}
+
+[data-theme="dark"] .testimonial-card cite {
+  color: #ffd54f;
+}
+
+[data-theme="dark"] footer {
+  background: #111;
+  color: #aaa;
+}
+
+[data-theme="dark"] a {
+  color: #ffd54f;
+}
