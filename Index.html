@@ -13,7 +13,10 @@
   <meta property="og:type" content="website" />
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" type="image/png" />
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- ✅ Use home.css for homepage only -->
+  <link rel="stylesheet" href="home.css" />
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -27,8 +30,6 @@
   </script>
 </head>
 <body>
-
-  <!-- ✅ Responsive Navigation -->
   <nav>
     <div class="nav-brand">Tutor Brian</div>
     <button class="menu-toggle" id="menu-toggle">☰</button>
@@ -137,7 +138,6 @@
 
   <a href="https://calendly.com/tutorjohntaylor/30min" class="book-mobile">Book Now</a>
 
-  <!-- Carousel Script -->
   <script>
     const track = document.querySelector('.carousel-track');
     const prevBtn = document.querySelector('.carousel-btn.prev');
@@ -156,13 +156,11 @@
     });
   </script>
 
-  <!-- AOS Script -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 1000, once: true });
   </script>
 
-  <!-- Mobile Menu Script -->
   <script>
     const toggle = document.getElementById("menu-toggle");
     const navLinks = document.getElementById("nav-links");
@@ -171,18 +169,16 @@
     });
   </script>
 
-  <!-- ✅ Tawk.to Chat Widget: Placed at the very bottom for best results -->
   <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/68648d8d0340fc1912a7bc0a/1iv4chsr3';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/68648d8d0340fc1912a7bc0a/1iv4chsr3';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
     })();
   </script>
-
 </body>
 </html>
