@@ -229,6 +229,7 @@ section {
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  width: 100%;
 }
 
 .testimonial-card {
@@ -240,6 +241,11 @@ section {
   font-style: italic;
   color: #444;
   user-select: none;
+  white-space: normal; /* allow wrapping */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  min-height: 150px;
+  margin: 0 1rem;
 }
 
 .testimonial-card cite {
@@ -256,6 +262,8 @@ section {
   position: absolute;
   bottom: 10px;
   right: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .carousel-btn {
@@ -264,7 +272,6 @@ section {
   color: white;
   font-size: 1.3rem;
   padding: 8px 12px;
-  margin-left: 5px;
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -384,5 +391,22 @@ footer a:focus {
   footer .footer-container {
     flex-direction: column;
     gap: 1rem;
+  }
+
+  .testimonial-card {
+    margin: 0 0.5rem;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+    min-height: auto;
+  }
+
+  .carousel-buttons {
+    bottom: 5px;
+    right: 5px;
+  }
+
+  .carousel-btn {
+    padding: 0.4rem 0.7rem;
+    font-size: 1rem;
   }
 }
