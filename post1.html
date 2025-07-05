@@ -4,268 +4,165 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>How to Structure a Thesis Chapter by Chapter | Smart Essay Coach</title>
+  <meta name="description" content="Learn how to structure your thesis chapter by chapter with clear guidance on introduction, literature review, methodology, results, discussion, and conclusion. Perfect for graduate students and researchers." />
+  <meta name="keywords" content="thesis structure, how to write a thesis, chapter by chapter thesis guide, academic writing, thesis tips, graduate thesis help" />
+  <meta name="author" content="Brian Ogot, Smart Essay Coach" />
   
   <link rel="stylesheet" href="home.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
+  
   <style>
     /* Scoped styles for post1.html */
-
-    body {
+    .post-container {
+      max-width: 800px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: var(--bg, #f9f9f9);
-      color: var(--text, #222);
       line-height: 1.7;
-    }
-
-    /* Navbar styles */
-    nav.navbar {
-      background-color: var(--nav-bg, #4f46e5);
-      color: #fff;
-      padding: 1rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .nav-container {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .nav-brand {
-      font-weight: 700;
-      font-size: 1.5rem;
-      letter-spacing: 0.05em;
-      cursor: default;
-      color: #fff;
-    }
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      margin-left: auto;
-      padding: 0;
-    }
-    .nav-links li a {
-      color: #e0e7ff;
-      font-weight: 600;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-size: 1rem;
-      transition: color 0.2s ease;
-    }
-    .nav-links li a:hover,
-    .nav-links li a.active {
-      color: #c7d2fe;
-      text-decoration: underline;
-    }
-
-    /* Menu toggle (mobile) */
-    #menu-toggle {
-      display: none;
-      background: transparent;
-      border: none;
-      color: white;
-      font-size: 2rem;
-      cursor: pointer;
-      margin-left: auto;
-    }
-
-    /* Theme toggle button */
-    .theme-toggle {
-      background: transparent;
-      border: none;
-      color: #e0e7ff;
-      cursor: pointer;
-      font-size: 1.8rem;
-      margin-left: 1rem;
-      transition: color 0.2s ease;
-    }
-    .theme-toggle:hover {
-      color: #c7d2fe;
-    }
-
-    /* Responsive nav */
-    @media (max-width: 768px) {
-      #menu-toggle {
-        display: block;
-      }
-      .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: var(--nav-bg, #4f46e5);
-        flex-direction: column;
-        width: 200px;
-        padding: 1rem 0;
-        border-radius: 0 0 0 10px;
-        display: none;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      }
-      .nav-links.active {
-        display: flex;
-      }
-      .nav-links li {
-        padding: 0.5rem 1.5rem;
-      }
-    }
-
-    main.post-container {
+      color: #222;
       background: #fff;
-      max-width: 750px;
-      margin: 2rem auto 3rem;
-      padding: 2.5rem 2rem 3rem;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
 
-    main.post-container h1 {
-      font-weight: 700;
-      font-size: 2.25rem;
-      margin-bottom: 1rem;
-      color: #333;
+    .post-container h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.25rem;
+      color: #2c3e50;
     }
 
-    main.post-container h2 {
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      color: #4f46e5;
-      font-weight: 600;
-      border-bottom: 2px solid #c7d2fe;
-      padding-bottom: 0.3rem;
+    .author-date {
+      font-style: italic;
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    main.post-container p {
-      font-size: 1.1rem;
-      color: #444;
-      margin-bottom: 1.5rem;
+    .author-date .material-icons {
+      font-size: 1.2rem;
+      color: #4a90e2;
     }
 
-    /* Post image */
     .post-image {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin: 1.5rem 0 2rem;
-      box-shadow: 0 6px 14px rgba(79, 70, 229, 0.15);
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
     }
 
-    /* Back to blog link */
-    .back-link {
-      display: inline-block;
-      margin-top: 2rem;
+    h2 {
+      color: #4a90e2;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
       font-weight: 600;
-      color: #4f46e5;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: color 0.2s ease;
-    }
-    .back-link:hover {
-      color: #3730a3;
-      text-decoration: underline;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    /* Icons next to h2 headings */
-    h2::before {
-      content: "📘";
-      margin-right: 0.5rem;
+    h2 .material-icons {
+      color: #4a90e2;
+      font-size: 1.5rem;
     }
-    h2:nth-of-type(3)::before {
-      content: "🧾";
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #444;
     }
-    h2:nth-of-type(4)::before {
-      content: "🛠️";
+
+    a.back-link {
+      display: inline-block;
+      margin-top: 3rem;
+      color: #4a90e2;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
-    h2:nth-of-type(5)::before {
-      content: "📊";
-    }
-    h2:nth-of-type(6)::before {
-      content: "💬";
-    }
-    h2:nth-of-type(7)::before {
-      content: "🎯";
+
+    a.back-link:hover {
+      text-decoration: underline;
+      color: #2c3e50;
     }
   </style>
-
-  <script defer>
-    function toggleTheme() {
-      const html = document.documentElement;
-      html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
-    }
-  </script>
 </head>
 <body>
+
 <nav class="navbar">
   <div class="nav-container">
     <div class="nav-brand">Tutor Brian</div>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+    <button class="menu-toggle" id="menu-toggle">
       <span class="material-icons">menu</span>
     </button>
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html"><span class="material-icons">home</span> Home</a></li>
       <li><a href="blog.html" class="active"><span class="material-icons">article</span> Blog</a></li>
     </ul>
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-      <span class="material-icons">brightness_4</span>
-    </button>
+    <button class="theme-toggle" onclick="toggleTheme()"><span class="material-icons">brightness_4</span></button>
   </div>
 </nav>
 
 <main class="post-container" data-aos="fade-up">
   <h1>How to Structure a Thesis Chapter by Chapter</h1>
 
-  <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="Thesis structure illustration" class="post-image"/>
+  <p class="author-date">
+    <span class="material-icons">person</span> Brian Ogot, the founder of Smart Essay Coach
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <span class="material-icons">event</span> July 5, 2025
+  </p>
 
-  <p>Struggling to structure your thesis effectively? You're not alone. In this guide, we break down how to organize each chapter, from your intro to your final conclusion, so you can write confidently and clearly.</p>
+  <img 
+    src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" 
+    alt="Student writing thesis" 
+    class="post-image"
+  />
 
-  <h2>1. Introduction</h2>
-  <p>This section sets the stage for your research. Explain your research question, the problem you’re addressing, and why it matters in the broader academic context.</p>
+  <p>Struggling to structure your thesis effectively? You’re not alone. A clear, well-organized thesis helps you communicate your research clearly and impress your academic committee. This comprehensive guide breaks down each chapter to help you write with confidence and clarity.</p>
 
-  <h2>2. Literature Review</h2>
-  <p>Summarize existing research related to your topic. Highlight gaps, trends, and theoretical foundations that justify your study. Be sure to cite sources consistently.</p>
+  <h2><span class="material-icons">looks_one</span> 1. Introduction</h2>
+  <p>The introduction sets the stage for your research. Here, you clearly state your research question or hypothesis, explain the problem your thesis addresses, and highlight why it matters to your field. A strong introduction hooks your reader and provides the context necessary for understanding the rest of your work.</p>
 
-  <h2>3. Methodology</h2>
-  <p>Describe your research design, including participants, tools, and procedures. Make it clear enough for others to replicate your study.</p>
+  <h2><span class="material-icons">looks_two</span> 2. Literature Review</h2>
+  <p>This chapter summarizes and critically evaluates existing research related to your topic. Identify key themes, trends, gaps, and theoretical frameworks. The literature review establishes the foundation for your study and justifies your research by showing what is already known and where your work fits.</p>
 
-  <h2>4. Results & Analysis</h2>
-  <p>Present your data using charts, tables, or thematic descriptions if qualitative. Avoid interpretation here; just report the findings objectively.</p>
+  <h2><span class="material-icons">looks_3</span> 3. Methodology</h2>
+  <p>Describe your research design, data collection methods, participants, and analytical tools. Be detailed enough for other researchers to replicate your study. Transparency here increases the credibility of your findings and allows readers to assess the reliability of your methods.</p>
 
-  <h2>5. Discussion</h2>
-  <p>Interpret the results, comparing them to previous studies. Discuss implications, limitations, and how your findings fit into the larger research landscape.</p>
+  <h2><span class="material-icons">looks_4</span> 4. Results & Analysis</h2>
+  <p>Present the data you gathered in an organized way using tables, charts, graphs, or qualitative themes. Focus on the facts—save your interpretation for the discussion chapter. Clear visuals and concise presentation make your results easier to understand.</p>
 
-  <h2>6. Conclusion</h2>
-  <p>Wrap up by revisiting your research objectives, summarizing key findings, and suggesting directions for future research.</p>
+  <h2><span class="material-icons">looks_5</span> 5. Discussion</h2>
+  <p>Interpret your findings here. Compare your results with previous studies and theoretical expectations. Discuss implications, limitations, and the significance of your work. This chapter shows your ability to think critically and place your research within the broader academic conversation.</p>
+
+  <h2><span class="material-icons">looks_6</span> 6. Conclusion</h2>
+  <p>Wrap up your thesis by summarizing your main findings, restating their importance, and suggesting directions for future research. A strong conclusion reinforces your contributions and leaves a lasting impression on your readers.</p>
 
   <a href="blog.html" class="back-link">← Back to Blog</a>
 </main>
 
-<footer style="text-align:center; padding: 1.5rem 1rem; font-size: 0.9rem; color: #666;">
+<footer>
   <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init({ duration: 900, once: true });
+  AOS.init({ duration: 1000, once: true });
 </script>
-
 <script>
   const toggle = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");
   toggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
   });
+  function toggleTheme() {
+    const html = document.documentElement;
+    html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+  }
 </script>
 
 </body>
