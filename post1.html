@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Structure a Thesis Chapter by Chapter | Smart Essay Coach</title>
+  <link rel="stylesheet" href="home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    .post-container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 1rem;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+    }
+    .post-container h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .post-container p {
+      margin-bottom: 1.5rem;
+      color: #444;
+    }
+    .post-container img {
+      max-width: 100%;
+      margin: 1rem 0;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #4f46e5;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-brand">Tutor Brian</div>
+    <button class="menu-toggle" id="menu-toggle">
+      <span class="material-icons">menu</span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="material-icons">home</span> Home</a></li>
+      <li><a href="blog.html" class="active"><span class="material-icons">article</span> Blog</a></li>
+    </ul>
+    <button class="theme-toggle" onclick="toggleTheme()"><span class="material-icons">brightness_4</span></button>
+  </div>
+</nav>
+
+<main class="post-container" data-aos="fade-up">
+  <h1>How to Structure a Thesis Chapter by Chapter</h1>
+  <p>Struggling to structure your thesis effectively? You're not alone. In this guide, we break down how to organize each chapter, from your intro to your final conclusion.</p>
+
+  <h2>1. Introduction</h2>
+  <p>This section sets the stage. Explain your research question, the problem you're addressing, and why it matters.</p>
+
+  <h2>2. Literature Review</h2>
+  <p>Summarize existing research. Show gaps, trends, and theoretical foundations. Make sure to cite consistently.</p>
+
+  <h2>3. Methodology</h2>
+  <p>Describe your research design, participants, tools, and procedures. Be clear and reproducible.</p>
+
+  <h2>4. Results & Analysis</h2>
+  <p>Present your data using charts, tables, or themes (if qualitative). Avoid interpretation here.</p>
+
+  <h2>5. Discussion</h2>
+  <p>Interpret the results. Compare with previous studies. What does it all mean?</p>
+
+  <h2>6. Conclusion</h2>
+  <p>Wrap it up. Revisit your objectives, summarize findings, and propose future research.</p>
+
+  <a href="blog.html" class="back-link">← Back to Blog</a>
+</main>
+
+<footer>
+  <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ duration: 1000, once: true });</script>
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+  function toggleTheme() {
+    const html = document.documentElement;
+    html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+  }
+</script>
+
+</body>
+</html>

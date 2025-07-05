@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APA vs MLA vs Chicago: A Quick Style Guide | Smart Essay Coach</title>
+  <link rel="stylesheet" href="home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    .post-container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 1rem;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+    }
+    .post-container h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .post-container p {
+      margin-bottom: 1.5rem;
+      color: #444;
+    }
+    .post-container img {
+      max-width: 100%;
+      margin: 1rem 0;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #4f46e5;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-brand">Tutor Brian</div>
+    <button class="menu-toggle" id="menu-toggle">
+      <span class="material-icons">menu</span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="material-icons">home</span> Home</a></li>
+      <li><a href="blog.html" class="active"><span class="material-icons">article</span> Blog</a></li>
+    </ul>
+    <button class="theme-toggle" onclick="toggleTheme()"><span class="material-icons">brightness_4</span></button>
+  </div>
+</nav>
+
+<main class="post-container" data-aos="fade-up">
+  <h1>APA vs MLA vs Chicago: A Quick Style Guide</h1>
+  <p>Choosing the right citation style can be confusing. Here’s a quick breakdown of APA, MLA, and Chicago to help you format your papers with confidence.</p>
+
+  <h2>APA Style (American Psychological Association)</h2>
+  <p>Common in social sciences, APA emphasizes author-date citations. It uses in-text citations like <em>(Smith, 2020)</em> and includes a “References” page at the end.</p>
+
+  <h2>MLA Style (Modern Language Association)</h2>
+  <p>Popular in the humanities, MLA uses author-page citations such as <em>(Smith 23)</em>. The “Works Cited” section concludes the paper.</p>
+
+  <h2>Chicago Style (Chicago Manual of Style)</h2>
+  <p>Used in history and some other disciplines, Chicago offers two systems: Notes-Bibliography (footnotes + bibliography) and Author-Date. Footnotes look like this: <sup>1</sup>.</p>
+
+  <h2>Quick Comparison Table</h2>
+  <p>
+    <strong>APA:</strong> (Author, Year) • <strong>MLA:</strong> (Author Page) • <strong>Chicago:</strong> Footnotes or (Author Year)
+  </p>
+
+  <a href="blog.html" class="back-link">← Back to Blog</a>
+</main>
+
+<footer>
+  <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ duration: 1000, once: true });</script>
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+  function toggleTheme() {
+    const html = document.documentElement;
+    html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+  }
+</script>
+</body>
+</html>
