@@ -2,80 +2,274 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blog | Smart Essay Coach</title>
+  <meta name="description" content="Explore expert writing strategies, research tips, and academic insights from Smart Essay Coach to boost your academic success." />
+  <meta name="keywords" content="academic writing tips, thesis structure, citation styles, AI detection, Smart Essay Coach, essay help, research tips" />
+  <meta name="author" content="Brian Ogot, Smart Essay Coach" />
 
-  <meta name="description" content="Insights and writing tips from Smart Essay Coach – academic tutoring that works.">
   <link rel="stylesheet" href="home.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
-    .blog-header {
-      text-align: center;
-      padding: 4rem 1rem 2rem;
-    }
-
-    .blog-header h1 {
+    /* Reset for grid and typography */
+    body {
+      background: #f9fafb;
       font-family: 'Inter', sans-serif;
-      font-size: 2.4rem;
-      margin-bottom: 1rem;
+      color: #2c3e50;
+      margin: 0;
+      padding: 0;
     }
 
-    .blog-grid {
-      max-width: 1100px;
+    nav.navbar {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1200px;
       margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+    .nav-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1.2px;
+      cursor: default;
+      color: #ecf0f1;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links li a {
+      color: #ecf0f1;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.5rem 0.7rem;
+      border-radius: 5px;
+      transition: background-color 0.25s ease;
+    }
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      background-color: #4f46e5;
+      box-shadow: 0 2px 12px rgba(79, 70, 229, 0.5);
+    }
+    .nav-links li a .material-icons {
+      font-size: 18px;
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #ecf0f1;
+      font-size: 22px;
+      margin-left: 0.75rem;
+      transition: color 0.3s ease;
+    }
+    .theme-toggle:hover {
+      color: #8a99ff;
+    }
+    .menu-toggle {
+      display: none; /* Hide on desktop */
+      background: transparent;
+      border: none;
+      color: #ecf0f1;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* Responsive nav for mobile */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        background: #2c3e50;
+        height: calc(100vh - 60px);
+        width: 220px;
+        flex-direction: column;
+        padding-top: 1rem;
+        gap: 0;
+        transition: right 0.3s ease;
+        border-radius: 0 0 0 8px;
+        box-shadow: -4px 0 15px rgba(0,0,0,0.3);
+      }
+      .nav-links.active {
+        right: 0;
+      }
+      .nav-links li a {
+        padding: 1rem 1.25rem;
+        font-size: 1.1rem;
+        border-radius: 0;
+        border-bottom: 1px solid #39495e;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    header.blog-header {
+      max-width: 900px;
+      margin: 4rem auto 3rem;
+      text-align: center;
+      padding: 0 1rem;
+      color: #2c3e50;
+    }
+    header.blog-header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1.5px;
+      color: #4f46e5;
+      text-shadow: 0 1px 6px rgba(79, 70, 229, 0.5);
+    }
+    header.blog-header p {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #5b5b7d;
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.5;
+    }
+
+    main.blog-grid {
+      max-width: 1100px;
+      margin: 0 auto 4rem;
       display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      padding: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      padding: 0 1rem;
     }
 
     .blog-card {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
       overflow: hidden;
-      transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
-
     .blog-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(79, 70, 229, 0.4);
+      z-index: 10;
     }
 
     .blog-card img {
       width: 100%;
-      height: 160px;
+      height: 220px;
       object-fit: cover;
+      border-bottom: 4px solid #4f46e5;
+      transition: transform 0.4s ease;
+    }
+    .blog-card:hover img {
+      transform: scale(1.05);
     }
 
     .blog-content {
-      padding: 1rem 1.25rem 1.5rem;
+      padding: 1.5rem 1.75rem 2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
-
     .blog-content h2 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .blog-content p {
-      font-size: 1rem;
-      color: #555;
-      line-height: 1.6;
-    }
-
-    .read-more {
-      display: inline-block;
-      margin-top: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
       color: #4f46e5;
+    }
+    .blog-content p {
+      font-size: 1.1rem;
+      color: #555;
+      flex-grow: 1;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .read-more {
+      align-self: flex-start;
+      padding: 0.5rem 1rem;
+      background-color: #4f46e5;
+      color: white;
       font-weight: 600;
+      border-radius: 30px;
       text-decoration: none;
+      box-shadow: 0 4px 10px rgba(79, 70, 229, 0.35);
+      transition: background-color 0.3s ease;
+    }
+    .read-more:hover {
+      background-color: #3c37b8;
+      box-shadow: 0 6px 15px rgba(60, 55, 184, 0.5);
     }
 
-    .read-more:hover {
+    footer {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      border-top: 1px solid #4f46e5;
+    }
+    footer a {
+      color: #8a99ff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: #c1caff;
       text-decoration: underline;
+    }
+
+    .book-mobile {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      main.blog-grid {
+        grid-template-columns: 1fr;
+      }
+      .book-mobile {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #4f46e5;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 30px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 6px 15px rgba(79, 70, 229, 0.6);
+        z-index: 1000;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+      .book-mobile:hover {
+        background-color: #3c37b8;
+      }
     }
   </style>
 
@@ -87,10 +281,11 @@
   </script>
 </head>
 <body>
+
 <nav class="navbar">
   <div class="nav-container">
     <div class="nav-brand">Tutor Brian</div>
-    <button class="menu-toggle" id="menu-toggle">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
       <span class="material-icons">menu</span>
     </button>
     <ul class="nav-links" id="nav-links">
@@ -101,62 +296,70 @@
       <li><a href="faq.html"><span class="material-icons">help</span> FAQ</a></li>
       <li><a href="blog.html" class="active"><span class="material-icons">article</span> Blog</a></li>
     </ul>
-    <button class="theme-toggle" onclick="toggleTheme()"><span class="material-icons">brightness_4</span></button>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <span class="material-icons">brightness_4</span>
+    </button>
   </div>
 </nav>
 
 <header class="blog-header" data-aos="fade-up">
   <h1>Smart Academic Insights</h1>
-  <p>Read helpful writing strategies, research tips, and tools from Brian & the team.</p>
+  <p>Discover expert writing strategies, research tips, and tools from Brian &amp; the Smart Essay Coach team to excel academically.</p>
 </header>
 
-<main class="blog-grid" data-aos="fade-up">
-  <div class="blog-card">
-    <img src="https://source.unsplash.com/featured/?books,library" alt="Thesis Structure" />
+<main class="blog-grid" data-aos="fade-up" aria-label="Blog post listings">
+  <article class="blog-card" tabindex="0" role="article" aria-labelledby="post1-title" aria-describedby="post1-desc">
+    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" alt="Stack of books and open notebook" loading="lazy" />
     <div class="blog-content">
-      <h2>How to Structure a Thesis Chapter by Chapter</h2>
-      <p>Confused about where to begin your literature review or how to link chapters together? Here’s a clear roadmap.</p>
-      <a href="post1.html" class="read-more">Read More →</a>
+      <h2 id="post1-title">How to Structure a Thesis Chapter by Chapter</h2>
+      <p id="post1-desc">Confused about where to begin your literature review or how to link chapters together? Here’s a clear roadmap to writing your thesis.</p>
+      <a href="post1.html" class="read-more" aria-label="Read more about How to Structure a Thesis Chapter by Chapter">Read More →</a>
     </div>
-  </div>
+  </article>
 
-  <div class="blog-card">
-    <img src="https://source.unsplash.com/featured/?writing,laptop" alt="Citation Styles" />
+  <article class="blog-card" tabindex="0" role="article" aria-labelledby="post2-title" aria-describedby="post2-desc">
+    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80" alt="Laptop and citation notes" loading="lazy" />
     <div class="blog-content">
-      <h2>APA vs MLA vs Chicago: A Quick Style Guide</h2>
-      <p>Struggling to remember when to italicize or use quotation marks? This cheat sheet simplifies citation rules.</p>
-      <a href="post2.html" class="read-more">Read More →</a>
+      <h2 id="post2-title">APA vs MLA vs Chicago: A Quick Style Guide</h2>
+      <p id="post2-desc">Struggling to remember when to italicize or use quotation marks? This cheat sheet simplifies citation rules for you.</p>
+      <a href="post2.html" class="read-more" aria-label="Read more about APA vs MLA vs Chicago: A Quick Style Guide">Read More →</a>
     </div>
-  </div>
+  </article>
 
-  <div class="blog-card">
-    <img src="https://source.unsplash.com/featured/?ai,robot" alt="AI Detection" />
+  <article class="blog-card" tabindex="0" role="article" aria-labelledby="post3-title" aria-describedby="post3-desc">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Person working with AI interface on laptop" loading="lazy" />
     <div class="blog-content">
-      <h2>AI Detection in 2025: How to Stay Original</h2>
-      <p>With AI detection tools evolving, learn safe practices for writing essays that won't be flagged.</p>
-      <a href="post3.html" class="read-more">Read More →</a>
+      <h2 id="post3-title">AI Detection in 2025: How to Stay Original</h2>
+      <p id="post3-desc">With AI detection tools evolving, learn safe practices for writing essays that won't be flagged or mistaken for AI content.</p>
+      <a href="post3.html" class="read-more" aria-label="Read more about AI Detection in 2025: How to Stay Original">Read More →</a>
     </div>
-  </div>
+  </article>
 </main>
 
 <footer>
   <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
-  <p>Contact: <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a> | <a href="https://wa.me/717357947" target="_blank" rel="noopener">WhatsApp</a> | <a href="https://t.me/smartessaycoach" target="_blank" rel="noopener">Telegram</a></p>
+  <p>
+    Contact: 
+    <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a> | 
+    <a href="https://wa.me/717357947" target="_blank" rel="noopener">WhatsApp</a> | 
+    <a href="https://t.me/smartessaycoach" target="_blank" rel="noopener">Telegram</a>
+  </p>
 </footer>
 
-<a href="https://calendly.com/tutorjohntaylor/30min" class="book-mobile">Book Now</a>
+<a href="https://calendly.com/tutorjohntaylor/30min" class="book-mobile" aria-label="Book a 30 minute session">Book Now</a>
 
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
 <script>
-  AOS.init({ duration: 1000, once: true });
-</script>
-
-<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    AOS.init({ duration: 1000, once: true });
+  });
+  
   const toggle = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");
   toggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
   });
 </script>
+
 </body>
 </html>
