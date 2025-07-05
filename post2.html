@@ -2,40 +2,112 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>APA vs MLA vs Chicago: A Quick Style Guide | Smart Essay Coach</title>
+  <meta name="description" content="Confused about citation styles? Learn the key differences between APA, MLA, and Chicago styles with examples and a quick comparison table to format your academic papers perfectly." />
+  <meta name="keywords" content="APA style, MLA style, Chicago style, citation guide, academic writing, formatting styles, referencing, Smart Essay Coach" />
+  <meta name="author" content="Brian Ogot, Smart Essay Coach" />
+
   <link rel="stylesheet" href="home.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  
   <style>
+    /* Scoped styles for post2.html */
     .post-container {
       max-width: 800px;
-      margin: auto;
-      padding: 2rem 1rem;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
       font-family: 'Inter', sans-serif;
       line-height: 1.7;
+      color: #222;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
+
     .post-container h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      margin-bottom: 0.25rem;
+      color: #2c3e50;
     }
-    .post-container p {
+
+    .author-date {
+      font-style: italic;
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .author-date .material-icons {
+      font-size: 1.2rem;
+      color: #4a90e2;
+    }
+
+    .post-image {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    }
+
+    h2 {
+      color: #4a90e2;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h2 .material-icons {
+      color: #4a90e2;
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
       margin-bottom: 1.5rem;
       color: #444;
     }
-    .post-container img {
-      max-width: 100%;
-      margin: 1rem 0;
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 1.05rem;
     }
-    .back-link {
+    .comparison-table th, .comparison-table td {
+      border: 1px solid #ddd;
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    .comparison-table th {
+      background-color: #4a90e2;
+      color: #fff;
+      font-weight: 600;
+    }
+    .comparison-table tbody tr:nth-child(even) {
+      background-color: #f5f9ff;
+    }
+
+    a.back-link {
       display: inline-block;
-      margin-top: 2rem;
-      color: #4f46e5;
+      margin-top: 3rem;
+      color: #4a90e2;
+      font-weight: 600;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
-    .back-link:hover {
+
+    a.back-link:hover {
       text-decoration: underline;
+      color: #2c3e50;
     }
   </style>
 </head>
@@ -57,21 +129,61 @@
 
 <main class="post-container" data-aos="fade-up">
   <h1>APA vs MLA vs Chicago: A Quick Style Guide</h1>
-  <p>Choosing the right citation style can be confusing. Here’s a quick breakdown of APA, MLA, and Chicago to help you format your papers with confidence.</p>
 
-  <h2>APA Style (American Psychological Association)</h2>
-  <p>Common in social sciences, APA emphasizes author-date citations. It uses in-text citations like <em>(Smith, 2020)</em> and includes a “References” page at the end.</p>
-
-  <h2>MLA Style (Modern Language Association)</h2>
-  <p>Popular in the humanities, MLA uses author-page citations such as <em>(Smith 23)</em>. The “Works Cited” section concludes the paper.</p>
-
-  <h2>Chicago Style (Chicago Manual of Style)</h2>
-  <p>Used in history and some other disciplines, Chicago offers two systems: Notes-Bibliography (footnotes + bibliography) and Author-Date. Footnotes look like this: <sup>1</sup>.</p>
-
-  <h2>Quick Comparison Table</h2>
-  <p>
-    <strong>APA:</strong> (Author, Year) • <strong>MLA:</strong> (Author Page) • <strong>Chicago:</strong> Footnotes or (Author Year)
+  <p class="author-date">
+    <span class="material-icons">person</span> Brian Ogot, the founder of Smart Essay Coach
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <span class="material-icons">event</span> July 5, 2025
   </p>
+
+  <img 
+    src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" 
+    alt="Citation style guide with books and laptop" 
+    class="post-image"
+  />
+
+  <p>Choosing the right citation style is essential for academic writing success. Whether you're writing essays, research papers, or dissertations, understanding the differences between APA, MLA, and Chicago styles will save you time and improve the professionalism of your work. Here's a quick but thorough guide to help you format your papers confidently.</p>
+
+  <h2><span class="material-icons">style</span> APA Style (American Psychological Association)</h2>
+  <p>APA style is widely used in the social sciences. It emphasizes author-date citations within the text, for example, <em>(Smith, 2020)</em>. The reference list at the end is titled “References” and includes full publication details. APA focuses on clarity, precision, and the date of publication to highlight recent research.</p>
+
+  <h2><span class="material-icons">style</span> MLA Style (Modern Language Association)</h2>
+  <p>MLA style is common in humanities disciplines like literature and cultural studies. It uses author-page format for in-text citations, such as <em>(Smith 23)</em>. The final list is called “Works Cited.” MLA focuses on ease of reading and straightforward attribution of sources.</p>
+
+  <h2><span class="material-icons">style</span> Chicago Style (Chicago Manual of Style)</h2>
+  <p>Chicago style is versatile and used in history and many other fields. It offers two systems: Notes-Bibliography (which uses footnotes or endnotes alongside a bibliography) and Author-Date (similar to APA). Footnotes look like this: <sup>1</sup>. Chicago provides detailed formatting rules and flexibility depending on your discipline.</p>
+
+  <h2><span class="material-icons">table_chart</span> Quick Comparison Table</h2>
+  <table class="comparison-table" aria-label="Citation style comparison">
+    <thead>
+      <tr>
+        <th>Style</th>
+        <th>In-Text Citation</th>
+        <th>Reference List Title</th>
+        <th>Common Use</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>APA</td>
+        <td>(Author, Year)</td>
+        <td>References</td>
+        <td>Social Sciences</td>
+      </tr>
+      <tr>
+        <td>MLA</td>
+        <td>(Author Page)</td>
+        <td>Works Cited</td>
+        <td>Humanities</td>
+      </tr>
+      <tr>
+        <td>Chicago</td>
+        <td>Footnotes or (Author Year)</td>
+        <td>Bibliography</td>
+        <td>History, Various</td>
+      </tr>
+    </tbody>
+  </table>
 
   <a href="blog.html" class="back-link">← Back to Blog</a>
 </main>
@@ -81,7 +193,9 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init({ duration: 1000, once: true });</script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
 <script>
   const toggle = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");
@@ -93,5 +207,6 @@
     html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
   }
 </script>
+
 </body>
 </html>
