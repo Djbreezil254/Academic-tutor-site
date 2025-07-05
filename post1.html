@@ -1,41 +1,70 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>How to Structure a Thesis Chapter by Chapter | Smart Essay Coach</title>
-  <link rel="stylesheet" href="home.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
   <style>
     .post-container {
       max-width: 800px;
       margin: auto;
       padding: 2rem 1rem;
       font-family: 'Inter', sans-serif;
-      line-height: 1.7;
+      line-height: 1.75;
+      color: #333;
     }
     .post-container h1 {
-      font-size: 2rem;
+      font-size: 2.4rem;
       margin-bottom: 1rem;
+      text-align: center;
+      color: #1f2937;
+    }
+    .post-container h2 {
+      font-size: 1.8rem;
+      margin-top: 2rem;
+      color: #4f46e5;
+      display: flex;
+      align-items: center;
+    }
+    .post-container h2 .material-icons {
+      margin-right: 0.5rem;
+      color: #6366f1;
     }
     .post-container p {
       margin-bottom: 1.5rem;
-      color: #444;
+      font-size: 1rem;
     }
-    .post-container img {
-      max-width: 100%;
-      margin: 1rem 0;
+    .post-image {
+      width: 100%;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     .back-link {
       display: inline-block;
-      margin-top: 2rem;
-      color: #4f46e5;
+      margin-top: 2.5rem;
+      padding: 0.5rem 1rem;
+      background: #4f46e5;
+      color: white;
+      border-radius: 6px;
       text-decoration: none;
+      transition: background 0.3s ease;
     }
     .back-link:hover {
-      text-decoration: underline;
+      background: #4338ca;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      .post-container h1 { font-size: 2rem; }
+      .post-container h2 { font-size: 1.5rem; }
     }
   </style>
 </head>
@@ -57,25 +86,28 @@
 
 <main class="post-container" data-aos="fade-up">
   <h1>How to Structure a Thesis Chapter by Chapter</h1>
-  <p>Struggling to structure your thesis effectively? You're not alone. In this guide, we break down how to organize each chapter, from your intro to your final conclusion.</p>
 
-  <h2>1. Introduction</h2>
-  <p>This section sets the stage. Explain your research question, the problem you're addressing, and why it matters.</p>
+  <img src="https://source.unsplash.com/featured/?thesis,structure" alt="Thesis structure illustration" class="post-image"/>
 
-  <h2>2. Literature Review</h2>
-  <p>Summarize existing research. Show gaps, trends, and theoretical foundations. Make sure to cite consistently.</p>
+  <p>Struggling to structure your thesis effectively? You're not alone. In this comprehensive guide, we map out how to organize each chapter—Introduction through Conclusion—making the process clear, coherent, and compelling.</p>
 
-  <h2>3. Methodology</h2>
-  <p>Describe your research design, participants, tools, and procedures. Be clear and reproducible.</p>
+  <h2><span class="material-icons">auto_stories</span> Chapter 1: Introduction</h2>
+  <p>This chapter sets the foundation. Articulate your research questions, state the problem, its significance, and outline the overall structure of your thesis.</p>
 
-  <h2>4. Results & Analysis</h2>
-  <p>Present your data using charts, tables, or themes (if qualitative). Avoid interpretation here.</p>
+  <h2><span class="material-icons">menu_book</span> Chapter 2: Literature Review</h2>
+  <p>Here, you synthesize existing research, identify theoretical gaps, and build a framework that justifies your own study.</p>
 
-  <h2>5. Discussion</h2>
-  <p>Interpret the results. Compare with previous studies. What does it all mean?</p>
+  <h2><span class="material-icons">build_circle</span> Chapter 3: Methodology</h2>
+  <p>Detail your research design, participants, tools, procedures, and ethical considerations—making your study replicable.</p>
 
-  <h2>6. Conclusion</h2>
-  <p>Wrap it up. Revisit your objectives, summarize findings, and propose future research.</p>
+  <h2><span class="material-icons">bar_chart</span> Chapter 4: Results & Analysis</h2>
+  <p>Present your research findings clearly—via tables, charts, or themes. Save detailed interpretation for the next chapter.</p>
+
+  <h2><span class="material-icons">insights</span> Chapter 5: Discussion</h2>
+  <p>Interpret your findings, compare them with existing studies, and discuss implications, limitations, and future research pathways.</p>
+
+  <h2><span class="material-icons">check_circle</span> Chapter 6: Conclusion</h2>
+  <p>Summarize your core findings, revisiting research objectives, contributions, and suggesting avenues for continued work.</p>
 
   <a href="blog.html" class="back-link">← Back to Blog</a>
 </main>
@@ -85,8 +117,8 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init({ duration: 1000, once: true });</script>
 <script>
+  AOS.init({ duration: 1000, once: true });
   const toggle = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");
   toggle.addEventListener("click", () => {
