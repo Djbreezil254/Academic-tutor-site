@@ -10,24 +10,50 @@
 
   <link rel="stylesheet" href="home.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
-    /* Reset for grid and typography */
-    body {
-      background: #f9fafb;
-      font-family: 'Inter', sans-serif;
-      color: #2c3e50;
-      margin: 0;
-      padding: 0;
+    /* CSS Variables for easier theme management */
+    :root {
+      --primary-color: #4f46e5; /* Your existing purple/blue */
+      --secondary-color: #3f51b5; /* A deeper blue for accent */
+      --text-dark: #2c3e50;
+      --text-light: #ecf0f1;
+      --bg-light: #f9fafb;
+      --card-bg-light: #ffffff;
+      --shadow-color: rgba(0,0,0,0.07);
+      --hover-shadow-color: rgba(79, 70, 229, 0.4);
+      --border-color: #e0e0e0; /* Light border for subtle separation */
     }
 
+    /* Dark theme variables */
+    [data-theme="dark"] {
+      --text-dark: #ecf0f1;
+      --text-light: #2c3e50;
+      --bg-light: #2c3e50;
+      --card-bg-light: #34495e;
+      --shadow-color: rgba(0,0,0,0.2);
+      --hover-shadow-color: rgba(79, 70, 229, 0.6);
+      --border-color: #4f5f70;
+    }
+
+    /* General Body and Typography Refinement */
+    body {
+      background: var(--bg-light);
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Navigation Bar - Minor adjustments for consistency */
     nav.navbar {
-      background-color: #2c3e50;
-      color: #ecf0f1;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      background-color: var(--text-dark); /* Using text-dark for consistency */
+      color: var(--text-light);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Slightly softer shadow */
       position: sticky;
       top: 0;
       z-index: 1200;
@@ -38,95 +64,84 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.75rem 1rem;
+      padding: 0.85rem 1.2rem; /* Slightly more padding */
     }
     .nav-brand {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1.8rem;
-      letter-spacing: 1.2px;
-      cursor: default;
-      color: #ecf0f1;
+      font-weight: 800; /* Bolder brand font */
+      font-size: 1.9rem; /* Slightly larger */
+      letter-spacing: 1.5px; /* Increased spacing */
+      color: var(--text-light);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
     }
     .nav-links {
       display: flex;
-      gap: 1rem;
+      gap: 1.2rem; /* Increased gap between links */
       list-style: none;
       margin: 0;
       padding: 0;
     }
     .nav-links li a {
-      color: #ecf0f1;
+      color: var(--text-light);
       font-weight: 600;
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 0.3rem;
-      padding: 0.5rem 0.7rem;
-      border-radius: 5px;
-      transition: background-color 0.25s ease;
+      gap: 0.4rem; /* Slightly larger icon gap */
+      padding: 0.6rem 1rem; /* More prominent buttons */
+      border-radius: 8px; /* Softer border-radius */
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
     }
     .nav-links li a:hover,
     .nav-links li a.active {
-      background-color: #4f46e5;
-      box-shadow: 0 2px 12px rgba(79, 70, 229, 0.5);
+      background-color: var(--primary-color);
+      box-shadow: 0 4px 15px var(--hover-shadow-color); /* More pronounced hover shadow */
+      color: white; /* Ensure text remains white on hover */
     }
     .nav-links li a .material-icons {
-      font-size: 18px;
+      font-size: 20px; /* Slightly larger icons */
     }
 
     .theme-toggle {
       background: transparent;
       border: none;
       cursor: pointer;
-      color: #ecf0f1;
-      font-size: 22px;
-      margin-left: 0.75rem;
-      transition: color 0.3s ease;
+      color: var(--text-light);
+      font-size: 24px; /* Larger toggle icon */
+      margin-left: 1rem;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
     .theme-toggle:hover {
-      color: #8a99ff;
+      color: var(--primary-color); /* Matches active link color */
+      transform: rotate(15deg); /* Subtle rotate effect */
     }
     .menu-toggle {
-      display: none; /* Hide on desktop */
+      display: none;
       background: transparent;
       border: none;
-      color: #ecf0f1;
-      font-size: 28px;
+      color: var(--text-light);
+      font-size: 32px; /* Larger menu icon */
       cursor: pointer;
-      z-index: 1400; /* Above overlay */
-      transition: opacity 0.3s ease;
+      z-index: 1400;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .menu-toggle:hover {
+      transform: scale(1.1);
     }
     .menu-toggle.hidden {
       opacity: 0;
       pointer-events: none;
     }
 
-    /* Responsive nav for mobile */
+    /* Responsive nav for mobile - Minor adjustments */
     @media (max-width: 768px) {
       .nav-links {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100vw;
-        height: 100vh;
-        background: #2c3e50;
-        flex-direction: column;
-        padding-top: 3rem;
-        gap: 1rem;
-        transition: transform 0.3s ease;
-        transform: translateX(100%);
-        z-index: 1300;
-        border-radius: 0;
-        box-shadow: none;
-      }
-      .nav-links.active {
-        transform: translateX(0);
+        padding-top: 4rem; /* More space from top */
+        gap: 1.5rem; /* Larger gap for mobile links */
       }
       .nav-links li a {
-        font-size: 1.3rem;
-        padding: 1rem 2rem;
-        border-bottom: none;
+        font-size: 1.5rem; /* Larger text for mobile */
+        padding: 1.2rem 2.5rem;
       }
       .menu-toggle {
         display: block;
@@ -140,7 +155,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.5); /* Slightly darker overlay */
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
@@ -151,70 +166,76 @@
       pointer-events: auto;
     }
 
+    /* Blog Header - Enhanced styling */
     header.blog-header {
       max-width: 900px;
-      margin: 4rem auto 3rem;
+      margin: 5rem auto 4rem; /* More vertical space */
       text-align: center;
-      padding: 0 1rem;
-      color: #2c3e50;
+      padding: 0 1.5rem;
+      color: var(--text-dark);
     }
     header.blog-header h1 {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      letter-spacing: 1.5px;
-      color: #4f46e5;
-      text-shadow: 0 1px 6px rgba(79, 70, 229, 0.5);
+      font-weight: 800; /* Bolder heading */
+      font-size: 3.5rem; /* Larger and more impactful */
+      margin-bottom: 1rem;
+      letter-spacing: 2px; /* Increased spacing */
+      color: var(--primary-color);
+      text-shadow: 0 2px 8px var(--hover-shadow-color); /* More prominent shadow */
     }
     header.blog-header p {
-      font-size: 1.25rem;
-      font-weight: 500;
-      color: #5b5b7d;
-      max-width: 600px;
+      font-size: 1.35rem; /* Larger body text */
+      font-weight: 400; /* Lighter weight for readability */
+      color: #6a7c8e; /* A slightly softer dark grey */
+      max-width: 700px;
       margin: auto;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
+    /* Main Blog Grid - Refined layout */
     main.blog-grid {
       max-width: 1100px;
-      margin: 0 auto 4rem;
+      margin: 0 auto 5rem; /* More bottom margin */
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
-      padding: 0 1rem;
-      padding-top: 1rem; /* So content isn't hidden under sticky nav */
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly smaller min-width for more flexibility */
+      gap: 3rem; /* Increased gap for better separation */
+      padding: 0 1.5rem;
+      padding-top: 1rem;
     }
 
+    /* Blog Card - Significant visual enhancements */
     .blog-card {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+      background: var(--card-bg-light);
+      border-radius: 20px; /* More rounded corners */
+      box-shadow: 0 10px 25px var(--shadow-color); /* Softer, larger initial shadow */
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smoother transitions */
       cursor: pointer;
+      border: 1px solid var(--border-color); /* Subtle border for definition */
     }
     .blog-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(79, 70, 229, 0.4);
+      transform: translateY(-15px) rotate(1deg); /* More pronounced lift and subtle rotate */
+      box-shadow: 0 20px 45px var(--hover-shadow-color); /* Larger, more colorful shadow on hover */
       z-index: 10;
     }
 
     .blog-card img {
       width: 100%;
-      height: 220px;
+      height: 250px; /* Slightly taller images */
       object-fit: cover;
-      border-bottom: 4px solid #4f46e5;
-      transition: transform 0.4s ease;
+      border-bottom: 6px solid var(--primary-color); /* Thicker, more prominent border */
+      transition: transform 0.5s ease; /* Smoother image zoom */
+      filter: brightness(0.95); /* Slightly desaturate image for softer look */
     }
     .blog-card:hover img {
-      transform: scale(1.05);
+      transform: scale(1.08); /* More significant zoom on hover */
+      filter: brightness(1); /* Restore full brightness on hover */
     }
 
     .blog-content {
-      padding: 1.5rem 1.75rem 2rem;
+      padding: 2rem; /* Increased padding */
       flex-grow: 1;
       display: flex;
       flex-direction: column;
@@ -222,50 +243,54 @@
     .blog-content h2 {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-      color: #4f46e5;
+      font-size: 1.8rem; /* Larger heading in card */
+      margin-bottom: 0.8rem;
+      color: var(--secondary-color); /* Using secondary color for heading */
+      line-height: 1.3;
     }
     .blog-content p {
-      font-size: 1.1rem;
-      color: #555;
+      font-size: 1.15rem; /* Slightly larger body text */
+      color: #666; /* Softer grey for body text */
       flex-grow: 1;
-      line-height: 1.6;
-      margin-bottom: 1.25rem;
+      line-height: 1.7; /* Increased line height for readability */
+      margin-bottom: 1.5rem;
     }
     .read-more {
       align-self: flex-start;
-      padding: 0.5rem 1rem;
-      background-color: #4f46e5;
+      padding: 0.7rem 1.5rem; /* Larger button */
+      background-color: var(--primary-color);
       color: white;
       font-weight: 600;
-      border-radius: 30px;
+      border-radius: 35px; /* More rounded pill shape */
       text-decoration: none;
-      box-shadow: 0 4px 10px rgba(79, 70, 229, 0.35);
-      transition: background-color 0.3s ease;
+      box-shadow: 0 5px 12px rgba(79, 70, 229, 0.45); /* More prominent shadow */
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+      letter-spacing: 0.5px;
     }
     .read-more:hover {
-      background-color: #3c37b8;
-      box-shadow: 0 6px 15px rgba(60, 55, 184, 0.5);
+      background-color: var(--secondary-color); /* Change color on hover */
+      box-shadow: 0 8px 20px rgba(63, 81, 181, 0.6); /* New shadow for secondary color */
+      transform: translateY(-2px); /* Subtle lift on hover */
     }
 
+    /* Footer - Enhanced styling */
     footer {
-      background-color: #2c3e50;
-      color: #ecf0f1;
-      padding: 2rem 1rem;
+      background-color: var(--text-dark);
+      color: var(--text-light);
+      padding: 3rem 1.5rem; /* More padding */
       text-align: center;
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
-      border-top: 1px solid #4f46e5;
+      font-size: 1rem; /* Slightly larger text */
+      letter-spacing: 0.08em; /* Increased letter spacing */
+      border-top: 3px solid var(--primary-color); /* Thicker, more prominent top border */
     }
     footer a {
-      color: #8a99ff;
+      color: var(--primary-color); /* Primary color for links */
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, text-decoration 0.3s ease;
     }
     footer a:hover {
-      color: #c1caff;
+      color: var(--text-light); /* Lighter color on hover */
       text-decoration: underline;
     }
 
@@ -276,26 +301,45 @@
     @media (max-width: 768px) {
       main.blog-grid {
         grid-template-columns: 1fr;
+        gap: 2rem; /* Slightly smaller gap on mobile */
+      }
+      .blog-card {
+        border-radius: 15px; /* Slightly less rounded on mobile */
+      }
+      .blog-card img {
+        height: 200px; /* Slightly shorter images on mobile */
+        border-bottom-width: 4px; /* Thinner border on mobile */
+      }
+      .blog-content {
+        padding: 1.5rem; /* Less padding on mobile */
+      }
+      .blog-content h2 {
+        font-size: 1.6rem; /* Adjust heading size */
+      }
+      .blog-content p {
+        font-size: 1rem; /* Adjust body text size */
+      }
+      header.blog-header h1 {
+        font-size: 2.5rem; /* Smaller header on mobile */
+      }
+      header.blog-header p {
+        font-size: 1.1rem; /* Smaller sub-text on mobile */
       }
       .book-mobile {
         display: block;
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #4f46e5;
-        color: white;
-        padding: 12px 20px;
-        border-radius: 30px;
-        font-weight: 700;
-        text-decoration: none;
-        box-shadow: 0 6px 15px rgba(79, 70, 229, 0.6);
-        z-index: 1000;
-        font-size: 1rem;
-        transition: background-color 0.3s ease;
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 18px;
+        font-size: 0.9rem;
       }
-      .book-mobile:hover {
-        background-color: #3c37b8;
-      }
+    }
+
+    /* Dark Mode specific adjustments if needed, though variables handle most */
+    [data-theme="dark"] .blog-content p {
+        color: #b0c4de; /* Lighter grey for body text in dark mode */
+    }
+    [data-theme="dark"] header.blog-header p {
+        color: #b0c4de; /* Lighter grey for sub-text in dark mode */
     }
   </style>
 
@@ -303,7 +347,78 @@
     function toggleTheme() {
       const html = document.documentElement;
       html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+      // Store user's theme preference
+      localStorage.setItem('theme', html.dataset.theme);
     }
+
+    // Apply saved theme preference on load
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+
+      AOS.init({ duration: 1000, once: true, mirror: false }); // Added mirror: false for better control
+    });
+
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const overlay = document.getElementById("nav-overlay");
+
+    function openMenu() {
+      navLinks.classList.add("active");
+      overlay.classList.add("active");
+      toggle.setAttribute("aria-expanded", "true");
+      // Optional: Disable body scroll when menu is open
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      navLinks.classList.remove("active");
+      overlay.classList.remove("active");
+      toggle.setAttribute("aria-expanded", "false");
+      // Optional: Re-enable body scroll
+      document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener("click", () => {
+      if (navLinks.classList.contains("active")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    overlay.addEventListener("click", () => {
+      closeMenu();
+    });
+
+    // Close menu on nav link click (mobile)
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        // Delay closing slightly to allow navigation to start
+        setTimeout(closeMenu, 150);
+      });
+    });
+
+    // Close menu when resizing from mobile to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+
+    // Handle keyboard navigation for blog cards
+    document.querySelectorAll('.blog-card').forEach(card => {
+        card.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                const link = card.querySelector('.read-more');
+                if (link) {
+                    link.click(); // Programmatically click the read more link
+                }
+            }
+        });
+    });
   </script>
 </head>
 <body>
@@ -328,7 +443,6 @@
   </div>
 </nav>
 
-<!-- Overlay for mobile menu -->
 <div class="nav-overlay" id="nav-overlay"></div>
 
 <header class="blog-header" data-aos="fade-up">
@@ -368,9 +482,9 @@
 <footer>
   <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
   <p>
-    Contact: 
-    <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a> | 
-    <a href="https://wa.me/717357947" target="_blank" rel="noopener">WhatsApp</a> | 
+    Contact:
+    <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a> |
+    <a href="https://wa.me/717357947" target="_blank" rel="noopener">WhatsApp</a> |
     <a href="https://t.me/smartessaycoach" target="_blank" rel="noopener">Telegram</a>
   </p>
 </footer>
@@ -378,46 +492,5 @@
 <a href="https://calendly.com/tutorjohntaylor/30min" class="book-mobile" aria-label="Book a 30 minute session">Book Now</a>
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    AOS.init({ duration: 1000, once: true });
-  });
-
-  const toggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
-  const overlay = document.getElementById("nav-overlay");
-
-  function openMenu() {
-    navLinks.classList.add("active");
-    overlay.classList.add("active");
-    toggle.setAttribute("aria-expanded", "true");
-  }
-
-  function closeMenu() {
-    navLinks.classList.remove("active");
-    overlay.classList.remove("active");
-    toggle.setAttribute("aria-expanded", "false");
-  }
-
-  toggle.addEventListener("click", () => {
-    if (navLinks.classList.contains("active")) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
-  });
-
-  overlay.addEventListener("click", () => {
-    closeMenu();
-  });
-
-  // Close menu on nav link click (mobile)
-  navLinks.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      closeMenu();
-    });
-  });
-</script>
-
 </body>
 </html>
