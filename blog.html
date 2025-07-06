@@ -47,6 +47,8 @@
       margin: 0;
       padding: 0;
       transition: background-color 0.3s ease, color 0.3s ease;
+      /* Ensure body overflow is not hidden by default for general scrolling */
+      overflow-x: hidden; /* Prevent horizontal scrollbar if any */
     }
 
     /* Navigation Bar - Minor adjustments for consistency */
@@ -136,8 +138,24 @@
     /* Responsive nav for mobile - Minor adjustments */
     @media (max-width: 768px) {
       .nav-links {
+        position: fixed; /* Keep fixed to viewport */
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        background: var(--text-dark); /* Use theme variable */
+        flex-direction: column;
         padding-top: 4rem; /* More space from top */
         gap: 1.5rem; /* Larger gap for mobile links */
+        transition: transform 0.3s ease;
+        transform: translateX(100%);
+        z-index: 1300;
+        border-radius: 0;
+        box-shadow: none;
+        overflow-y: auto; /* Allow scrolling within the menu if content exceeds height */
+      }
+      .nav-links.active {
+        transform: translateX(0);
       }
       .nav-links li a {
         font-size: 1.5rem; /* Larger text for mobile */
@@ -327,10 +345,12 @@
       }
       .book-mobile {
         display: block;
+        position: fixed; /* Ensures it stays visible while scrolling */
         bottom: 15px;
         right: 15px;
         padding: 10px 18px;
         font-size: 0.9rem;
+        z-index: 999; /* Ensure it's above other content but below the active menu */
       }
     }
 
@@ -347,18 +367,16 @@
     function toggleTheme() {
       const html = document.documentElement;
       html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
-      // Store user's theme preference
       localStorage.setItem('theme', html.dataset.theme);
     }
 
-    // Apply saved theme preference on load
     document.addEventListener("DOMContentLoaded", () => {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme) {
         document.documentElement.dataset.theme = savedTheme;
       }
 
-      AOS.init({ duration: 1000, once: true, mirror: false }); // Added mirror: false for better control
+      AOS.init({ duration: 1000, once: true, mirror: false });
     });
 
     const toggle = document.getElementById("menu-toggle");
@@ -369,16 +387,15 @@
       navLinks.classList.add("active");
       overlay.classList.add("active");
       toggle.setAttribute("aria-expanded", "true");
-      // Optional: Disable body scroll when menu is open
-      document.body.style.overflow = 'hidden';
+      // Removed document.body.style.overflow = 'hidden'; to ensure scrolling.
+      // The overlay with pointer-events: auto will block clicks outside the menu.
     }
 
     function closeMenu() {
       navLinks.classList.remove("active");
       overlay.classList.remove("active");
       toggle.setAttribute("aria-expanded", "false");
-      // Optional: Re-enable body scroll
-      document.body.style.overflow = '';
+      // Removed document.body.style.overflow = '';
     }
 
     toggle.addEventListener("click", () => {
@@ -396,8 +413,8 @@
     // Close menu on nav link click (mobile)
     navLinks.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
-        // Delay closing slightly to allow navigation to start
-        setTimeout(closeMenu, 150);
+        // Ensure the menu closes immediately on link click to allow navigation
+        closeMenu();
       });
     });
 
@@ -414,7 +431,7 @@
             if (e.key === 'Enter' || e.key === ' ') {
                 const link = card.querySelector('.read-more');
                 if (link) {
-                    link.click(); // Programmatically click the read more link
+                    link.click();
                 }
             }
         });
