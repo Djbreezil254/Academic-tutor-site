@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resources | Smart Essay Coach</title>
+  <meta name="description" content="Comprehensive student resources for academic success from undergraduate to PhD level." />
+  <meta name="author" content="Smart Essay Coach" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background: #f9fafb;
+      font-family: 'Inter', sans-serif;
+      color: #2c3e50;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav.navbar {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1200;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+    .nav-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1.2px;
+      cursor: default;
+      color: #ecf0f1;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+    }
+    .nav-links li a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
+      transition: background-color 0.25s ease;
+    }
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      background-color: #4f46e5;
+      box-shadow: 0 3px 10px rgba(79, 70, 229, 0.5);
+    }
+
+    header.resources-header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    header.resources-header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      color: #4f46e5;
+      margin-bottom: 0.5rem;
+    }
+    header.resources-header p {
+      font-size: 1.2rem;
+      color: #5a5a77;
+    }
+
+    .resource-grid {
+      display: grid;
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1rem 4rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .resource-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .resource-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(79, 70, 229, 0.3);
+    }
+    .resource-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      color: #333;
+    }
+    .resource-card p {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .resource-card a {
+      background-color: #4f46e5;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-weight: 600;
+      align-self: start;
+      transition: background-color 0.3s ease;
+    }
+    .resource-card a:hover {
+      background-color: #3c37b8;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      border-top: 1px solid #4f46e5;
+    }
+    footer a {
+      color: #8a99ff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: #c1caff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-brand">Tutor Brian</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="resources.html" class="active">Resources</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="resources-header" data-aos="fade-up">
+  <h1>Student Resources Hub</h1>
+  <p>Explore top academic tools and platforms trusted by students and universities worldwide.</p>
+</header>
+
+<section class="resource-grid" aria-label="Academic resources">
+  <div class="resource-card" data-aos="zoom-in">
+    <h3>Grammarly</h3>
+    <p>Grammar, plagiarism, and AI writing assistant trusted by students and educators.</p>
+    <a href="https://www.grammarly.com" target="_blank" rel="noopener">Visit Site</a>
+  </div>
+
+  <div class="resource-card" data-aos="zoom-in">
+    <h3>Turnitin</h3>
+    <p>Check for academic integrity, plagiarism, and AI detection used by institutions.</p>
+    <a href="https://www.turnitin.com" target="_blank" rel="noopener">Visit Site</a>
+  </div>
+
+  <div class="resource-card" data-aos="zoom-in">
+    <h3>APA Style Guide</h3>
+    <p>Official style and citation manual from the American Psychological Association.</p>
+    <a href="https://apastyle.apa.org" target="_blank" rel="noopener">Visit Site</a>
+  </div>
+
+  <div class="resource-card" data-aos="zoom-in">
+    <h3>Google Scholar</h3>
+    <p>Search for peer-reviewed articles, theses, books, abstracts, and court opinions.</p>
+    <a href="https://scholar.google.com" target="_blank" rel="noopener">Visit Site</a>
+  </div>
+
+  <div class="resource-card" data-aos="zoom-in">
+    <h3>PubMed</h3>
+    <p>Find biomedical and life sciences literature from MEDLINE, life science journals, and online books.</p>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">Visit Site</a>
+  </div>
+
+  <div class="resource-card" data-aos="zoom-in">
+    <h3>Hemingway Editor</h3>
+    <p>Improve writing clarity and readability. Great for editing and revising drafts.</p>
+    <a href="https://hemingwayapp.com" target="_blank" rel="noopener">Visit Site</a>
+  </div>
+
+  <div class="resource-card" data-aos="zoom-in">
+    <h3>APA PsycINFO</h3>
+    <p>A comprehensive psychology database recommended by most U.S. universities.</p>
+    <a href="https://www.apa.org/pubs/databases/psycinfo" target="_blank" rel="noopener">Visit Site</a>
+  </div>
+
+  <div class="resource-card" data-aos="zoom-in">
+    <h3>AI Humanizer Tools</h3>
+    <p>Make AI-generated text sound more human for improved originality and tone.</p>
+    <a href="https://www.humanizeai.ai/" target="_blank" rel="noopener">Visit Site</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
+  <p>
+    Contact: <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a> | 
+    <a href="https://wa.me/717357947" target="_blank">WhatsApp</a> | 
+    <a href="https://t.me/smartessaycoach" target="_blank">Telegram</a>
+  </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    AOS.init({ duration: 1000, once: true });
+  });
+</script>
+</body>
+</html>
