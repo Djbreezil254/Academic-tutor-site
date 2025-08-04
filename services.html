@@ -4,115 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Services – Tutor Brian</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="./home.css" />
   <style>
-    /* ===== Navigation Styles ===== */
-    nav {
-      background: white;
-      border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      user-select: none;
-      font-weight: 600;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    nav .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75rem 2rem;
-      gap: 1rem;
-    }
-
-    nav .nav-brand {
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: #4f46e5;
-      user-select: none;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #4f46e5;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-      position: relative;
-      padding: 0.25rem 0;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #3730a3;
-      text-decoration: underline;
-    }
-
-    /* Hamburger toggle button */
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 30px;
-      height: 25px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 101;
-    }
-
-    .nav-toggle span {
-      width: 30px;
-      height: 3px;
-      background: #4f46e5;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-      transform-origin: 1px;
-    }
-
-    /* Hamburger active animation */
-    .nav-toggle.active span:nth-child(1) {
-      transform: rotate(45deg);
-    }
-    .nav-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-    .nav-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg);
-    }
-
-    /* Theme toggle button */
-    .theme-toggle {
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      font-size: 1.3rem;
-      color: #4f46e5;
-      transition: color 0.3s ease;
-      user-select: none;
-    }
-    .theme-toggle:hover {
-      color: #3730a3;
-    }
 
     /* ===== Your existing page styles ===== */
     body.services-page {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Inter', sans-serif;
       background: #f9fafb;
       color: #2c2c2c;
-      padding: 4rem 1rem 6rem;
+      padding: 0rem 1rem 6rem;
     }
 
     .services-page h1 {
@@ -137,7 +39,7 @@
     }
 
     .services-grid {
-      margin-top: 3rem;
+      margin-top: 4rem;
       max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
@@ -329,23 +231,24 @@
 <body class="services-page">
 
 <nav>
+  <nav class="navbar">
   <div class="nav-container">
     <div class="nav-brand">Tutor Brian</div>
-    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+      <span class="material-icons">menu</span>
     </button>
-    <ul id="primary-navigation" role="menu">
-      <li role="none"><a href="index.html" role="menuitem">Home</a></li>
-      <li role="none"><a href="about.html" role="menuitem">About</a></li>
-      <li role="none"><a href="services.html" role="menuitem" class="active">Services</a></li>
-      <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
-      <li role="none"><a href="faq.html" role="menuitem">FAQ</a></li>
-      <li><a href="blog.html"><span class="material-icons">article</span> Blog</a></li>
-      <li><a href="resources.html"><span class="material-icons">library_books</span> Resources</a></li>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="./index.html"><span class="material-icons">home</span> Home</a></li>
+      <li><a href="./about.html"><span class="material-icons">person</span> About</a></li>
+      <li><a href="./services.html" class="active"><span class="material-icons">build</span> Services</a></li>
+      <li><a href="./contact.html"><span class="material-icons">mail</span> Contact</a></li>
+      <li><a href="./faq.html"><span class="material-icons">help</span> FAQ</a></li>
+      <li><a href="./blog.html"><span class="material-icons">article</span> Blog</a></li>
+      <li><a href="./resources.html"><span class="material-icons">library_books</span> Resources</a></li>
     </ul>
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark theme">🌓</button>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light or dark theme">
+      <span class="material-icons">brightness_4</span>
+    </button>
   </div>
 </nav>
 
@@ -399,23 +302,15 @@
 </footer>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.getElementById('primary-navigation');
-
-    navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('active');
-      navMenu.classList.toggle('active');
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
-      navToggle.setAttribute('aria-expanded', expanded);
-    });
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
   });
-
   function toggleTheme() {
     const html = document.documentElement;
     html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
   }
 </script>
-
 </body>
 </html>
