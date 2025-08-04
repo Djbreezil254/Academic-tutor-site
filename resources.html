@@ -6,10 +6,10 @@
   <title>Resources | Smart Essay Coach</title>
   <meta name="description" content="Comprehensive student resources for academic success from undergraduate to PhD level." />
   <meta name="author" content="Smart Essay Coach" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
+  <link rel="stylesheet" href="./home.css" />
   <style>
     body {
       background: #f9fafb;
@@ -17,49 +17,6 @@
       color: #2c3e50;
       margin: 0;
       padding: 0;
-    }
-
-    nav.navbar {
-      background-color: #2c3e50;
-      color: #ecf0f1;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-      position: sticky;
-      top: 0;
-      z-index: 1200;
-    }
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.75rem 1rem;
-    }
-    .nav-brand {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1.8rem;
-      letter-spacing: 1.2px;
-      cursor: default;
-      color: #ecf0f1;
-    }
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      list-style: none;
-    }
-    .nav-links li a {
-      color: #ecf0f1;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 0.8rem;
-      border-radius: 6px;
-      transition: background-color 0.25s ease;
-    }
-    .nav-links li a:hover,
-    .nav-links li a.active {
-      background-color: #4f46e5;
-      box-shadow: 0 3px 10px rgba(79, 70, 229, 0.5);
     }
 
     header.resources-header {
@@ -153,14 +110,21 @@
 <nav class="navbar">
   <div class="nav-container">
     <div class="nav-brand">Tutor Brian</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="resources.html" class="active">Resources</a></li>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+      <span class="material-icons">menu</span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="./index.html"><span class="material-icons">home</span> Home</a></li>
+      <li><a href="./about.html"><span class="material-icons">person</span> About</a></li>
+      <li><a href="./services.html"><span class="material-icons">build</span> Services</a></li>
+      <li><a href="./contact.html"><span class="material-icons">mail</span> Contact</a></li>
+      <li><a href="./faq.html"><span class="material-icons">help</span> FAQ</a></li>
+      <li><a href="./blog.html"><span class="material-icons">article</span> Blog</a></li>
+      <li><a href="./resources.html" class="active"><span class="material-icons">library_books</span> Resources</a></li>
     </ul>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light or dark theme">
+      <span class="material-icons">brightness_4</span>
+    </button>
   </div>
 </nav>
 
@@ -254,12 +218,12 @@
   </div>
 </section>
 
-<footer>
-  <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
-  <p>
-    Contact: <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a> | 
-    <a href="https://wa.me/717357947" target="_blank">WhatsApp</a> | 
-    <a href="https://t.me/smartessaycoach" target="_blank">Telegram</a>
+<footer style="background:#1e3a8a; padding:2rem 1rem; margin-top:5rem;">
+  <p style="text-align:center; font-size:0.95rem; color:#ffffff; margin:0;">&copy; 2025 Tutor Brian | Academic Coaching</p>
+  <p style="text-align:center; font-size:0.95rem; color:#ffffff; margin:0.5rem 0 0;">
+    Contact: <a href="mailto:bomfreelancelab@gmail.com" style="color:#8a99ff; text-decoration:none;">bomfreelancelab@gmail.com</a> | 
+    <a href="https://wa.me/717357947" target="_blank" style="color:#8a99ff; text-decoration:none;">WhatsApp</a> | 
+    <a href="https://t.me/smartessaycoach" target="_blank" style="color:#8a99ff; text-decoration:none;">Telegram</a>
   </p>
 </footer>
 
@@ -267,7 +231,16 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     AOS.init({ duration: 1000, once: true });
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
   });
+  function toggleTheme() {
+    const html = document.documentElement;
+    html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+  }
 </script>
 </body>
 </html>
