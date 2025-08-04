@@ -4,312 +4,181 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact – Tutor Brian</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="./home.css" />
   <style>
-    /* ===== Navigation Styles ===== */
-    nav {
-      background: white;
-      border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      user-select: none;
-      font-weight: 600;
-      font-family: 'Poppins', sans-serif;
-    }
+  body.contact-page {
+    font-family: 'Inter', sans-serif;
+    background: #f9fafb;
+    color: #2c2c2c;
+    margin: 0;
+    padding: 0;
+  }
 
-    nav .nav-container {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75rem 2rem;
-    }
+  header {
+    padding: 2rem 1.5rem 1rem;
+    text-align: center;
+  }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-      margin: 0;
-      padding: 0;
-    }
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+  }
 
-    nav a {
-      text-decoration: none;
-      color: #4f46e5;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-      position: relative;
-      padding: 0.25rem 0;
-    }
+  header p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
 
-    nav a:hover,
-    nav a.active {
-      color: #3730a3;
-      text-decoration: underline;
-    }
+  main.contact-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
 
-    /* Hamburger toggle button */
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 30px;
-      height: 25px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 101;
-    }
+  .contact-info {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
 
-    .nav-toggle span {
-      width: 30px;
-      height: 3px;
-      background: #4f46e5;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-      transform-origin: 1px;
-    }
+  .contact-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #4f46e5;
+  }
 
-    /* Hamburger active animation */
-    .nav-toggle.active span:nth-child(1) {
-      transform: rotate(45deg);
-    }
-    .nav-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-    .nav-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg);
-    }
+  .contact-info p {
+    margin: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    color: #333;
+  }
 
-    /* ===== Page Styles ===== */
-    body.contact-page {
-      font-family: 'Poppins', sans-serif;
-      background: #f9fafb;
-      color: #2c2c2c;
-      margin: 0;
-      padding: 0;
-    }
+  .contact-info p span.material-icons {
+    color: #6366f1;
+  }
 
-    header {
-      padding: 2rem 1.5rem 1rem;
-      text-align: center;
-    }
+  .contact-info a {
+    color: #2563eb;
+    text-decoration: none;
+  }
 
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #1f2937;
-      margin-bottom: 0.25rem;
-    }
+  .contact-info p.social-icons a {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    color: #4f46e5;
+    vertical-align: middle;
+    text-decoration: none;
+  }
+  .contact-info p.social-icons a:hover {
+    color: #3730a3;
+  }
+  .contact-info p.social-icons .material-icons.facebook,
+  .contact-info p.social-icons .material-icons.telegram,
+  .contact-info p.social-icons .material-icons.x {
+    font-size: 1.5rem;
+    vertical-align: middle;
+  }
 
-    header p {
-      color: #555;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
+  .contact-form {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
 
+  .contact-form h2 {
+    font-size: 1.5rem;
+    color: #4f46e5;
+    margin-bottom: 1rem;
+  }
+
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+
+  .contact-form button {
+    background: #4f46e5;
+    color: white;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .contact-form button:hover {
+    background: #4338ca;
+  }
+
+  footer {
+    background: #1e3a8a;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: #ffffff;
+  }
+
+  @media (max-width: 768px) {
     main.contact-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      grid-template-columns: 1fr;
+      padding: 1.5rem;
     }
-
-    .contact-info {
-      background: #ffffff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .contact-info h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #4f46e5;
-    }
-
-    .contact-info p {
-      margin: 0.8rem 0;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 1rem;
-      color: #333;
-    }
-
-    .contact-info p span.material-icons {
-      color: #6366f1;
-    }
-
-    .contact-info a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-
-    /* Social Media icons style scoped to contact page only */
-    .contact-info p.social-icons a {
-      margin-right: 1rem;
-      font-size: 1.8rem;
-      color: #4f46e5;
-      vertical-align: middle;
-      text-decoration: none;
-    }
-    .contact-info p.social-icons a:hover {
-      color: #3730a3;
-    }
-    .contact-info p.social-icons .material-icons.facebook {
-      font-size: 24px;
-      vertical-align: middle;
-    }
-    .contact-info p.social-icons .material-icons.telegram {
-      font-size: 24px;
-      vertical-align: middle;
-    }
-    .contact-info p.social-icons .material-icons.x {
-      font-size: 24px;
-      vertical-align: middle;
-    }
-
-    .contact-form {
-      background: #ffffff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .contact-form h2 {
-      font-size: 1.5rem;
-      color: #4f46e5;
-      margin-bottom: 1rem;
-    }
-
-    .contact-form form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      padding: 0.75rem 1rem;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .contact-form textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
-
-    .contact-form button {
-      background: #4f46e5;
-      color: white;
-      font-size: 1rem;
-      padding: 0.75rem 1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .contact-form button:hover {
-      background: #4338ca;
-    }
-
-    footer {
-      background: #f3f4f6;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 2rem;
-      font-size: 0.95rem;
-      color: #666;
-    }
-
-    /* ===== Responsive Styles ===== */
-    @media (max-width: 768px) {
-      main.contact-container {
-        grid-template-columns: 1fr;
-        padding: 1.5rem;
-      }
-      nav .nav-container {
-        padding: 0.5rem 1rem;
-      }
-
-      nav ul {
-        position: fixed;
-        top: 58px;
-        left: 0;
-        right: 0;
-        background: #f9fafb;
-        flex-direction: column;
-        gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        border-radius: 0 0 12px 12px;
-        z-index: 99;
-      }
-
-      nav ul.open {
-        max-height: 400px;
-      }
-
-      nav ul li {
-        border-bottom: 1px solid #e0e0e0;
-      }
-      nav ul li:last-child {
-        border-bottom: none;
-      }
-      nav ul li a {
-        display: block;
-        padding: 1rem 1.5rem;
-        font-size: 1.2rem;
-        color: #4f46e5;
-      }
-      nav ul li a:hover,
-      nav ul li a.active {
-        background: #4338ca;
-        color: white;
-        border-radius: 0;
-      }
-
-      .nav-toggle {
-        display: flex;
-      }
-    }
+  }
   </style>
 </head>
 <body class="contact-page">
 
   <!-- Navigation -->
-  <nav>
-    <div class="nav-container">
-      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <ul id="primary-navigation" role="menu">
-        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
-        <li role="none"><a href="about.html" role="menuitem">About</a></li>
-        <li role="none"><a href="services.html" role="menuitem">Services</a></li>
-        <li role="none"><a href="contact.html" role="menuitem" class="active">Contact</a></li>
-        <li role="none"><a href="faq.html" role="menuitem">FAQ</a></li>
-        <li><a href="blog.html"><span class="material-icons">article</span> Blog</a></li>
-        <li><a href="resources.html"><span class="material-icons">library_books</span> Resources</a></li>
-      </ul>
-    </div>
-  </nav>
+ <nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-brand">Tutor Brian</div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+      <span class="material-icons">menu</span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="./index.html"><span class="material-icons">home</span> Home</a></li>
+      <li><a href="./about.html"><span class="material-icons">person</span> About</a></li>
+      <li><a href="./services.html"><span class="material-icons">build</span> Services</a></li>
+      <li><a href="./contact.html" class="active"><span class="material-icons">mail</span> Contact</a></li>
+      <li><a href="./faq.html"><span class="material-icons">help</span> FAQ</a></li>
+      <li><a href="./blog.html"><span class="material-icons">article</span> Blog</a></li>
+      <li><a href="./resources.html"><span class="material-icons">library_books</span> Resources</a></li>
+    </ul>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light or dark theme">
+      <span class="material-icons">brightness_4</span>
+    </button>
+  </div>
+</nav>
 
   <!-- Header -->
   <header>
@@ -354,23 +223,26 @@
   </main>
 
   <!-- Footer -->
-  <footer>
-    &copy; 2025 Tutor Brian – All rights reserved.
-  </footer>
+  <footer style="background:#1e3a8a; padding:2rem 1rem; margin-top:5rem;">
+  <p style="text-align:center; font-size:0.95rem; color:#ffffff; margin:0;">&copy; 2025 Tutor Brian | Academic Coaching</p>
+  <p style="text-align:center; font-size:0.95rem; color:#ffffff; margin:0.5rem 0 0;">
+    Contact: <a href="mailto:bomfreelancelab@gmail.com" style="color:#8a99ff; text-decoration:none;">bomfreelancelab@gmail.com</a> | 
+    <a href="https://wa.me/717357947" target="_blank" style="color:#8a99ff; text-decoration:none;">WhatsApp</a> | 
+    <a href="https://t.me/smartessaycoach" target="_blank" style="color:#8a99ff; text-decoration:none;">Telegram</a>
+  </p>
+</footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const navToggle = document.querySelector('.nav-toggle');
-      const navMenu = document.querySelector('nav ul');
-
-      navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        navMenu.classList.toggle('open');
-        const expanded = navToggle.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
-        navToggle.setAttribute('aria-expanded', expanded);
-      });
-    });
-  </script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+  function toggleTheme() {
+    const html = document.documentElement;
+    html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+  }
+</script>
 
 </body>
 </html>
