@@ -673,3 +673,110 @@ footer a:focus {
 [data-theme="dark"] a {
   color: #ffd54f;
 }
+
+/* Featured Resource Section */
+.featured-resource {
+  text-align: center;
+  background: #f9fafb;
+  border-radius: 15px;
+  padding: 3rem 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  margin: 4rem auto;
+  raizax-width: 700ස
+
+  .featured-resource h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary, #0066cc);
+  }
+
+  .featured-resource p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #555;
+  }
+
+  .featured-resource .cta {
+    background-color: #ff6600;
+    color: white;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(255, 102, 0, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+  }
+
+  .featured-resource .cta:hover,
+  .featured-resource .cta:focus {
+    background-color: #cc5200;
+    box-shadow: 0 8px 20px rgba(204, 82, 0, 0.6);
+    transform: scale(1.05);
+    outline: none;
+  }
+
+  .featured-resource .resource-link {
+    color: #0066cc;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .featured-resource .resource-link:hover,
+  .featured-resource .resource-link:focus {
+    color: #ff6600;
+    text-decoration: underline;
+  }
+
+  [data-theme="dark"] .featured-resource {
+    background: #2a2d33;
+    color: #e0e0e0;
+  }
+
+  [data-theme="dark"] .featured-resource p {
+    color: #ccc;
+  }
+.carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 50px; /* Adjusted padding for buttons */
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-card {
+  flex: 0 0 100%;
+  margin: 0 10px;
+  box-sizing: border-box;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+[data-theme="dark"] .carousel-btn {
+  background: #4dabf7;
+}
+
+[data-theme="dark"] .carousel-btn:hover,
+[data-theme="dark"] .carousel-btn:focus {
+  background: #3388cc;
+}
