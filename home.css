@@ -71,6 +71,9 @@ body, html {
   margin-left: 0.5rem; /* Add spacing between buttons */
   transition: color 0.3s ease;
 }
+.menu-toggle {
+  display: none;
+}
 
 .theme-toggle:hover,
 .theme-toggle:focus,
@@ -635,7 +638,7 @@ footer a:focus {
   padding: 3rem 2rem;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   margin: 4rem auto;
-  max-width: 700px; /* Fixed typo: was raizax-width: 700 */
+  max-width: 700px; 
 }
 
 .featured-resource h2 {
