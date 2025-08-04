@@ -38,7 +38,7 @@
   <nav class="navbar">
   <div class="nav-container">
     <div class="nav-brand">Tutor Brian</div>
-    <button class="menu-toggle" id="menu-toggle">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
       <span class="material-icons">menu</span>
     </button>
     <ul class="nav-links" id="nav-links">
@@ -50,7 +50,9 @@
       <li><a href="blog.html"><span class="material-icons">article</span> Blog</a></li>
       <li><a href="resources.html"><span class="material-icons">library_books</span> Resources</a></li>
     </ul>
-    <button class="theme-toggle" onclick="toggleTheme()"><span class="material-icons">brightness_4</span></button>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light or dark theme">
+      <span class="material-icons">brightness_4</span>
+    </button>
   </div>
 </nav>
 
@@ -92,6 +94,11 @@
         <div><span class="material-icons">rocket_launch</span><h3>Submit with Confidence</h3></div>
       </div>
     </section>
+<section class="ai-guidance" data-aos="fade-up">
+  <h2>Ethical AI Use in Academics</h2>
+  <p>Our coaching emphasizes ethical use of AI tools to enhance your writing, not replace it. Learn to use AI responsibly for brainstorming, editing, and research while maintaining academic integrity.</p>
+  <a href="resources.html" class="cta">Explore AI Tools →</a>
+</section>
 
  <section class="testimonials" data-aos="fade-up">
   <h2>What Students Say</h2>
@@ -124,7 +131,7 @@
 <section class="featured-resource" data-aos="fade-up">
   <h2>Featured Resource: Free APA Template</h2>
   <p>Download our free APA 7th Edition template to format your essays and research papers with ease. Perfect for students aiming for academic excellence.</p>
-  <a href="https://www.smartessaycoach.com/assets/apa-template.docx" target="_blank" rel="noopener" class="cta">📥 Download Now</a>
+  <a href="./Assets/APA-template.docx" download class="cta">📥 Download Now</a>
   <p>Explore more tools and templates on our <a href="resources.html" class="resource-link">Resources Page</a>.</p>
 </section>
 
@@ -181,7 +188,7 @@
   <p>Contact: <a href="mailto:bomfreelancelab@gmail.com">bomfreelancelab@gmail.com</a> | <a href="https://wa.me/717357947" target="_blank" rel="noopener">WhatsApp</a> | <a href="https://t.me/smartessaycoach" target="_blank" rel="noopener">Telegram</a></p>
 </footer>
 
-  <a href="https://calendly.com/tutorjohntaylor/30min" class="book-mobile">Book Now</a>
+  <a href="https://calendly.com/tutorjohntaylor/30min" class="book-mobile" aria-label="Book a coaching session">Book Now</a>
 
   <script>
     const track = document.querySelector('.carousel-track');
