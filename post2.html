@@ -3,102 +3,205 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>APA vs MLA vs Chicago: A Quick Style Guide | Smart Essay Coach</title>
-  <meta name="description" content="Confused about citation styles? Learn the key differences between APA, MLA, and Chicago styles with examples and a quick comparison table to format your academic papers perfectly." />
+  <title>APA vs MLA vs Chicago: A Comprehensive Style Guide | Smart Essay Coach</title>
+  <meta name="description" content="Master APA, MLA, and Chicago citation styles with this detailed guide. Learn key differences, practical examples, and classroom tips to format your academic papers perfectly." />
   <meta name="keywords" content="APA style, MLA style, Chicago style, citation guide, academic writing, formatting styles, referencing, Smart Essay Coach" />
   <meta name="author" content="Brian Ogot, Smart Essay Coach" />
 
   <link rel="stylesheet" href="home.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  
+
   <style>
     /* Scoped styles for post2.html */
-    .post-container {
-      max-width: 800px;
-      margin: 2rem auto 4rem;
-      padding: 0 1rem;
+    body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
-      line-height: 1.7;
-      color: #222;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      color: #1a1a1a;
+      background-color: #f8f9fa;
     }
 
-    .post-container h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.25rem;
+    .navbar {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
       color: #2c3e50;
     }
 
-    .author-date {
-      font-style: italic;
-      color: #777;
-      font-size: 0.9rem;
-      margin-bottom: 2rem;
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 500;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #4a90e2;
+    }
+
+    .nav-links .active {
+      color: #4a90e2;
+      font-weight: 600;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .post-container {
+      max-width: 900px;
+      margin: 3rem auto 5rem;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      line-height: 1.8;
+    }
+
+    .post-container h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+
+    .author-date {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: #6b7280;
+      margin-bottom: 2rem;
     }
 
     .author-date .material-icons {
-      font-size: 1.2rem;
       color: #4a90e2;
+      font-size: 1.3rem;
     }
 
     .post-image {
       width: 100%;
-      border-radius: 10px;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
       margin-bottom: 2rem;
-      box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
-      color: #4a90e2;
-      margin-top: 2.5rem;
-      margin-bottom: 0.75rem;
+      font-size: 1.8rem;
       font-weight: 600;
+      color: #4a90e2;
+      margin: 2.5rem 0 1rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
 
     h2 .material-icons {
-      color: #4a90e2;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #2c3e50;
+      margin: 1.5rem 0 0.75rem;
     }
 
     p {
       font-size: 1.1rem;
+      color: #374151;
       margin-bottom: 1.5rem;
-      color: #444;
+    }
+
+    ul {
+      list-style: disc;
+      margin: 1rem 0;
+      padding-left: 2rem;
+      font-size: 1.05rem;
+      color: #374151;
+    }
+
+    ul li {
+      margin-bottom: 0.75rem;
+    }
+
+    .example-box {
+      background: #f1f5f9;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #2c3e50;
     }
 
     .comparison-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 1rem;
-      font-size: 1.05rem;
+      margin: 1.5rem 0;
+      font-size: 1rem;
     }
-    .comparison-table th, .comparison-table td {
-      border: 1px solid #ddd;
+
+    .comparison-table th,
+    .comparison-table td {
+      border: 1px solid #e5e7eb;
       padding: 0.75rem 1rem;
       text-align: left;
     }
+
     .comparison-table th {
       background-color: #4a90e2;
       color: #fff;
       font-weight: 600;
     }
+
     .comparison-table tbody tr:nth-child(even) {
       background-color: #f5f9ff;
     }
 
     a.back-link {
-      display: inline-block;
-      margin-top: 3rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
       color: #4a90e2;
       font-weight: 600;
       text-decoration: none;
@@ -106,107 +209,256 @@
     }
 
     a.back-link:hover {
-      text-decoration: underline;
       color: #2c3e50;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #2c3e50;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .post-container {
+        padding: 1.5rem;
+        margin: 2rem 1rem;
+      }
+
+      .post-container h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* Dark Mode */
+    [data-theme="dark"] {
+      background: #1a1a1a;
+      color: #e5e7eb;
+    }
+
+    [data-theme="dark"] .navbar {
+      background: #2c3e50;
+    }
+
+    [data-theme="dark"] .post-container {
+      background: #2d3748;
+      color: #e5e7eb;
+    }
+
+    [data-theme="dark"] .post-container h1,
+    [data-theme="dark"] h3 {
+      color: #f1f5f9;
+    }
+
+    [data-theme="dark"] p,
+    [data-theme="dark"] ul li {
+      color: #d1d5db;
+    }
+
+    [data-theme="dark"] .example-box {
+      background: #3b4a6b;
+      color: #e5e7eb;
+    }
+
+    [data-theme="dark"] .comparison-table th {
+      background: #3b4a6b;
+    }
+
+    [data-theme="dark"] .comparison-table tbody tr:nth-child(even) {
+      background: #2d3748;
+    }
+
+    [data-theme="dark"] footer {
+      background: #1f2937;
     }
   </style>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">Smart Essay Coach</div>
+      <button class="menu-toggle" id="menu-toggle">
+        <span class="material-icons">menu</span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html"><span class="material-icons">home</span> Home</a></li>
+        <li><a href="https://smartessaycoach.netlify.app/blog" class="active"><span class="material-icons">article</span> Blog</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()"><span class="material-icons">brightness_4</span></button>
+    </div>
+  </nav>
 
-<nav class="navbar">
-  <div class="nav-container">
-    <div class="nav-brand">Tutor Brian</div>
-    <button class="menu-toggle" id="menu-toggle">
-      <span class="material-icons">menu</span>
-    </button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html"><span class="material-icons">home</span> Home</a></li>
-      <li><a href="blog.html" class="active"><span class="material-icons">article</span> Blog</a></li>
+  <main class="post-container" data-aos="fade-up">
+    <h1>APA vs MLA vs Chicago: A Comprehensive Style Guide</h1>
+
+    <p class="author-date">
+      <span class="material-icons">person</span> Brian Ogot, Founder - Smart Essay Coach
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <span class="material-icons">event</span> July 5, 2025
+    </p>
+
+    <img
+      src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80"
+      alt="Citation style guide with books and laptop"
+      class="post-image"
+    />
+
+    <p>Navigating citation styles can be a daunting task for students, yet mastering them is crucial for academic success. Whether you're crafting a psychology research paper, analyzing a novel for a literature class, or documenting historical events, choosing the right citation style—APA, MLA, or Chicago—ensures your work meets academic standards and communicates credibility. This comprehensive guide breaks down the key differences, provides realistic classroom scenarios, and offers practical examples aligned with the latest editions of each style (APA 7th, MLA 9th, Chicago 17th). By understanding these styles, you'll save time, avoid plagiarism, and present your work professionally.</p>
+
+    <h2><span class="material-icons">style</span> 1. APA Style (American Psychological Association)</h2>
+    <p>APA style, currently in its 7th edition (2020), is the go-to format for social sciences, including psychology, education, and sociology. It prioritizes clarity, precision, and the timeliness of research, using an author-date in-text citation system to emphasize recent scholarship. APA is designed to streamline scientific writing, making it ideal for research papers and empirical studies.</p>
+
+    <h3>Key Features</h3>
+    <ul>
+      <li><strong>In-Text Citations</strong>: Use the author-date format, e.g., (Smith, 2023). For direct quotes, include the page number, e.g., (Smith, 2023, p. 45).</li>
+      <li><strong>Reference List</strong>: Titled “References,” entries include full publication details, such as author, year, title, and DOI or URL for digital sources.</li>
+      <li><strong>Formatting</strong>: APA requires a title page, abstract (for longer papers), and specific headings (e.g., Level 1, Level 2) to organize content.</li>
+      <li><strong>Tone and Style</strong>: Emphasizes concise, objective language, avoiding bias (e.g., using “participants” instead of “subjects”).</li>
     </ul>
-    <button class="theme-toggle" onclick="toggleTheme()"><span class="material-icons">brightness_4</span></button>
-  </div>
-</nav>
 
-<main class="post-container" data-aos="fade-up">
-  <h1>APA vs MLA vs Chicago: A Quick Style Guide</h1>
+    <h3>Classroom Scenario</h3>
+    <p>Imagine you’re writing a psychology research paper on the effects of mindfulness on stress reduction. Your professor expects APA 7th edition formatting. You cite a recent study in your paper: “Mindfulness practices significantly reduce cortisol levels (Johnson & Lee, 2023).” In your References list, you’d include: <br>Johnson, A., & Lee, B. (2023). Mindfulness and stress: A meta-analysis. <em>Journal of Clinical Psychology</em>, <em>79</em>(4), 123–145. https://doi.org/10.1002/jclp.12345</p>
 
-  <p class="author-date">
-    <span class="material-icons">person</span> Brian Ogot, Founder- Smart Essay Coach
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <span class="material-icons">event</span> July 5, 2025
-  </p>
+    <div class="example-box">
+      <strong>Example</strong>: In a sociology class assignment, you might cite: <br>(Rodriguez, 2022) in the text, with the reference entry: <br>Rodriguez, M. (2022). Social media and community engagement. <em>Sociology Today</em>, <em>15</em>(2), 89–102. https://doi.org/10.1007/s12345-022-00123-4
+    </div>
 
-  <img 
-    src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" 
-    alt="Citation style guide with books and laptop" 
-    class="post-image"
-  />
+    <h2><span class="material-icons">style</span> 2. MLA Style (Modern Language Association)</h2>
+    <p>MLA style, in its 9th edition (2021), is widely used in humanities disciplines like literature, cultural studies, and languages. It emphasizes simplicity and readability, using an author-page in-text citation system to attribute sources clearly. MLA is ideal for essays analyzing texts or exploring cultural themes.</p>
 
-  <p>Choosing the right citation style is essential for academic writing success. Whether you're writing essays, research papers, or dissertations, understanding the differences between APA, MLA, and Chicago styles will save you time and improve the professionalism of your work. Here's a quick but thorough guide to help you format your papers confidently.</p>
+    <h3>Key Features</h3>
+    <ul>
+      <li><strong>In-Text Citations</strong>: Use the author-page format, e.g., (Smith 56). No comma is needed, and page numbers are required for direct quotes.</li>
+      <li><strong>Works Cited</strong>: Titled “Works Cited,” entries include author, title, publication details, and medium (e.g., Print, Web).</li>
+      <li><strong>Formatting</strong>: MLA typically requires a header with your name, instructor, course, and date, but no title page or abstract unless specified.</li>
+      <li><strong>Tone and Style</strong>: Encourages fluid, narrative-driven writing, often used for interpretive essays.</li>
+    </ul>
 
-  <h2><span class="material-icons">style</span> APA Style (American Psychological Association)</h2>
-  <p>APA style is widely used in the social sciences. It emphasizes author-date citations within the text, for example, <em>(Smith, 2020)</em>. The reference list at the end is titled “References” and includes full publication details. APA focuses on clarity, precision, and the date of publication to highlight recent research.</p>
+    <h3>Classroom Scenario</h3>
+    <p>Suppose you’re writing a literature essay analyzing themes in Toni Morrison’s <em>Beloved</em>. Your instructor requires MLA 9th edition. You might write: “Morrison explores trauma through Sethe’s memories (Morrison 89).” Your Works Cited entry would be: <br><em>Morrison, Toni. <em>Beloved</em>. Vintage, 2004.</em></p>
 
-  <h2><span class="material-icons">style</span> MLA Style (Modern Language Association)</h2>
-  <p>MLA style is common in humanities disciplines like literature and cultural studies. It uses author-page format for in-text citations, such as <em>(Smith 23)</em>. The final list is called “Works Cited.” MLA focuses on ease of reading and straightforward attribution of sources.</p>
+    <div class="example-box">
+      <strong>Example</strong>: For an English class analyzing a poem, you might cite: <br><em>(Dickinson 12)</em> in the text, with the Works Cited entry: <br>Dickinson, Emily. “Because I could not stop for Death.” <em>The Complete Poems of Emily Dickinson</em>, edited by Thomas H. Johnson, Little, Brown, 1960, pp. 11–12.
+    </div>
 
-  <h2><span class="material-icons">style</span> Chicago Style (Chicago Manual of Style)</h2>
-  <p>Chicago style is versatile and used in history and many other fields. It offers two systems: Notes-Bibliography (which uses footnotes or endnotes alongside a bibliography) and Author-Date (similar to APA). Footnotes look like this: <sup>1</sup>. Chicago provides detailed formatting rules and flexibility depending on your discipline.</p>
+    <h2><span class="material-icons">style</span> 3. Chicago Style (Chicago Manual of Style)</h2>
+    <p>Chicago style, in its 17th edition (2017), is versatile, used in history, business, and some social sciences. It offers two systems: Notes-Bibliography (common in history and humanities) and Author-Date (similar to APA). The Notes-Bibliography system uses footnotes or endnotes, providing flexibility for detailed source information.</p>
 
-  <h2><span class="material-icons">table_chart</span> Quick Comparison Table</h2>
-  <table class="comparison-table" aria-label="Citation style comparison">
-    <thead>
-      <tr>
-        <th>Style</th>
-        <th>In-Text Citation</th>
-        <th>Reference List Title</th>
-        <th>Common Use</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>APA</td>
-        <td>(Author, Year)</td>
-        <td>References</td>
-        <td>Social Sciences</td>
-      </tr>
-      <tr>
-        <td>MLA</td>
-        <td>(Author Page)</td>
-        <td>Works Cited</td>
-        <td>Humanities</td>
-      </tr>
-      <tr>
-        <td>Chicago</td>
-        <td>Footnotes or (Author Year)</td>
-        <td>Bibliography</td>
-        <td>History, Various</td>
-      </tr>
-    </tbody>
-  </table>
+    <h3>Key Features</h3>
+    <ul>
+      <li><strong>In-Text Citations</strong>: Notes-Bibliography uses superscript numbers (e.g., <sup>1</sup>) linked to footnotes or endnotes. Author-Date uses (Author Year), e.g., (Smith 2023).</li>
+      <li><strong>Bibliography</strong>: Titled “Bibliography” (Notes-Bibliography) or “References” (Author-Date), entries include full source details.</li>
+      <li><strong>Formatting</strong>: Chicago allows flexibility but often includes a title page and numbered headings. Footnotes provide space for additional commentary.</li>
+      <li><strong>Tone and Style</strong>: Balances academic rigor with narrative flexibility, suitable for historical or interdisciplinary work.</li>
+    </ul>
 
-  <a href="blog.html" class="back-link">← Back to Blog</a>
-</main>
+    <h3>Classroom Scenario</h3>
+    <p>For a history paper on the Civil Rights Movement, your professor requires Chicago Notes-Bibliography. You cite a source: “King’s speech galvanized the movement.”<sup>1</sup> Your footnote reads: <br><em>1. Martin Luther King Jr., <em>I Have a Dream</em> (Washington, DC: National Archives, 1963), 4.</em> <br>Your Bibliography entry would be: <br><em>King, Martin Luther, Jr. <em>I Have a Dream</em>. Washington, DC: National Archives, 1963.</em></p>
 
-<footer>
-  <p>&copy; 2025 Tutor Brian | Academic Coaching</p>
-</footer>
+    <div class="example-box">
+      <strong>Example</strong>: In a history class, you might use a footnote: <br><em><sup>1</sup> John Smith, <em>The Industrial Revolution</em> (Chicago: University of Chicago Press, 2020), 45.</em> <br>Bibliography: <br>Smith, John. <em>The Industrial Revolution</em>. Chicago: University of Chicago Press, 2020.
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 1000, once: true });
-</script>
-<script>
-  const toggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
-  toggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-  function toggleTheme() {
-    const html = document.documentElement;
-    html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
-  }
-</script>
+    <h2><span class="material-icons">table_chart</span> 4. Quick Comparison Table</h2>
+    <table class="comparison-table" aria-label="Comparison of APA, MLA, and Chicago citation styles">
+      <thead>
+        <tr>
+          <th>Style</th>
+          <th>In-Text Citation</th>
+          <th>Reference List Title</th>
+          <th>Common Use</th>
+          <th>Key Features</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>APA (7th Edition)</td>
+          <td>(Author, Year, p. #)</td>
+          <td>References</td>
+          <td>Social Sciences (e.g., Psychology, Education)</td>
+          <td>Author-date, emphasizes recent research, title page, abstract</td>
+        </tr>
+        <tr>
+          <td>MLA (9th Edition)</td>
+          <td>(Author Page)</td>
+          <td>Works Cited</td>
+          <td>Humanities (e.g., Literature, Languages)</td>
+          <td>Author-page, simple format, no title page</td>
+        </tr>
+        <tr>
+          <td>Chicago (17th Edition)</td>
+          <td>Footnotes<sup>1</sup> or (Author Year)</td>
+          <td>Bibliography or References</td>
+          <td>History, Business, Humanities</td>
+          <td>Flexible, supports footnotes or author-date, detailed source info</td>
+        </tr>
+      </tbody>
+    </table>
 
+    <h2><span class="material-icons">tips_and_updates</span> 5. Practical Tips for Choosing and Using Citation Styles</h2>
+    <p>Selecting the right citation style and applying it correctly can elevate your academic work. Here are tips to ensure success in the classroom:</p>
+    <ul>
+      <li><strong>Check Assignment Guidelines</strong>: Always confirm which style your instructor requires. For example, a psychology professor may mandate APA, while a literature professor prefers MLA.</li>
+      <li><strong>Use Citation Tools</strong>: Tools like Zotero, EndNote, or Purdue OWL’s citation generator can automate formatting, but always double-check for accuracy against the latest style manuals.</li>
+      <li><strong>Practice Consistency</strong>: Ensure all citations and references follow the same style. Mixing APA and MLA in one paper can confuse readers and lower your grade.</li>
+      <li><strong>Understand Your Discipline</strong>: Choose a style that aligns with your field. For interdisciplinary work, ask your professor which style best suits the assignment.</li>
+      <li><strong>Proofread Carefully</strong>: Errors in punctuation, capitalization, or formatting (e.g., missing DOIs in APA) can cost points. Use style-specific checklists to review your work.</li>
+    </ul>
+
+    <h3>Classroom Scenario</h3>
+    <p>You’re working on an interdisciplinary project combining psychology and history. Your professor allows you to choose between APA and Chicago Author-Date. Since your paper emphasizes recent psychological studies but includes historical context, you opt for APA to highlight publication dates, citing: <br>(Taylor, 2024) for a psychology article and (Brown, 2021) for a historical source. You ensure all references follow APA 7th edition guidelines to maintain consistency.</p>
+
+    <p>Mastering APA, MLA, and Chicago styles empowers you to meet academic expectations and present your research professionally. Whether you’re citing a journal article, a novel, or a historical document, understanding these styles will streamline your writing process and boost your credibility. Need personalized help with citations or academic writing? At <strong>Smart Essay Coach</strong>, we provide tailored coaching to ensure your papers shine. <a href="https://calendly.com/tutorjohntaylor/30min">Contact us today</a> to get started!</p>
+
+    <a href="https://smartessaycoach.netlify.app/blog" class="back-link"><span class="material-icons">arrow_back</span> Back to Blog</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Smart Essay Coach | Academic Coaching</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+    }
+  </script>
 </body>
 </html>
