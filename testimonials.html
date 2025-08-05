@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials – Smart Essay Coach</title>
+  <meta name="description" content="Read success stories from students in nursing, business, and logistics programs who achieved academic excellence with Smart Essay Coach’s personalized tutoring and research guidance." />
+  <meta name="keywords" content="academic coaching testimonials, nursing student success, business administration reviews, logistics assignment help, Smart Essay Coach" />
+  <meta name="author" content="Smart Essay Coach Team" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="./home.css" />
+  <style>
+    /* TESTIMONIALS PAGE ONLY FONT OVERRIDE */
+    body.testimonials-page {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+    }
+
+    /* === TESTIMONIALS PAGE ONLY === */
+    .testimonials-page .testimonials {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .testimonials-page h1,
+    .testimonials-page h2 {
+      text-align: center;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin-bottom: 1rem;
+    }
+
+    .testimonials-page h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .testimonials-page .intro p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 800px;
+      margin: 0.5rem auto;
+      color: #555;
+    }
+
+    .testimonials-page .intro .cta {
+      display: inline-block;
+      background: #ff6600;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .testimonials-page .intro .cta:hover {
+      background: #cc5200;
+      transform: scale(1.05);
+    }
+    .testimonials-page .intro .cta:focus {
+      outline: 2px solid #4f46e5;
+      outline-offset: 2px;
+    }
+
+    .testimonials-page .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .testimonials-page .testimonial-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .testimonials-page .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonials-page .testimonial-card span.material-icons {
+      font-size: 2rem;
+      color: #4f46e5;
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonials-page .testimonial-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+      font-style: italic;
+      margin: 0.5rem 0;
+    }
+
+    .testimonials-page .testimonial-card cite {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: #0066cc;
+      font-style: normal;
+    }
+
+    [data-theme="dark"] .testimonials-page {
+      background: #1f2937;
+      color: #e0e0e0;
+    }
+
+    [data-theme="dark"] .testimonials-page .testimonial-card {
+      background: #2f333b;
+      color: #e0e0e0;
+    }
+
+    [data-theme="dark"] .testimonials-page .testimonial-card p {
+      color: #ccc;
+    }
+
+    [data-theme="dark"] .testimonials-page .testimonial-card cite {
+      color: #ffd54f;
+    }
+
+    [data-theme="dark"] .testimonials-page .intro .cta {
+      background: #cc5200;
+    }
+
+    /* Normalize navigation on mobile to match index.html and services.html */
+    @media (max-width: 768px) {
+      .testimonials-page h1 {
+        font-size: 2rem;
+      }
+      .testimonials-page .intro .cta {
+        padding: 0.5rem 1.5rem;
+      }
+      .testimonials-page .nav-links.active li a {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+      }
+      .testimonials-page .nav-links.active .material-icons {
+        font-size: 1.5rem;
+        margin-right: 0.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="testimonials-page">
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-brand">Tutor Brian</div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+      <span class="material-icons">menu</span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="./index.html"><span class="material-icons">home</span> Home</a></li>
+      <li><a href="./about.html"><span class="material-icons">person</span> About</a></li>
+      <li><a href="./services.html"><span class="material-icons">build</span> Services</a></li>
+      <li><a href="./contact.html"><span class="material-icons">mail</span> Contact</a></li>
+      <li><a href="./faq.html"><span class="material-icons">help</span> FAQ</a></li>
+      <li><a href="./blog.html"><span class="material-icons">article</span> Blog</a></li>
+      <li><a href="./resources.html"><span class="material-icons">library_books</span> Resources</a></li>
+    </ul>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light or dark theme">
+      <span class="material-icons">brightness_4</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+  <section class="intro">
+    <h1>Student Success Stories</h1>
+    <p>Hear from students in nursing, business, and logistics programs who transformed their academic journeys with Smart Essay Coach’s personalized coaching. From RN-BSN essays to PhD dissertations, our guidance helps students excel.</p>
+    <a href="./contact.html" class="cta">Start Your Success Story</a>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Students Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <span class="material-icons">school</span>
+        <p>"I’m an RN in SNHU’s online BSN program, and my NUR-306 community health course was tough. Brian helped me with my journal assignments on disease prevention. He showed me how to use APA correctly and organize my thoughts on patient education for low-income communities. My grades went up, and I felt way more confident!"</p>
+        <cite>— Jessica M., RN-BSN Student, SNHU</cite>
+      </div>
+      <div class="testimonial-card">
+        <span class="material-icons">favorite</span>
+        <p>"Balancing work and SNHU’s RN-BSN program was overwhelming, especially with NUR-499’s health equity project. Brian guided me through researching maternal health disparities and writing a clear, evidence-based paper. His feedback on my drafts made my arguments stronger, and I got an A on the assignment!"</p>
+        <cite>— Emily R., RN-BSN Student, SNHU</cite>
+      </div>
+      <div class="testimonial-card">
+        <span class="material-icons">work</span>
+        <p>"As a military student at AMU studying logistics, I struggled with my government contracting assignments. Brian helped me break down FAR regulations and structure my essays for clarity. His tips on citing sources properly saved me from plagiarism issues. I’m doing so much better in my courses now!"</p>
+        <cite>— Sgt. Michael T., Logistics Student, AMU</cite>
+      </div>
+      <div class="testimonial-card">
+        <span class="material-icons">assignment</span>
+        <p>"AMU’s logistics program is intense, especially the assignments on supply chain contracts. Brian coached me on analyzing case studies and writing concise responses. He even helped me understand how to use Boolean searches to find credible sources fast. My professor was impressed with my last paper!"</p>
+        <cite>— Capt. Lauren B., Logistics Student, AMU</cite>
+      </div>
+      <div class="testimonial-card">
+        <span class="material-icons">business</span>
+        <p>"UMGC’s MBA program had me stressed with strategic management papers. Brian helped me tackle a case study on organizational leadership, guiding me to connect theory to real-world examples. His feedback tightened my writing, and I scored high on my assignment. He really gets grad-level work!"</p>
+        <cite>— David K., MBA Student, UMGC</cite>
+      </div>
+      <div class="testimonial-card">
+        <span class="material-icons">trending_up</span>
+        <p>"I was stuck on my UMGC MBA capstone project, especially the financial analysis part. Brian walked me through structuring the report and using APA for citations. His advice on presenting data clearly made my project stand out. I’m so grateful for his practical coaching!"</p>
+        <cite>— Sophia L., MBA Student, UMGC</cite>
+      </div>
+      <div class="testimonial-card">
+        <span class="material-icons">science</span>
+        <p>"In Walden’s MSN program, Advanced Pathophysiology was kicking my butt. Brian helped me understand complex concepts like cellular injury and write clear discussion posts. His tips on researching peer-reviewed articles made my assignments stronger, and I finally got the hang of APA formatting!"</p>
+        <cite>— Rachel P., MSN Student, Walden University</cite>
+      </div>
+      <div class="testimonial-card">
+        <span class="material-icons">healing</span>
+        <p>"Advanced Pharmacology in Wilkes’ MSN program was overwhelming with all the drug mechanisms and interactions. Brian guided me through organizing my case study responses and citing sources properly. His feedback helped me focus on key points, and my professor praised my clarity. Huge relief!"</p>
+        <cite>— Amanda S., MSN Student, Wilkes University</cite>
+      </div>
+      <div class="testimonial-card">
+        <span class="material-icons">book</span>
+        <p>"Liberty’s PBA program is intense, and my dissertation proposal was a mess. Brian helped me refine my research question on ethical leadership and structure my literature review. His advice on synthesizing sources and avoiding plagiarism was a lifesaver. My advisor finally approved my draft!"</p>
+        <cite>— Thomas R., PBA Doctoral Student, Liberty University</cite>
+      </div>
+      <div class="testimonial-card">
+        <span class="material-icons">gavel</span>
+        <p>"Writing my PBA dissertation at Liberty was tough, especially the methodology section. Brian coached me on mixed-methods research and helped me align my framework with business ethics. His detailed feedback made my chapter clear and professional. I’m on track to finish strong!"</p>
+        <cite>— Olivia W., PBA Doctoral Student, Liberty University</cite>
+      </div>
+      <div class="testimonial-card">
+        <span class="material-icons">local_hospital</span>
+        <p>"Walden’s MSN program pushed me hard with evidence-based practice projects. Brian helped me analyze research for my quality improvement assignment and structure my paper. His tips on avoiding Turnitin flags were super helpful, and I got great feedback from my instructor!"</p>
+        <cite>— Nicole C., MSN Student, Walden University</cite>
+      </div>
+      <div class="testimonial-card">
+        <span class="material-icons">health_and_safety</span>
+        <p>"Wilkes’ MSN leadership course had me struggling with policy analysis papers. Brian showed me how to connect nursing theories to real-world applications and cite sources in APA. His coaching made my arguments sharper, and I’m way more confident in my writing now!"</p>
+        <cite>— Daniel M., MSN Student, Wilkes University</cite>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="background:#f9fafb; border-top:1px solid #e5e7eb; padding:2rem 1.5rem;">
+  <p style="text-align:center; font-size:0.9rem; margin:0; color:#666;">&copy; 2025 Tutor Brian | Academic Coaching</p>
+</footer>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+  function toggleTheme() {
+    const html = document.documentElement;
+    html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+  }
+</script>
+
+</body>
+</html>
