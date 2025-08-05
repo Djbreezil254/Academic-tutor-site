@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies – Smart Essay Coach</title>
+  <meta name="description" content="Explore how Smart Essay Coach helped a nursing student overcome academic challenges in UTA’s RN-BSN program to achieve success." />
+  <meta name="keywords" content="academic coaching case study, nursing student success, RN-BSN community health, UTA NURS 4465, Smart Essay Coach" />
+  <meta name="author" content="Smart Essay Coach Team" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="./home.css" />
+  <style>
+    /* CASE STUDIES PAGE ONLY FONT OVERRIDE */
+    body.cases-page {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+    }
+
+    .cases-page .intro,
+    .cases-page .case-studies {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .cases-page h1,
+    .cases-page h2 {
+      text-align: center;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin-bottom: 1rem;
+    }
+
+    .cases-page h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .cases-page .intro p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 800px;
+      margin: 0.5rem auto;
+      color: #555;
+    }
+
+    .cases-page .intro .cta {
+      display: inline-block;
+      background: #ff6600;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .cases-page .intro .cta:hover {
+      background: #cc5200;
+      transform: scale(1.05);
+    }
+    .cases-page .intro .cta:focus {
+      outline: 2px solid #4f46e5;
+      outline-offset: 2px;
+    }
+
+    .cases-page .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .cases-page .case-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .cases-page .case-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .cases-page .case-card span.material-icons {
+      font-size: 2rem;
+      color: #4f46e5;
+      margin-bottom: 0.5rem;
+    }
+
+    .cases-page .case-card h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #222;
+      margin: 0.5rem 0;
+    }
+
+    .cases-page .case-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+      margin: 0.5rem 0;
+    }
+
+    .cases-page .case-card a {
+      color: #0066cc;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .cases-page .case-card a:hover,
+    .cases-page .case-card a:focus {
+      color: #ff6600;
+      text-decoration: underline;
+    }
+
+    [data-theme="dark"] .cases-page {
+      background: #1f2937;
+      color: #e0e0e0;
+    }
+
+    [data-theme="dark"] .cases-page .case-card {
+      background: #2f333b;
+      color: #e0e0e0;
+    }
+
+    [data-theme="dark"] .cases-page .case-card h3 {
+      color: #e0e0e0;
+    }
+
+    [data-theme="dark"] .cases-page .case-card p {
+      color: #ccc;
+    }
+
+    [data-theme="dark"] .cases-page .case-card a {
+      color: #ffd54f;
+    }
+
+    [data-theme="dark"] .cases-page .intro .cta {
+      background: #cc5200;
+    }
+
+    @media (max-width: 768px) {
+      .cases-page h1 {
+        font-size: 2rem;
+      }
+      .cases-page .intro .cta {
+        padding: 0.5rem 1.5rem;
+      }
+      .cases-page .nav-links.active li a {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+      }
+      .cases-page .nav-links.active .material-icons {
+        font-size: 1.5rem;
+        margin-right: 0.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="cases-page">
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-brand">Tutor Brian</div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+      <span class="material-icons">menu</span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="./index.html"><span class="material-icons">home</span> Home</a></li>
+      <li><a href="./about.html"><span class="material-icons">person</span> About</a></li>
+      <li><a href="./services.html"><span class="material-icons">build</span> Services</a></li>
+      <li><a href="./contact.html"><span class="material-icons">mail</span> Contact</a></li>
+      <li><a href="./faq.html"><span class="material-icons">help</span> FAQ</a></li>
+      <li><a href="./blog.html"><span class="material-icons">article</span> Blog</a></li>
+      <li><a href="./resources.html"><span class="material-icons">library_books</span> Resources</a></li>
+      <li><a href="./testimonials.html"><span class="material-icons">star</span> Testimonials</a></li>
+    </ul>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light or dark theme">
+      <span class="material-icons">brightness_4</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+  <section class="intro">
+    <h1>Our Case Studies</h1>
+    <p>Discover how Smart Essay Coach empowers students to overcome academic challenges and achieve their goals. Explore this detailed success story to see our coaching in action.</p>
+    <a href="./contact.html" class="cta">Get Started with Your Success</a>
+  </section>
+
+  <section class="case-studies">
+    <h2>Featured Success Story</h2>
+    <div class="cases-grid">
+      <div class="case-card">
+        <span class="material-icons">school</span>
+        <h3>Guiding an RN-BSN Student to Success in UTA’s NURS 4465</h3>
+        <p>A nursing student struggled with community health assignments in UTA’s RN-BSN program. Learn how we helped her master APA formatting and course requirements to earn an A.</p>
+        <a href="./case1.html">Read Full Case Study</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="background:#f9fafb; border-top:1px solid #e5e7eb; padding:2rem 1.5rem;">
+  <p style="text-align:center; font-size:0.9rem; margin:0; color:#666;">&copy; 2025 Tutor Brian | Academic Coaching</p>
+</footer>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+  function toggleTheme() {
+    const html = document.documentElement;
+    html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+  }
+</script>
+
+</body>
+</html>
