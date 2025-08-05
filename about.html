@@ -21,8 +21,9 @@
     .about-page .intro, 
     .about-page .values, 
     .about-page .stats, 
-    .about-page .quote {
-      padding: 0rem 1rem;
+    .about-page .quote,
+    .about-page .team {
+      padding: 2rem 1rem;
       max-width: 1000px;
       margin: auto;
     }
@@ -43,6 +44,26 @@
       margin: 0.5rem auto;
     }
 
+    .about-page .intro .cta {
+      display: inline-block;
+      background: #ff6600;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .about-page .intro .cta:hover {
+      background: #cc5200;
+      transform: scale(1.05);
+    }
+    .about-page .intro .cta:focus {
+      outline: 2px solid #4f46e5;
+      outline-offset: 2px;
+    }
+
     .about-page .values ul {
       list-style: none;
       padding: 0;
@@ -53,11 +74,27 @@
 
     .about-page .values li {
       background: #f9f9f9;
-      padding: 1rem;
+      padding: 1.5rem;
       border-radius: 8px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.05);
       font-size: 1rem;
-      line-height: 1.4;
+      line-height: 1.6;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .about-page .values li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .about-page .values li .material-icons {
+      font-size: 2rem;
+      color: #4f46e5;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .about-page .values li strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
     }
 
     .about-page .stats-grid {
@@ -95,7 +132,7 @@
     .about-page .quote {
       text-align: center;
       font-style: italic;
-      margin-top: 3rem;
+      margin-top: 2rem;
       color: #333;
     }
 
@@ -106,9 +143,68 @@
       color: #555;
     }
 
+    .about-page .team {
+      text-align: center;
+    }
+
+    .about-page .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .about-page .team-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .about-page .team-card h3 {
+      font-size: 1.4rem;
+      margin: 0.5rem 0;
+      color: #222;
+    }
+
+    .about-page .team-card p {
+      font-size: 1rem;
+      color: #666;
+      margin: 0.5rem 0;
+    }
+
+    [data-theme="dark"] .about-page {
+      background: #1f2937;
+      color: #e0e0e0;
+    }
+
+    [data-theme="dark"] .values li,
+    [data-theme="dark"] .stat-card,
+    [data-theme="dark"] .team-card {
+      background: #2f333b;
+      color: #e0e0e0;
+    }
+
+    [data-theme="dark"] .stat-card h3,
+    [data-theme="dark"] .team-card h3 {
+      color: #e0e0e0;
+    }
+
+    [data-theme="dark"] .stat-card p,
+    [data-theme="dark"] .team-card p {
+      color: #b0b0b0;
+    }
+
+    [data-theme="dark"] .intro .cta {
+      background: #cc5200;
+    }
+
     @media (max-width: 600px) {
       .about-page h1, .about-page h2 {
         font-size: 1.5rem;
+      }
+      .about-page .intro .cta {
+        padding: 0.5rem 1.5rem;
       }
     }
   </style>
@@ -124,7 +220,7 @@
     </button>
     <ul class="nav-links" id="nav-links">
       <li><a href="./index.html"><span class="material-icons">home</span> Home</a></li>
-      <li><a href="./about.html" class="active"><span class="material-icons">person</span> About</a></li>
+      <li><a href="./about.html" class="active" aria-current="page"><span class="material-icons">person</span> About</a></li>
       <li><a href="./services.html"><span class="material-icons">build</span> Services</a></li>
       <li><a href="./contact.html"><span class="material-icons">mail</span> Contact</a></li>
       <li><a href="./faq.html"><span class="material-icons">help</span> FAQ</a></li>
@@ -139,53 +235,90 @@
 
 <main>
   <section class="intro">
-  <h1>Why We Coach</h1>
-  <p>Our mission is simple: To help students gain clarity, confidence, and control in their academic journey.</p>
-  <p>Through personalized coaching and research support, we aim to demystify the academic process by empowering each student to write with purpose, defend with strength, and grow with integrity.</p>
-  <p>At BomFreelanceLab, academic success isn’t just about finishing a paper. Rather, it’s about building the mindset, structure, and skills to thrive long after the assignment is done.</p>
-</section>
+    <h1>Why We Coach</h1>
+    <p>At Smart Essay Coach, we empower students to conquer academic challenges with clarity, confidence, and purpose. Through personalized coaching and expert guidance, we transform complex research and writing tasks into opportunities for growth, equipping you with skills to excel in your academic journey and beyond.</p>
+    <a href="./contact.html" class="cta">Start Your Journey Today</a>
+  </section>
 
   <section class="values">
     <h2>Our Core Values</h2>
     <ul>
-      <li>🔍 <strong>Integrity:</strong> Upholding academic honesty at every step.</li>
-      <li>🎯 <strong>Excellence:</strong> Delivering rigorous, in‑depth coaching and feedback.</li>
-      <li>🤝 <strong>Collaboration:</strong> Studying with you—not for you.</li>
-      <li>📈 <strong>Growth:</strong> Empowering continuous improvement through learning.</li>
-      <li>💡 <strong>Innovation:</strong> Integrating smart tools and AI‑safe writing methods.</li>
+      <li>
+        <span class="material-icons">verified</span>
+        <strong>Integrity</strong>
+        <p>We uphold academic honesty, guiding you to produce authentic, ethical work that reflects your true potential.</p>
+      </li>
+      <li>
+        <span class="material-icons">star</span>
+        <strong>Excellence</strong>
+        <p>Our rigorous coaching and detailed feedback ensure your writing meets the highest academic standards.</p>
+      </li>
+      <li>
+        <span class="material-icons">group</span>
+        <strong>Collaboration</strong>
+        <p>We partner with you, offering tailored support to strengthen your skills and achieve your goals.</p>
+      </li>
+      <li>
+        <span class="material-icons">trending_up</span>
+        <strong>Growth</strong>
+        <p>We foster lifelong learning, empowering you to improve with every project and beyond.</p>
+      </li>
+      <li>
+        <span class="material-icons">lightbulb</span>
+        <strong>Innovation</strong>
+        <p>We integrate cutting-edge tools and AI-safe methods to enhance your research and writing process.</p>
+      </li>
     </ul>
   </section>
 
   <section class="stats">
-    <h2>By the Numbers 📊</h2>
+    <h2>Our Impact</h2>
+    <p>Since our founding, Smart Essay Coach has transformed the academic journeys of students worldwide.</p>
     <div class="stats-grid">
       <div class="stat-card">
         <span class="material-icons">people</span>
-        <h3>250+</h3><p>Happy Clients</p>
+        <h3>250+</h3>
+        <p>Students Empowered</p>
       </div>
       <div class="stat-card">
         <span class="material-icons">star_rate</span>
-        <h3>4.9/5</h3><p>Average Rating</p>
+        <h3>4.9/5</h3>
+        <p>Client Feedback</p>
       </div>
       <div class="stat-card">
         <span class="material-icons">work</span>
-        <h3>5 Years+</h3><p>Team Experience</p>
+        <h3>5+ Years</h3>
+        <p>Coaching Expertise</p>
       </div>
       <div class="stat-card">
         <span class="material-icons">thumb_up</span>
-        <h3>98%</h3><p>Client Satisfaction</p>
+        <h3>98%</h3>
+        <p>Success Rate</p>
       </div>
       <div class="stat-card">
         <span class="material-icons">done_all</span>
-        <h3>450+</h3><p>Projects Completed</p>
+        <h3>450+</h3>
+        <p>Projects Completed</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="team">
+    <h2>Meet Your Coaches</h2>
+    <p>Our team, led by Tutor Brian, brings years of expertise in academic writing and research to guide you to success.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <h3>Tutor Brian</h3>
+        <p>Founder & Lead Coach</p>
+        <p>With over 5 years of experience, Brian specializes in thesis structuring and academic mentorship, helping students achieve excellence.</p>
       </div>
     </div>
   </section>
 
   <section class="quote">
     <blockquote>
-      <p>“Education is the most powerful weapon which you can use to change the world.”</p>
-      <cite>– Nelson Mandela</cite>
+      <p>“Smart Essay Coach transformed my thesis process, giving me the tools to write with confidence and clarity.”</p>
+      <cite>– Sarah K., Graduate Student</cite>
     </blockquote>
   </section>
 </main>
