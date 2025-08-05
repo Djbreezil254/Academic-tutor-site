@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study: Liberty DBA Concept Paper Success – Smart Essay Coach</title>
+  <meta name="description" content="Learn how Smart Essay Coach helped a DBA student at Liberty University navigate the concept paper process, achieving minimal revisions and first-submission approvals." />
+  <meta name="keywords" content="Liberty DBA case study, concept paper success, doctoral research coaching, business administration dissertation, Smart Essay Coach" />
+  <meta name="author" content="Smart Essay Coach Team" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="./home.css" />
+  <style>
+    body.case-page {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+    }
+
+    .case-page .case-study {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .case-page h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      text-align: center;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+    }
+
+    .case-page .intro p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 800px;
+      margin: 0.5rem auto;
+      color: #555;
+    }
+
+    .case-page .intro .cta {
+      display: inline-block;
+      background: #ff6600;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .case-page .intro .cta:hover {
+      background: #cc5200;
+      transform: scale(1.05);
+    }
+    .case-page .intro .cta:focus {
+      outline: 2px solid #4f46e5;
+      outline-offset: 2px;
+    }
+
+    .case-page .case-content {
+      background: #fff;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      margin-top: 2rem;
+    }
+
+    .case-page .case-content h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .case-page .case-content h2 span.material-icons {
+      font-size: 2rem;
+      color: #4f46e5;
+    }
+
+    .case-page .case-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    .case-page .case-content ul {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .case-page .case-content ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    [data-theme="dark"] .case-page {
+      background: #1f2937;
+      color: #e0e0e0;
+    }
+
+    [data-theme="dark"] .case-page .case-content {
+      background: #2f333b;
+      color: #e0e0e0;
+    }
+
+    [data-theme="dark"] .case-page .case-content h2 {
+      color: #e0e0e0;
+    }
+
+    [data-theme="dark"] .case-page .case-content p,
+    [data-theme="dark"] .case-page .case-content ul li {
+      color: #ccc;
+    }
+
+    [data-theme="dark"] .case-page .intro .cta {
+      background: #cc5200;
+    }
+
+    @media (max-width: 768px) {
+      .case-page h1 {
+        font-size: 2rem;
+      }
+      .case-page .intro .cta {
+        padding: 0.5rem 1.5rem;
+      }
+      .case-page .nav-links.active li a {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+      }
+      .case-page .nav-links.active .material-icons {
+        font-size: 1.5rem;
+        margin-right: 0.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="case-page">
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-brand">Tutor Brian</div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+      <span class="material-icons">menu</span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="./index.html"><span class="material-icons">home</span> Home</a></li>
+      <li><a href="./about.html"><span class="material-icons">person</span> About</a></li>
+      <li><a href="./services.html"><span class="material-icons">build</span> Services</a></li>
+      <li><a href="./contact.html"><span class="material-icons">mail</span> Contact</a></li>
+      <li><a href="./faq.html"><span class="material-icons">help</span> FAQ</a></li>
+      <li><a href="./blog.html"><span class="material-icons">article</span> Blog</a></li>
+      <li><a href="./resources.html"><span class="material-icons">library_books</span> Resources</a></li>
+      <li><a href="./testimonials.html"><span class="material-icons">star</span> Testimonials</a></li>
+      <li><a href="./cases.html"><span class="material-icons">school</span> Case Studies</a></li>
+    </ul>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light or dark theme">
+      <span class="material-icons">brightness_4</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+  <section class="intro">
+    <h1>Case Study: Guiding a Doctoral Student Through Liberty’s DBA Concept Paper</h1>
+    <p>Discover how Smart Essay Coach helped a DBA student at Liberty University navigate the rigorous concept paper process, achieving minimal revisions and first-submission approvals for their doctoral project.</p>
+    <a href="./contact.html" class="cta">Start Your Success Story</a>
+  </section>
+
+  <section class="case-study">
+    <div class="case-content">
+      <h2><span class="material-icons">report_problem</span> The Challenge</h2>
+      <p>A doctoral student in Liberty University’s Doctor of Business Administration (DBA) program faced the daunting task of developing a research concept paper for an 800-level course, a critical step toward their final dissertation. The concept paper required a clear, well-structured document that would serve as the foundation for their doctoral project, addressing a business-related problem with academic rigor. The process involved completing four tasks—each requiring institutional approval—covering the research topic, problem statement, literature review, research questions, methodology, and scholarly contribution. The student struggled with the complexity of aligning their ideas with Liberty’s academic standards, including APA 7th edition formatting and identifying a research gap. They were concerned about potential delays from multiple revisions, which could hinder their progress in the DBA program. Seeking to minimize revisions and build confidence, the student turned to Smart Essay Coach for guidance.</p>
+
+      <h2><span class="material-icons">lightbulb</span> Our Solution</h2>
+      <p>Smart Essay Coach provided a structured, collaborative coaching model tailored to the student’s needs and the DBA program’s requirements. Using Liberty’s Research Concept Guide and Research Concept Paper Template, we guided the student through each task with targeted strategies:</p>
+      <ul>
+        <li><strong>Task 1: Research Topic and Problem Statement</strong>: We began by helping the student develop a compelling research topic and a clear problem statement. This involved brainstorming a business issue relevant to their interests, ensuring it was specific, significant, and researchable. We used the template’s structure, which includes sections like Introduction, Problem Statement, and Purpose Statement, to frame their ideas effectively. For example, we guided the student to articulate a problem statement that addressed a real-world business challenge, supported by preliminary evidence. We also reviewed APA 7th edition guidelines to ensure proper formatting and citations. After our coaching, the student submitted Task 1 and received only one minor revision, which they addressed quickly, gaining approval to proceed.</li>
+        <li><strong>Task 2: Literature Review and Research Questions</strong>: Next, we focused on conducting an initial literature review and formulating research questions. We taught the student how to perform a targeted literature search using Liberty’s library databases (e.g., EBSCO, ProQuest) to identify a gap in existing research. This involved selecting peer-reviewed articles from 2020 or later to ensure relevance. We guided the student in synthesizing sources to demonstrate the gap and crafting research questions that were clear, focused, and aligned with the identified problem. For instance, we helped refine questions to ensure they were researchable within the DBA’s scope. After our session, the student submitted Task 2, receiving just one revision, which they resolved efficiently, showing a strong understanding of the process.</li>
+        <li><strong>Tasks 3 & 4: Methodology and Scholarly Contribution</strong>: For the final tasks, we concentrated on developing the methodology and articulating the research’s scholarly contribution. We discussed how to select and justify an appropriate research design (e.g., qualitative, quantitative, or mixed-methods), population, and sampling strategy, ensuring alignment with the Research Concept Guide. For example, we explored options like a qualitative single case study for in-depth analysis or a survey-based approach for broader insights, tailoring the choice to the student’s topic. We also helped the student articulate how their research would contribute to business scholarship, such as addressing a practical issue in their industry. Our detailed feedback ensured the student’s submissions were robust and well-structured. Both Task 3 and Task 4 were approved on the first submission, a testament to the student’s hard work and our focused coaching.</li>
+        <li><strong>Academic Standards and Writing Support</strong>: Throughout the process, we emphasized adherence to Liberty’s academic standards, particularly APA 7th edition formatting for citations and references. We provided guidance on structuring each section, avoiding plagiarism through proper paraphrasing, and using credible sources. We also set up a timeline to manage submission deadlines, ensuring the student stayed on track and avoided delays.</li>
+      </ul>
+
+      <h2><span class="material-icons">star</span> The Results</h2>
+      <p>With Smart Essay Coach’s guidance, the student successfully navigated the concept paper process, completing all four tasks with remarkable efficiency. They received only two revisions total— one for Task 1 and one for Task 2—and achieved first-submission approvals for Tasks 3 and 4. This streamlined process allowed them to move forward in their DBA program without delays, building a strong foundation for their dissertation. The student gained confidence in their research and writing skills, mastering complex tasks like literature synthesis and methodology design. Their success is reflected in their heartfelt testimonial, which highlights the impact of our coaching and their intent to continue the partnership for future phases of their doctoral journey.</p>
+      <p><strong>Student Testimonial:</strong> "I just wanted to reach out and say thank you so much for your guidance on my concept paper. I genuinely couldn't have done it without you. I was dreading this process, but with your help, it was so manageable. Getting those last two tasks approved on the first submission felt incredible! I'll definitely be in touch for coaching on the actual DBA project next semester."</p>
+    </div>
+  </section>
+</main>
+
+<footer style="background:#f9fafb; border-top:1px solid #e5e7eb; padding:2rem 1.5rem;">
+  <p style="text-align:center; font-size:0.9rem; margin:0; color:#666;">&copy; 2025 Tutor Brian | Academic Coaching</p>
+</footer>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+  function toggleTheme() {
+    const html = document.documentElement;
+    html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+  }
+</script>
+
+</body>
+</html>
